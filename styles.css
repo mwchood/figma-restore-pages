@@ -4891,6 +4891,50 @@ html:has(#restore-bare:target) .figma-frame {
   line-height: 28px;
 }
 
+.restore-register-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  margin-left: auto;
+  padding: 7px 8px 7px 12px;
+  border: 1px solid #ffd8a8;
+  border-radius: 8px;
+  background: #fff7ed;
+  color: #7c2d12;
+  box-shadow: 0 8px 22px rgba(154, 77, 0, 0.08);
+}
+
+.restore-register-note[hidden] {
+  display: none;
+}
+
+.restore-register-note span {
+  min-width: 0;
+  font-size: 13px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.restore-register-note strong {
+  color: #111;
+  font-weight: 700;
+}
+
+.restore-register-note button {
+  flex: 0 0 auto;
+  height: 26px;
+  padding: 0 9px;
+  border: 1px solid #fdba74;
+  border-radius: 6px;
+  background: #fff;
+  color: #9a3412;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+}
+
 .restore-hub-preview-header a {
   flex: 0 0 auto;
   height: 34px;
@@ -4955,6 +4999,21 @@ html:has(#restore-bare:target) .figma-frame {
 
   .restore-hub-preview {
     padding: 16px;
+  }
+
+  .restore-hub-preview-header {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .restore-register-note {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .restore-register-note span {
+    white-space: normal;
   }
 
   .restore-hub-preview iframe {

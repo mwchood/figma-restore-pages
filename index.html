@@ -64,6 +64,11 @@
       <section class="restore-hub-preview" aria-live="polite">
         <header class="restore-hub-preview-header">
           <h2 id="restoreHubTitle">我的 V1</h2>
+          <div class="restore-register-note" id="restoreRegisterNote" hidden>
+            <span>体验注册流程：订单号 <strong>TB202607100001</strong>，SN <strong>SN-OK-001</strong></span>
+            <button type="button" data-copy-demo="TB202607100001">复制订单号</button>
+            <button type="button" data-copy-demo="SN-OK-001">复制 SN</button>
+          </div>
           <a id="restoreHubOpen" href="./sy-v1.html" target="_blank" rel="noreferrer">打开页面</a>
         </header>
         <iframe id="restoreHubFrame" title="我的 V1" src="./sy-v1.html"></iframe>
@@ -75,6 +80,7 @@
       const frame = document.getElementById("restoreHubFrame");
       const title = document.getElementById("restoreHubTitle");
       const openLink = document.getElementById("restoreHubOpen");
+      const registerNote = document.getElementById("restoreRegisterNote");
 
       function selectPage(button, replaceHash = false) {
         buttons.forEach((item) => item.classList.toggle("active", item === button));
@@ -84,6 +90,7 @@
         frame.title = pageTitle;
         title.textContent = pageTitle;
         openLink.href = `./${page}`;
+        registerNote.hidden = !page.endsWith("register-product.html");
         if (!replaceHash) window.location.hash = page;
       }
 
@@ -93,6 +100,22 @@
 
       buttons.forEach((button) => {
         button.addEventListener("click", () => selectPage(button));
+      });
+
+      document.querySelectorAll("[data-copy-demo]").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const value = button.dataset.copyDemo;
+          try {
+            await navigator.clipboard.writeText(value);
+            const label = button.textContent;
+            button.textContent = "\u5df2\u590d\u5236";
+            setTimeout(() => {
+              button.textContent = label;
+            }, 1200);
+          } catch {
+            window.prompt("\u590d\u5236\u4e0b\u9762\u7684\u5185\u5bb9", value);
+          }
+        });
       });
     </script>
   </body>
