@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>售后小程序 - 注册成功</title>
+    <link rel="stylesheet" href="./register.css" />
+  </head>
+  <body>
+    <main class="preview-shell">
+      <section class="miniapp-frame" aria-label="注册成功">
+        <header class="page-header">
+          <span class="status-time">9:41</span>
+          <h1 class="page-title">注册成功</h1>
+          <span class="mini-capsule" aria-hidden="true"></span>
+        </header>
+
+        <section class="success-body">
+          <div class="success-mark" aria-hidden="true">
+            <svg viewBox="0 0 54 54">
+              <path d="M14 28l9 9 18-22"></path>
+            </svg>
+          </div>
+          <h2>产品注册成功</h2>
+          <p>已添加到「我的产品」</p>
+        </section>
+
+        <div class="bottom-action bottom-action--stacked">
+          <a class="primary-button" href="./index.html?registered=1">返回首页</a>
+          <a class="secondary-button" href="./index.html?registered=1">查看产品</a>
+          <span class="home-indicator" aria-hidden="true"></span>
+        </div>
+      </section>
+    </main>
+    <script>
+      localStorage.setItem("aftersalesProductRegistered", "1");
+    </script>
+  </body>
+</html>

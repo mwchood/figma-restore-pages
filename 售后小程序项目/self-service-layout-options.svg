@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="760" viewBox="0 0 980 760">
+  <defs>
+    <style>
+      .page { fill: #eef1f5; }
+      .phone { fill: #fff; stroke: #cfd5dc; stroke-width: 1.5; }
+      .screen { fill: #f9f9f9; }
+      .top { fill: #e8edf2; }
+      .card { fill: #fff; stroke: #dfe3e8; stroke-width: 1; }
+      .soft { fill: #f4f6f8; stroke: #dfe3e8; stroke-width: 1; }
+      .line { stroke: #ccd3da; stroke-width: 1; }
+      .dark { fill: #111; font-family: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif; }
+      .mid { fill: #666; font-family: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif; }
+      .light { fill: #999; font-family: "Noto Sans SC", "Microsoft YaHei", Arial, sans-serif; }
+      .accent { fill: #ed6319; }
+      .title { font-size: 24px; font-weight: 600; }
+      .nav { font-size: 18px; font-weight: 600; }
+      .h2 { font-size: 17px; font-weight: 600; }
+      .body { font-size: 13px; font-weight: 400; }
+      .small { font-size: 11px; font-weight: 400; }
+      .tab { font-size: 11px; font-weight: 400; }
+      .note { font-size: 12px; font-weight: 400; }
+    </style>
+  </defs>
+
+  <rect class="page" width="980" height="760"/>
+  <text class="dark title" x="60" y="62">自助服务入口布局对比</text>
+  <text class="mid body" x="60" y="91">左：四个入口横向排列。右：四个入口 2×2 排列。</text>
+
+  <!-- Option A -->
+  <g transform="translate(90 130)">
+    <text class="dark h2" x="0" y="-24">方案 A：横向四入口</text>
+    <rect class="phone" x="0" y="0" width="375" height="580" rx="28"/>
+    <clipPath id="clip-a">
+      <rect x="0" y="0" width="375" height="580" rx="28"/>
+    </clipPath>
+    <g clip-path="url(#clip-a)">
+      <rect class="screen" x="0" y="0" width="375" height="580"/>
+      <rect class="top" x="0" y="0" width="375" height="150"/>
+      <text class="dark small" x="24" y="30">9:41</text>
+      <rect class="soft" x="286" y="18" width="64" height="24" rx="12"/>
+      <text class="dark nav" x="24" y="86">首页</text>
+      <text class="mid body" x="24" y="113">欢迎使用售后服务</text>
+
+      <rect class="card" x="16" y="128" width="343" height="154" rx="10"/>
+      <text class="dark h2" x="32" y="160">我的产品</text>
+      <rect class="soft" x="32" y="184" width="84" height="64" rx="8"/>
+      <text class="dark body" x="132" y="207">净水器 X1</text>
+      <text class="light small" x="132" y="231">SN：A1B2C3D4</text>
+
+      <text class="dark h2" x="24" y="326">自助服务</text>
+      <rect class="card" x="16" y="346" width="343" height="128" rx="10"/>
+      <g transform="translate(34 370)">
+        <rect class="soft" x="0" y="0" width="58" height="58" rx="12"/>
+        <circle class="accent" cx="29" cy="25" r="12"/>
+        <text class="dark small" x="-7" y="82">售后服务申请</text>
+      </g>
+      <g transform="translate(116 370)">
+        <rect class="soft" x="0" y="0" width="58" height="58" rx="12"/>
+        <circle class="dark" cx="29" cy="25" r="12"/>
+        <text class="dark small" x="4" y="82">服务进度</text>
+      </g>
+      <g transform="translate(198 370)">
+        <rect class="soft" x="0" y="0" width="58" height="58" rx="12"/>
+        <circle class="dark" cx="29" cy="25" r="12"/>
+        <text class="dark small" x="4" y="82">申请开票</text>
+      </g>
+      <g transform="translate(280 370)">
+        <rect class="soft" x="0" y="0" width="58" height="58" rx="12"/>
+        <circle class="dark" cx="29" cy="25" r="12"/>
+        <text class="dark small" x="4" y="82">产品知识</text>
+      </g>
+
+      <rect class="card" x="0" y="496" width="375" height="84"/>
+      <line class="line" x1="0" y1="496" x2="375" y2="496"/>
+      <text class="accent tab" x="55" y="546">首页</text>
+      <text class="light tab" x="161" y="546">会员中心</text>
+      <text class="light tab" x="303" y="546">我的</text>
+    </g>
+    <text class="mid note" x="0" y="618">优点：紧凑，首页信息露出更多。</text>
+    <text class="mid note" x="0" y="640">风险：长文案挤，点击面积偏小。</text>
+  </g>
+
+  <!-- Option B -->
+  <g transform="translate(515 130)">
+    <text class="dark h2" x="0" y="-24">方案 B：2×2 宫格</text>
+    <rect class="phone" x="0" y="0" width="375" height="580" rx="28"/>
+    <clipPath id="clip-b">
+      <rect x="0" y="0" width="375" height="580" rx="28"/>
+    </clipPath>
+    <g clip-path="url(#clip-b)">
+      <rect class="screen" x="0" y="0" width="375" height="580"/>
+      <rect class="top" x="0" y="0" width="375" height="150"/>
+      <text class="dark small" x="24" y="30">9:41</text>
+      <rect class="soft" x="286" y="18" width="64" height="24" rx="12"/>
+      <text class="dark nav" x="24" y="86">首页</text>
+      <text class="mid body" x="24" y="113">欢迎使用售后服务</text>
+
+      <rect class="card" x="16" y="128" width="343" height="132" rx="10"/>
+      <text class="dark h2" x="32" y="160">我的产品</text>
+      <rect class="soft" x="32" y="184" width="72" height="48" rx="8"/>
+      <text class="dark body" x="120" y="204">净水器 X1</text>
+      <text class="light small" x="120" y="226">SN：A1B2C3D4</text>
+
+      <text class="dark h2" x="24" y="304">自助服务</text>
+      <rect class="card" x="16" y="324" width="343" height="204" rx="10"/>
+      <g transform="translate(32 344)">
+        <rect class="soft" x="0" y="0" width="148" height="72" rx="10"/>
+        <circle class="accent" cx="32" cy="36" r="13"/>
+        <text class="dark body" x="56" y="32">售后服务申请</text>
+        <text class="light small" x="56" y="52">退换修/补寄</text>
+      </g>
+      <g transform="translate(195 344)">
+        <rect class="soft" x="0" y="0" width="148" height="72" rx="10"/>
+        <circle class="dark" cx="32" cy="36" r="13"/>
+        <text class="dark body" x="56" y="32">服务进度</text>
+        <text class="light small" x="56" y="52">查看处理状态</text>
+      </g>
+      <g transform="translate(32 436)">
+        <rect class="soft" x="0" y="0" width="148" height="72" rx="10"/>
+        <circle class="dark" cx="32" cy="36" r="13"/>
+        <text class="dark body" x="56" y="32">申请开票</text>
+        <text class="light small" x="56" y="52">订单发票服务</text>
+      </g>
+      <g transform="translate(195 436)">
+        <rect class="soft" x="0" y="0" width="148" height="72" rx="10"/>
+        <circle class="dark" cx="32" cy="36" r="13"/>
+        <text class="dark body" x="56" y="32">产品知识</text>
+        <text class="light small" x="56" y="52">使用/保养指南</text>
+      </g>
+
+      <rect class="card" x="0" y="496" width="375" height="84"/>
+      <line class="line" x1="0" y1="496" x2="375" y2="496"/>
+      <text class="accent tab" x="55" y="546">首页</text>
+      <text class="light tab" x="161" y="546">会员中心</text>
+      <text class="light tab" x="303" y="546">我的</text>
+    </g>
+    <text class="mid note" x="0" y="618">优点：点击面积大，可加辅助说明。</text>
+    <text class="mid note" x="0" y="640">风险：首页纵向占用更高。</text>
+  </g>
+</svg>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>售后小程序 - 售后申请</title>
+    <link rel="stylesheet" href="./after-sales.css" />
+  </head>
+  <body>
+    <main class="preview-shell">
+      <section class="miniapp-frame" aria-label="售后申请">
+        <header class="page-header">
+          <span class="status-time">9:41</span>
+          <a class="back-link" href="./index.html" aria-label="返回首页" data-back></a>
+          <h1 class="page-title">售后申请</h1>
+          <span class="mini-capsule" aria-hidden="true"></span>
+        </header>
+
+        <section class="form-content">
+          <nav class="request-tabs" aria-label="申请方式">
+            <button class="request-tab is-active" type="button" data-tab="product">商品申请</button>
+            <button class="request-tab" type="button" data-tab="sn">SN 申请</button>
+          </nav>
+
+          <section class="tab-panel is-active" data-panel="product">
+            <div class="side-tab-layout">
+              <nav class="side-tabs" aria-label="商品来源">
+                <button class="side-tab is-active" type="button" data-product-source="registered">已注册产品</button>
+                <button class="side-tab" type="button" data-product-source="air-conditioner">空调</button>
+                <button class="side-tab" type="button" data-product-source="wearable">穿戴设备</button>
+                <button class="side-tab" type="button" data-product-source="air-purifier">空气净化器</button>
+                <button class="side-tab" type="button" data-product-source="water">净水设备</button>
+                <button class="side-tab" type="button" data-product-source="kitchen">厨房电器</button>
+                <button class="side-tab" type="button" data-product-source="cleaning">清洁设备</button>
+                <button class="side-tab" type="button" data-product-source="audio">影音设备</button>
+              </nav>
+              <div class="side-panel">
+                <div class="source-panel is-active" data-source-panel="registered">
+                  <div class="option-list" data-registered-list></div>
+                </div>
+                <div class="source-panel" data-source-panel="air-conditioner">
+                  <div class="option-list" data-catalog-list="air-conditioner"></div>
+                </div>
+                <div class="source-panel" data-source-panel="wearable">
+                  <div class="option-list" data-catalog-list="wearable"></div>
+                </div>
+                <div class="source-panel" data-source-panel="air-purifier">
+                  <div class="option-list" data-catalog-list="air-purifier"></div>
+                </div>
+                <div class="source-panel" data-source-panel="water">
+                  <div class="option-list" data-catalog-list="water"></div>
+                </div>
+                <div class="source-panel" data-source-panel="kitchen">
+                  <div class="option-list" data-catalog-list="kitchen"></div>
+                </div>
+                <div class="source-panel" data-source-panel="cleaning">
+                  <div class="option-list" data-catalog-list="cleaning"></div>
+                </div>
+                <div class="source-panel" data-source-panel="audio">
+                  <div class="option-list" data-catalog-list="audio"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tab-panel" data-panel="sn">
+            <h2 class="section-label">输入或扫码 SN</h2>
+            <div class="sn-field-wrap">
+              <input class="text-field" id="sn-input" type="text" placeholder="请输入 SN" autocomplete="off" />
+              <a class="scan-entry" href="./scan-sn.html" aria-label="扫码识别 SN">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 4H5a1 1 0 0 0-1 1v2"></path>
+                  <path d="M17 4h2a1 1 0 0 1 1 1v2"></path>
+                  <path d="M20 17v2a1 1 0 0 1-1 1h-2"></path>
+                  <path d="M7 20H5a1 1 0 0 1-1-1v-2"></path>
+                  <path d="M7 12h10"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="sn-actions">
+              <button class="inline-button" type="button" data-confirm-sn>确认申请</button>
+            </div>
+          </section>
+        </section>
+
+        <div class="toast" role="status" aria-live="polite" data-toast></div>
+      </section>
+    </main>
+
+    <script>
+      const fallbackProducts = [
+        { name: "净水器 X1", sn: "SN-OK-001", warranty: "2027-10-23", kind: "water" },
+        { name: "焦点触控笔", sn: "SN-OK-002", warranty: "2026-12-07", kind: "stylus" },
+        { name: "智能手环 S9", sn: "SN-OK-003", warranty: "2027-03-10", kind: "band" }
+      ];
+      const catalogProducts = [
+        { id: "ac-vertical", name: "立式空调 A1", warranty: "2028-06-30", kind: "air", category: "air-conditioner" },
+        { id: "ac-wall", name: "壁挂空调 C2", warranty: "2028-05-18", kind: "air", category: "air-conditioner" },
+        { id: "band", name: "智能手环 S9", warranty: "2027-03-10", kind: "band", category: "wearable" },
+        { id: "watch", name: "智能手表 W3", warranty: "2027-09-12", kind: "band", category: "wearable" },
+        { id: "air", name: "空气净化器 A3", warranty: "2028-01-18", kind: "air", category: "air-purifier" },
+        { id: "air-desk", name: "桌面净化器 P1", warranty: "2027-11-20", kind: "air", category: "air-purifier" },
+        { id: "water", name: "净水器 X1", warranty: "2027-10-23", kind: "water", category: "water" },
+        { id: "water-pro", name: "台式净饮机 W2", warranty: "2028-02-16", kind: "water", category: "water" },
+        { id: "oven", name: "智能蒸烤箱 K5", warranty: "2028-04-08", kind: "air", category: "kitchen" },
+        { id: "coffee", name: "全自动咖啡机 C1", warranty: "2027-12-18", kind: "water", category: "kitchen" },
+        { id: "vacuum", name: "无线洗地机 V8", warranty: "2028-03-05", kind: "air", category: "cleaning" },
+        { id: "robot", name: "扫拖机器人 R6", warranty: "2028-07-22", kind: "air", category: "cleaning" },
+        { id: "speaker", name: "智能音箱 M2", warranty: "2027-08-30", kind: "band", category: "audio" },
+        { id: "projector", name: "便携投影仪 P6", warranty: "2028-09-15", kind: "air", category: "audio" }
+      ];
+      const productAssets = {
+        water: "./assets/product-water-purifier-real.png",
+        stylus: "./assets/product-stylus-real.png",
+        band: "./assets/product-smart-band-real.png",
+        air: "./assets/product-air-purifier-real.png"
+      };
+      const safeParse = (value) => {
+        try {
+          return JSON.parse(value || "[]");
+        } catch {
+          return [];
+        }
+      };
+      const escapeHTML = (value) =>
+        String(value || "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+      const inferKind = (product) => {
+        if (product.kind && product.kind !== "default") return product.kind;
+        if (product.name?.includes("触控笔")) return "stylus";
+        if (product.name?.includes("手环")) return "band";
+        if (product.name?.includes("空气净化器")) return "air";
+        return "water";
+      };
+      const thumb = (product) => productAssets[inferKind(product)] || productAssets.water;
+      const normalizeProduct = (product, index) => ({
+        name: product.name || fallbackProducts[index]?.name || "已注册产品",
+        sn: product.sn || fallbackProducts[index]?.sn || "",
+        warranty: product.warranty || fallbackProducts[index]?.warranty || "",
+        kind: inferKind(product)
+      });
+
+      let registeredProducts = safeParse(localStorage.getItem("aftersalesProducts")).map(normalizeProduct);
+      if (!registeredProducts.length) registeredProducts = fallbackProducts.map(normalizeProduct);
+
+      const card = (product, href, extra = "") => `
+        <a class="option-card" href="${href}" aria-label="${escapeHTML(product.name)}">
+          <span class="option-thumb" aria-hidden="true"><img src="${thumb(product)}" alt="" /></span>
+          <span class="option-info">
+            <strong>${escapeHTML(product.name)}</strong>
+            ${extra ? `<small>${extra}</small>` : ""}
+          </span>
+        </a>`;
+
+      document.querySelector("[data-registered-list]").innerHTML = registeredProducts
+        .map((product) => card(product, `./after-sales-form.html?sn=${encodeURIComponent(product.sn)}`, `SN：${escapeHTML(product.sn)}`))
+        .join("");
+      catalogProducts.forEach((product) => {
+        const list = document.querySelector(`[data-catalog-list="${product.category}"]`);
+        if (!list) return;
+        list.insertAdjacentHTML("beforeend", card(product, `./after-sales-form.html?product=${encodeURIComponent(product.id)}`));
+      });
+
+      document.querySelectorAll("[data-tab]").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document.querySelectorAll("[data-tab]").forEach((item) => item.classList.toggle("is-active", item === tab));
+          document.querySelectorAll("[data-panel]").forEach((panel) => panel.classList.toggle("is-active", panel.dataset.panel === tab.dataset.tab));
+        });
+      });
+      document.querySelectorAll("[data-product-source]").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document.querySelectorAll("[data-product-source]").forEach((item) => item.classList.toggle("is-active", item === tab));
+          document.querySelectorAll("[data-source-panel]").forEach((panel) => panel.classList.toggle("is-active", panel.dataset.sourcePanel === tab.dataset.productSource));
+        });
+      });
+
+      const toast = document.querySelector("[data-toast]");
+      let toastTimer;
+      const showToast = (message) => {
+        clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+        toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 1600);
+      };
+      document.querySelector("[data-confirm-sn]").addEventListener("click", () => {
+        const sn = document.querySelector("#sn-input").value.trim().toUpperCase();
+        if (!sn) {
+          showToast("请输入 SN");
+          return;
+        }
+        const product = registeredProducts.find((item) => item.sn === sn) || fallbackProducts.find((item) => item.sn === sn);
+        if (!product) {
+          showToast("未识别到产品信息");
+          return;
+        }
+        location.href = `./after-sales-form.html?sn=${encodeURIComponent(sn)}`;
+      });
+      document.querySelector("[data-back]")?.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (history.length > 1) history.back();
+        else location.href = "./index.html";
+      });
+    </script>
+  </body>
+</html>

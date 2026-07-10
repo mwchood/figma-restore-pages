@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>售后小程序 - 全部产品</title>
+    <link rel="stylesheet" href="./product.css" />
+  </head>
+  <body>
+    <main class="preview-shell">
+      <section class="miniapp-frame" aria-label="全部产品">
+        <header class="page-header">
+          <span class="status-time">9:41</span>
+          <a class="back-link" href="./index.html" aria-label="返回首页" data-back></a>
+          <h1 class="page-title">全部产品</h1>
+          <span class="mini-capsule" aria-hidden="true"></span>
+        </header>
+
+        <section class="page-content">
+          <div class="list-meta" data-product-count>共 0 个产品</div>
+          <div class="product-list" data-product-list></div>
+          <p class="empty-note">空状态：仅显示注册产品卡。</p>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      const fallbackProducts = [
+        { name: "净水器 X1", sn: "SN-OK-001", warranty: "2027-10-23", orderNo: "TB202607100001", channel: "淘宝", registeredAt: "2026-07-10", kind: "water" },
+        { name: "焦点触控笔", sn: "SN-OK-002", warranty: "2026-12-07", orderNo: "JD202607100002", channel: "京东", registeredAt: "2026-07-10", kind: "stylus" }
+      ];
+
+      const safeParse = (value) => {
+        try {
+          return JSON.parse(value || "[]");
+        } catch {
+          return [];
+        }
+      };
+
+      const escapeHTML = (value) =>
+        String(value || "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+
+      const productAssets = {
+        default: "./assets/product-water-purifier-real.png",
+        water: "./assets/product-water-purifier-real.png",
+        pen: "./assets/product-stylus-real.png",
+        stylus: "./assets/product-stylus-real.png",
+        band: "./assets/product-smart-band-real.png",
+        air: "./assets/product-air-purifier-real.png"
+      };
+      const productThumb = (kind = "default") => `<img src="${productAssets[kind] || productAssets.default}" alt="" />`;
+      const inferProductKind = (product, index) => {
+        if (product.kind && product.kind !== "default") return product.kind;
+        if (product.name?.includes("触控笔")) return "stylus";
+        if (product.name?.includes("手环")) return "band";
+        if (product.name?.includes("空气净化器")) return "air";
+        return fallbackProducts[index]?.kind || product.kind || "water";
+      };
+
+      const normalizeProduct = (product, index) => ({
+        name: product.name || fallbackProducts[index]?.name || "已注册产品",
+        sn: product.sn || fallbackProducts[index]?.sn || "SN-UNKNOWN",
+        warranty: product.warranty || fallbackProducts[index]?.warranty || "2027-10-23",
+        orderNo: product.orderNo || fallbackProducts[index]?.orderNo || "",
+        channel: product.channel || fallbackProducts[index]?.channel || "",
+        registeredAt: product.registeredAt || "2026-07-10",
+        kind: inferProductKind(product, index)
+      });
+
+      const shouldShowDemoProducts =
+        new URLSearchParams(location.search).get("registered") === "1" ||
+        localStorage.getItem("aftersalesProductRegistered") === "1";
+      let products = safeParse(localStorage.getItem("aftersalesProducts")).map(normalizeProduct);
+      if (!products.length && shouldShowDemoProducts) {
+        products = fallbackProducts.map(normalizeProduct);
+        localStorage.setItem("aftersalesProducts", JSON.stringify(products));
+        localStorage.setItem("aftersalesProductRegistered", "1");
+      }
+
+      const list = document.querySelector("[data-product-list]");
+      document.querySelector("[data-product-count]").textContent = `共 ${products.length} 个产品`;
+      list.innerHTML =
+        products
+          .map(
+            (product) => `
+              <a class="product-row" href="./product-detail.html?sn=${encodeURIComponent(product.sn)}" aria-label="${escapeHTML(product.name)}">
+                <span class="product-thumb">${productThumb(product.kind)}</span>
+                <span class="product-row__info">
+                  <strong>${escapeHTML(product.name)}</strong>
+                  <small>SN：${escapeHTML(product.sn)}</small>
+                </span>
+              </a>`
+          )
+          .join("") +
+        `
+          <a class="register-entry" href="./register-product.html" aria-label="注册产品">
+            <span class="register-entry__icon" aria-hidden="true"></span>
+            <strong>注册产品</strong>
+          </a>`;
+
+      document.querySelector("[data-back]")?.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (history.length > 1) {
+          history.back();
+        } else {
+          location.href = "./index.html";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="860" viewBox="0 0 1180 860">
+  <defs>
+    <style>
+      .canvas{fill:#e7ebf0}
+      .sheet{fill:#fff;filter:url(#shadow)}
+      .panel{fill:#f9f9f9}
+      .card{fill:#fff;stroke:#dbdbdb;stroke-width:1}
+      .key{fill:#000}
+      .soft{fill:#f9f9f9;stroke:#f0f0f0;stroke-width:1}
+      .warn{fill:#fff7f2;stroke:#ed6319;stroke-width:1}
+      .line{stroke:#999;stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .dash{stroke:#999;stroke-width:1.2;fill:none;stroke-dasharray:5 5;stroke-linecap:round;stroke-linejoin:round}
+      .accent{stroke:#ed6319;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .ink{fill:#000;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .gray{fill:#666;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .muted{fill:#999;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .inverse{fill:#fff;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .h1{font-size:26px;font-weight:500}
+      .h2{font-size:18px;font-weight:500}
+      .h3{font-size:15px;font-weight:400}
+      .body{font-size:13px;font-weight:300}
+      .small{font-size:12px;font-weight:300}
+      .micro{font-size:11px;font-weight:300}
+    </style>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="112%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#1d2632" flood-opacity=".14"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1l8 4-8 4" fill="none" stroke="#999" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrowAccent" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1l8 4-8 4" fill="none" stroke="#ed6319" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect class="canvas" width="1180" height="860"/>
+  <rect class="sheet" x="44" y="38" width="1092" height="784" rx="8"/>
+
+  <text class="ink h1" x="84" y="88">产品注册业务流程</text>
+  <text class="gray body" x="84" y="116">目标：用户从首页进入注册流程，完成渠道、订单号、SN 提交后，首页「我的产品」展示已注册产品。</text>
+
+  <g transform="translate(84 152)">
+    <rect class="panel" width="1012" height="428" rx="8"/>
+    <text class="ink h2" x="24" y="36">主流程</text>
+
+    <g transform="translate(24 70)">
+      <rect class="card" width="142" height="86" rx="6"/>
+      <text class="ink h3" x="18" y="32">首页</text>
+      <text class="gray small" x="18" y="56">点击「注册产品」</text>
+    </g>
+
+    <g transform="translate(228 70)">
+      <rect class="card" width="210" height="96" rx="6"/>
+      <text class="ink h3" x="18" y="32">注册产品表单页</text>
+      <text class="gray small" x="18" y="58">选择渠道 + 填写订单号</text>
+      <text class="gray small" x="18" y="78">填写或扫码 SN</text>
+    </g>
+
+    <g transform="translate(540 70)">
+      <rect class="key" width="150" height="86" rx="6"/>
+      <text class="inverse h3" x="18" y="32">提交注册</text>
+      <text class="inverse small" x="18" y="56" opacity=".78">进入系统校验</text>
+    </g>
+
+    <path class="line" marker-end="url(#arrow)" d="M166 113h56"/>
+    <path class="line" marker-end="url(#arrow)" d="M438 113h96"/>
+
+    <g transform="translate(306 222)">
+      <rect class="soft" width="190" height="110" rx="6"/>
+      <text class="ink h3" x="18" y="30">客户端校验</text>
+      <text class="gray small" x="18" y="56">渠道必选</text>
+      <text class="gray small" x="18" y="78">订单号、SN 必填</text>
+    </g>
+
+    <g transform="translate(548 222)">
+      <rect class="soft" width="216" height="110" rx="6"/>
+      <text class="ink h3" x="18" y="30">服务端校验</text>
+      <text class="gray small" x="18" y="56">SN 是否存在 / 是否已绑定</text>
+      <text class="gray small" x="18" y="78">订单号与渠道是否匹配</text>
+    </g>
+
+    <g transform="translate(816 222)">
+      <rect class="card" width="150" height="110" rx="6"/>
+      <text class="ink h3" x="18" y="34">注册成功</text>
+      <text class="gray small" x="18" y="60">写入产品绑定关系</text>
+      <text class="gray small" x="18" y="82">返回首页或查看产品</text>
+    </g>
+
+    <path class="line" marker-end="url(#arrow)" d="M615 156v36c0 18 10 30 28 30h10"/>
+    <path class="line" marker-end="url(#arrow)" d="M548 277h-46"/>
+    <path class="line" marker-end="url(#arrow)" d="M496 277h46"/>
+    <path class="line" marker-end="url(#arrow)" d="M764 277h46"/>
+
+    <g transform="translate(24 222)">
+      <rect class="warn" width="226" height="110" rx="6"/>
+      <text class="ink h3" x="18" y="30">首页已注册态</text>
+      <text class="gray small" x="18" y="56">「我的产品」展示产品卡</text>
+      <text class="gray small" x="18" y="78">可进入产品详情或查看全部产品</text>
+    </g>
+
+    <path class="accent" marker-end="url(#arrowAccent)" d="M816 302h-540"/>
+  </g>
+
+  <g transform="translate(84 610)">
+    <rect class="panel" width="488" height="170" rx="8"/>
+    <text class="ink h2" x="24" y="36">异常分支</text>
+    <g transform="translate(24 58)">
+      <rect class="card" width="132" height="76" rx="6"/>
+      <text class="ink h3" x="16" y="30">扫码失败</text>
+      <text class="gray micro" x="16" y="52">允许手动输入 SN</text>
+    </g>
+    <g transform="translate(172 58)">
+      <rect class="card" width="132" height="76" rx="6"/>
+      <text class="ink h3" x="16" y="30">信息缺失</text>
+      <text class="gray micro" x="16" y="52">表单内提示补全</text>
+    </g>
+    <g transform="translate(320 58)">
+      <rect class="card" width="132" height="76" rx="6"/>
+      <text class="ink h3" x="16" y="30">校验失败</text>
+      <text class="gray micro" x="16" y="52">提示原因并保留输入</text>
+    </g>
+  </g>
+
+  <g transform="translate(608 610)">
+    <rect class="panel" width="488" height="170" rx="8"/>
+    <text class="ink h2" x="24" y="36">页面状态清单</text>
+    <text class="gray small" x="24" y="68">1. 首页未注册产品状态</text>
+    <text class="gray small" x="24" y="94">2. 注册产品表单页（渠道 + 订单号 + SN）</text>
+    <text class="gray small" x="24" y="120">3. 扫码 SN 状态</text>
+    <text class="gray small" x="260" y="68">4. 注册提交中 / 校验中</text>
+    <text class="gray small" x="260" y="94">5. 注册成功页</text>
+    <text class="gray small" x="260" y="120">6. 首页已注册产品状态</text>
+  </g>
+
+  <g transform="translate(84 792)">
+    <text class="muted micro" x="0" y="0">待产品经理确认：渠道列表、订单号格式、SN 格式、SN 已绑定处理、注册成功后产品卡字段。</text>
+  </g>
+</svg>

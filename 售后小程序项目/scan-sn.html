@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>售后小程序 - 扫描 SN</title>
+    <link rel="stylesheet" href="./register.css" />
+  </head>
+  <body>
+    <main class="preview-shell">
+      <section class="miniapp-frame scan-frame" aria-label="扫描 SN">
+        <header class="page-header">
+          <span class="status-time">9:41</span>
+          <a class="back-link" href="./register-product.html" aria-label="返回注册产品" data-back></a>
+          <h1 class="page-title">扫描 SN</h1>
+          <span class="mini-capsule" aria-hidden="true"></span>
+        </header>
+
+        <div class="scan-box" aria-hidden="true">
+          <span class="scan-corner"></span>
+          <span class="scan-corner"></span>
+          <span class="scan-corner"></span>
+          <span class="scan-corner"></span>
+        </div>
+
+        <div class="scan-copy">
+          <h2>请将 SN 条码放入框内</h2>
+          <p>无法扫码时，可返回手动输入</p>
+        </div>
+
+        <a class="manual-entry" href="./register-product.html">手动输入</a>
+      </section>
+    </main>
+    <script>
+      document.querySelector("[data-back]")?.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (history.length > 1) {
+          history.back();
+        } else {
+          location.href = "./register-product.html";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="980" viewBox="0 0 520 980">
+  <defs>
+    <style>
+      .canvas{fill:#e7ebf0}
+      .phone{fill:#111;filter:url(#shadow)}
+      .screen{fill:#f5f5f5}
+      .white{fill:#fff}
+      .ink{fill:#111;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .gray{fill:#777;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .muted{fill:#aaa;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .inverse{fill:#fff;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .orange{fill:#ff6b12}
+      .blue{fill:#3196ff}
+      .purple{fill:#6973ff}
+      .yellow{fill:#ffb300}
+      .h1{font-size:30px;font-weight:500}
+      .h2{font-size:22px;font-weight:500}
+      .h3{font-size:18px;font-weight:400}
+      .body{font-size:15px;font-weight:300}
+      .small{font-size:12px;font-weight:300}
+      .micro{font-size:10px;font-weight:300}
+      .stroke{stroke:#111;stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .strokeG{stroke:#999;stroke-width:1.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .strokeW{stroke:#fff;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .line{stroke:#ececec;stroke-width:1}
+    </style>
+    <filter id="shadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#1d2632" flood-opacity=".18"/>
+    </filter>
+    <linearGradient id="bannerBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7fd4ff"/>
+      <stop offset=".48" stop-color="#1683ea"/>
+      <stop offset="1" stop-color="#0b49c9"/>
+    </linearGradient>
+    <linearGradient id="airGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaf8ff" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#eaf8ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="device" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".62" stop-color="#eff3f7"/>
+      <stop offset="1" stop-color="#d6dfe7"/>
+    </linearGradient>
+    <linearGradient id="productBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f5f7f8"/>
+    </linearGradient>
+    <clipPath id="phoneClip"><rect x="0" y="0" width="375" height="812" rx="28"/></clipPath>
+  </defs>
+
+  <rect class="canvas" width="520" height="980"/>
+  <text class="ink h2" x="60" y="58">售后首页方案：参考样式版</text>
+  <text class="gray small" x="60" y="82">结构：上方 Banner / 我的产品 / 自助服务</text>
+
+  <g transform="translate(72 118)">
+    <rect class="phone" x="-8" y="-8" width="391" height="828" rx="34"/>
+    <g clip-path="url(#phoneClip)">
+      <rect class="screen" width="375" height="812"/>
+
+      <!-- Top banner -->
+      <g>
+        <rect x="0" y="0" width="375" height="250" fill="url(#bannerBg)"/>
+        <circle cx="184" cy="263" r="173" fill="#f4f5f7"/>
+        <text class="inverse small" x="22" y="31" font-weight="600">9:41</text>
+        <g transform="translate(22 62)">
+          <rect x="0" y="0" width="32" height="32" rx="10" fill="#fff"/>
+          <text class="ink" x="8" y="23" font-size="17" font-weight="600" font-family="Arial">S</text>
+          <text class="inverse h2" x="44" y="24">售后服务</text>
+        </g>
+        <rect x="218" y="58" width="136" height="40" rx="20" fill="#fff"/>
+        <text class="ink body" x="244" y="84">在线咨询</text>
+        <line x1="306" y1="67" x2="306" y2="90" stroke="#e8e8e8"/>
+        <circle cx="325" cy="78" r="3" fill="#111"/>
+        <circle cx="337" cy="78" r="3" fill="#111"/>
+        <circle cx="349" cy="78" r="3" fill="#111"/>
+        <text class="inverse body" x="141" y="128" opacity=".88">换新维修安心保障</text>
+        <text class="inverse" x="66" y="170" font-size="34" font-weight="600" font-family="Noto Sans SC, PingFang SC, Microsoft YaHei, Arial">官方服务补贴</text>
+        <text class="inverse h2" x="128" y="202">至高 400 元</text>
+        <g transform="translate(111 197)">
+          <ellipse cx="80" cy="44" rx="92" ry="34" fill="#fff" opacity=".55"/>
+          <rect x="36" y="-2" width="88" height="42" rx="12" fill="url(#device)" stroke="#dbe5ee"/>
+          <circle cx="109" cy="17" r="12" fill="#111"/>
+          <text class="inverse micro" x="102" y="20">26°</text>
+          <rect x="45" y="38" width="70" height="10" rx="4" fill="#c9d7e3"/>
+          <path d="M51 48c14 18 16 39 16 64M65 48c8 20 8 42 8 64M79 48c2 22 0 43 0 64M93 48c-5 21-8 43-8 64M107 48c-12 20-16 42-16 64" stroke="url(#airGlow)" stroke-width="2"/>
+        </g>
+        <rect x="184" y="236" width="16" height="3" rx="2" fill="#ff6b12"/>
+      </g>
+
+      <!-- My product -->
+      <g transform="translate(0 250)">
+        <rect x="0" y="0" width="375" height="220" fill="#f5f5f5"/>
+        <text class="ink h1" x="22" y="54">我的产品</text>
+        <circle cx="114" cy="44" r="8" fill="none" stroke="#bdbdbd" stroke-width="1.4"/>
+        <text class="muted micro" x="111" y="48">?</text>
+        <text class="gray body" x="275" y="52">全部产品(1)</text>
+        <path d="M351 43l6 6-6 6" class="strokeG"/>
+        <rect x="14" y="84" width="334" height="126" rx="22" fill="#fff"/>
+        <g transform="translate(44 110)">
+          <ellipse cx="53" cy="72" rx="42" ry="10" fill="#eef1f3"/>
+          <rect x="34" y="0" width="38" height="74" rx="15" fill="url(#device)" stroke="#d7e0e7"/>
+          <path d="M44 16h18M44 25h18" stroke="#c9d4dc" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="53" cy="48" r="8" fill="#ced8df"/>
+        </g>
+        <text class="ink h2" x="142" y="137">净水器 X1</text>
+        <text class="gray body" x="142" y="168">质保至 2027-10-23</text>
+        <text class="muted small" x="142" y="193">SN：A1B2C3D4</text>
+      </g>
+
+      <!-- Self service -->
+      <g transform="translate(0 470)">
+        <rect x="0" y="0" width="375" height="254" fill="#f5f5f5"/>
+        <text class="ink h1" x="22" y="42">自助服务</text>
+        <g transform="translate(14 70)">
+          <rect class="white" x="0" y="0" width="164" height="64" rx="14"/>
+          <rect x="28" y="18" width="28" height="28" rx="10" fill="#ff6b12"/>
+          <path d="M36 30l6 6 10-13" class="strokeW"/>
+          <text class="ink h3" x="70" y="40">售后服务申请</text>
+        </g>
+        <g transform="translate(197 70)">
+          <rect class="white" x="0" y="0" width="164" height="64" rx="14"/>
+          <rect x="28" y="18" width="28" height="28" rx="10" fill="#ffb300"/>
+          <path d="M36 28h16M36 36h11" class="strokeW"/>
+          <text class="ink h3" x="70" y="40">服务进度</text>
+        </g>
+        <g transform="translate(14 152)">
+          <rect class="white" x="0" y="0" width="164" height="64" rx="14"/>
+          <rect x="28" y="18" width="28" height="28" rx="10" fill="#3196ff"/>
+          <text class="inverse" x="36" y="38" font-size="15" font-weight="600" font-family="Arial">¥</text>
+          <text class="ink h3" x="70" y="40">申请开票</text>
+        </g>
+        <g transform="translate(197 152)">
+          <rect class="white" x="0" y="0" width="164" height="64" rx="14"/>
+          <rect x="28" y="18" width="28" height="28" rx="10" fill="#6973ff"/>
+          <path d="M36 27h14v18H36zM40 33h7" class="strokeW"/>
+          <text class="ink h3" x="70" y="40">产品知识</text>
+        </g>
+      </g>
+
+      <!-- Bottom tabbar -->
+      <g transform="translate(0 724)">
+        <rect class="white" width="375" height="88"/>
+        <line class="line" x1="0" y1="0" x2="375" y2="0"/>
+        <rect x="86" y="18" width="20" height="20" rx="5" fill="#ff6b12"/>
+        <path d="M91 28l4 4 7-9" class="strokeW"/>
+        <text class="orange micro" x="84" y="60">首页</text>
+        <circle cx="188" cy="27" r="10" class="strokeG"/>
+        <text class="muted micro" x="168" y="60">会员中心</text>
+        <circle cx="281" cy="24" r="5" class="stroke"/>
+        <path d="M271 40c1-7 19-7 20 0" class="stroke"/>
+        <text class="ink micro" x="271" y="60">我的</text>
+        <rect x="121" y="77" width="134" height="5" rx="3" fill="#bdbdbd"/>
+      </g>
+    </g>
+  </g>
+</svg>

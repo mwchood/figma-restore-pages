@@ -1,0 +1,164 @@
+<svg width="1440" height="980" viewBox="0 0 1440 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1L9 5L1 9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      text { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+      .title { fill:#000; font-size:30px; font-weight:500; }
+      .note { fill:#666; font-size:14px; font-weight:300; }
+      .screen-title { fill:#000; font-size:16px; font-weight:500; }
+      .label { fill:#000; font-size:13px; font-weight:400; }
+      .muted { fill:#999; font-size:11px; font-weight:300; }
+      .phone { fill:#fff; stroke:#dbdbdb; stroke-width:1.2; }
+      .page { fill:#f9f9f9; }
+      .bar { fill:#fff; }
+      .card { fill:#fff; stroke:#f0f0f0; stroke-width:1; }
+      .soft { fill:#f9f9f9; }
+      .black { fill:#000; }
+      .accent { fill:#ed6319; }
+      .line { stroke:#999; stroke-width:1.5; marker-end:url(#arrow); }
+      .dash { stroke:#d8d8d8; stroke-width:1; stroke-dasharray:5 5; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="980" fill="#f9f9f9"/>
+  <text x="56" y="58" class="title">售后申请页面流转线框图</text>
+  <text x="56" y="88" class="note">低保真：商品申请和 SN 申请合并为同一页两个 Tab；视觉样式后续按 design-system-v2 落地。</text>
+
+  <!-- Screen 1 -->
+  <g transform="translate(56 132)">
+    <rect width="190" height="360" rx="10" class="phone"/>
+    <rect x="1" y="1" width="188" height="358" rx="9" class="page"/>
+    <rect x="1" y="1" width="188" height="54" class="bar"/>
+    <text x="76" y="35" text-anchor="middle" class="screen-title">售后申请</text>
+    <text x="16" y="86" class="label">选择申请方式</text>
+    <text x="16" y="116" class="label">商品申请</text>
+    <text x="92" y="116" class="muted">SN 申请</text>
+    <rect x="16" y="126" width="52" height="2" rx="1" class="accent"/>
+    <rect x="16" y="148" width="158" height="62" rx="6" class="card"/>
+    <rect x="30" y="162" width="36" height="36" rx="5" class="soft"/>
+    <text x="76" y="176" class="label">已注册产品</text>
+    <text x="76" y="198" class="muted">自动带出 SN</text>
+    <rect x="16" y="224" width="72" height="70" rx="6" class="card"/>
+    <rect x="31" y="236" width="42" height="36" rx="5" class="soft"/>
+    <text x="31" y="286" class="muted">商品 A</text>
+    <rect x="102" y="224" width="72" height="70" rx="6" class="card"/>
+    <rect x="117" y="236" width="42" height="36" rx="5" class="soft"/>
+    <text x="117" y="286" class="muted">商品 B</text>
+    <text x="16" y="324" class="muted">选总商品后，表单页填写 SN</text>
+  </g>
+
+  <!-- Screen 2 -->
+  <g transform="translate(322 132)">
+    <rect width="190" height="360" rx="10" class="phone"/>
+    <rect x="1" y="1" width="188" height="358" rx="9" class="page"/>
+    <rect x="1" y="1" width="188" height="54" class="bar"/>
+    <text x="95" y="35" text-anchor="middle" class="screen-title">售后申请</text>
+    <text x="16" y="86" class="label">商品申请</text>
+    <text x="92" y="86" class="muted">SN 申请</text>
+    <rect x="92" y="96" width="52" height="2" rx="1" class="accent"/>
+    <text x="16" y="128" class="label">输入或扫码 SN</text>
+    <rect x="16" y="148" width="158" height="42" rx="6" class="card"/>
+    <text x="30" y="174" class="muted">请输入 SN</text>
+    <circle cx="154" cy="169" r="10" fill="#f9f9f9" stroke="#dbdbdb"/>
+    <text x="16" y="220" class="label">识别结果</text>
+    <rect x="16" y="238" width="158" height="72" rx="6" class="card"/>
+    <rect x="30" y="254" width="40" height="40" rx="5" class="soft"/>
+    <text x="82" y="270" class="label">净水器 X1</text>
+    <text x="82" y="292" class="muted">保修期至 2027-10-23</text>
+    <rect x="16" y="324" width="158" height="24" rx="12" class="black"/>
+    <text x="95" y="341" fill="#fff" font-size="11" text-anchor="middle">确认申请</text>
+  </g>
+
+  <!-- Screen 3 -->
+  <g transform="translate(56 552)">
+    <rect width="190" height="360" rx="10" class="phone"/>
+    <rect x="1" y="1" width="188" height="358" rx="9" class="page"/>
+    <rect x="1" y="1" width="188" height="54" class="bar"/>
+    <text x="95" y="35" text-anchor="middle" class="screen-title">产品详情</text>
+    <rect x="16" y="78" width="158" height="96" rx="6" class="card"/>
+    <rect x="116" y="96" width="42" height="42" rx="5" class="soft"/>
+    <text x="30" y="110" class="label">净水器 X1</text>
+    <text x="30" y="134" class="muted">SN-OK-001</text>
+    <text x="30" y="156" class="muted">保修期至 2027-10-23</text>
+    <rect x="16" y="214" width="158" height="36" rx="18" class="black"/>
+    <text x="95" y="237" fill="#fff" font-size="13" text-anchor="middle">售后申请</text>
+    <text x="16" y="286" class="muted">从详情页进入时直接带入产品信息</text>
+  </g>
+
+  <!-- Screen 4 -->
+  <g transform="translate(612 132)">
+    <rect width="224" height="464" rx="10" class="phone"/>
+    <rect x="1" y="1" width="222" height="462" rx="9" class="page"/>
+    <rect x="1" y="1" width="222" height="54" class="bar"/>
+    <text x="112" y="35" text-anchor="middle" class="screen-title">售后申请</text>
+    <rect x="16" y="72" width="192" height="72" rx="6" class="card"/>
+    <text x="30" y="96" class="label">产品信息</text>
+    <text x="30" y="118" class="muted">产品名 / SN / 保修期</text>
+    <text x="30" y="136" class="muted">商品申请未带 SN 时显示输入框</text>
+    <rect x="16" y="160" width="192" height="104" rx="6" class="card"/>
+    <text x="30" y="186" class="label">故障信息</text>
+    <rect x="30" y="202" width="164" height="30" rx="4" class="soft"/>
+    <text x="42" y="222" class="muted">选择故障类型</text>
+    <rect x="30" y="240" width="164" height="12" rx="3" class="soft"/>
+    <text x="30" y="282" class="muted">图片/视频可选</text>
+    <rect x="16" y="288" width="192" height="112" rx="6" class="card"/>
+    <text x="30" y="314" class="label">寄件信息</text>
+    <rect x="30" y="330" width="76" height="28" rx="14" class="black"/>
+    <text x="68" y="349" fill="#fff" font-size="11" text-anchor="middle">上门取件</text>
+    <rect x="116" y="330" width="78" height="28" rx="14" fill="#fff" stroke="#dbdbdb"/>
+    <text x="155" y="349" class="muted" text-anchor="middle">自行寄回</text>
+    <text x="30" y="382" class="muted">联系人 / 手机号 / 地址 / 时间</text>
+    <rect x="16" y="416" width="192" height="36" rx="18" class="black"/>
+    <text x="112" y="439" fill="#fff" font-size="13" text-anchor="middle">提交服务单</text>
+  </g>
+
+  <!-- Screen 5 -->
+  <g transform="translate(928 132)">
+    <rect width="190" height="360" rx="10" class="phone"/>
+    <rect x="1" y="1" width="188" height="358" rx="9" class="page"/>
+    <rect x="1" y="1" width="188" height="54" class="bar"/>
+    <text x="95" y="35" text-anchor="middle" class="screen-title">提交成功</text>
+    <circle cx="95" cy="104" r="22" fill="#000"/>
+    <path d="M84 104L92 112L108 94" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="95" y="154" text-anchor="middle" class="label">服务单已提交</text>
+    <text x="95" y="180" text-anchor="middle" class="muted">服务单号：AS20260710001</text>
+    <rect x="16" y="220" width="158" height="36" rx="18" class="black"/>
+    <text x="95" y="243" fill="#fff" font-size="13" text-anchor="middle">查看服务进度</text>
+    <text x="95" y="284" text-anchor="middle" class="muted">返回首页</text>
+  </g>
+
+  <!-- Screen 6 -->
+  <g transform="translate(1194 132)">
+    <rect width="190" height="430" rx="10" class="phone"/>
+    <rect x="1" y="1" width="188" height="428" rx="9" class="page"/>
+    <rect x="1" y="1" width="188" height="54" class="bar"/>
+    <text x="95" y="35" text-anchor="middle" class="screen-title">服务进度</text>
+    <rect x="16" y="76" width="158" height="58" rx="6" class="card"/>
+    <text x="30" y="102" class="label">售后服务单</text>
+    <text x="30" y="124" class="muted">净水器 X1 / SN-OK-001</text>
+    <line x1="42" y1="166" x2="42" y2="360" stroke="#dbdbdb"/>
+    <circle cx="42" cy="170" r="7" class="accent"/>
+    <text x="62" y="176" class="label">客服审核</text>
+    <circle cx="42" cy="214" r="7" fill="#dbdbdb"/>
+    <text x="62" y="220" class="label">上门取件 / 自行寄回</text>
+    <circle cx="42" cy="258" r="7" fill="#dbdbdb"/>
+    <text x="62" y="264" class="label">工厂质检</text>
+    <circle cx="42" cy="302" r="7" fill="#dbdbdb"/>
+    <text x="62" y="308" class="label">维修报价单</text>
+    <circle cx="42" cy="346" r="7" fill="#dbdbdb"/>
+    <text x="62" y="352" class="label">寄回商品</text>
+  </g>
+
+  <!-- Links -->
+  <line x1="246" y1="312" x2="612" y2="312" class="line"/>
+  <line x1="512" y1="312" x2="612" y2="394" class="line"/>
+  <line x1="246" y1="732" x2="612" y2="394" class="line"/>
+  <line x1="836" y1="364" x2="928" y2="312" class="line"/>
+  <line x1="1118" y1="312" x2="1194" y2="312" class="line"/>
+
+  <rect x="56" y="922" width="1328" height="36" rx="6" fill="#fff"/>
+  <circle cx="80" cy="940" r="4" class="accent"/>
+  <text x="96" y="945" class="muted">页面实现建议：先做售后申请入口页（商品申请 / SN 申请 Tab）、售后申请表单、提交成功；服务进度可复用后续服务记录/进度模块。</text>
+</svg>

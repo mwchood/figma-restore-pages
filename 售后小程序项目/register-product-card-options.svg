@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="620" viewBox="0 0 520 620">
+  <defs>
+    <style>
+      .canvas{fill:#e7ebf0}
+      .panel{fill:#f9f9f9}
+      .card{fill:#fff}
+      .soft{fill:#f9f9f9}
+      .line{stroke:#f0f0f0;stroke-width:1}
+      .stroke{stroke:#000;stroke-width:1.25;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .muted-stroke{stroke:#999;stroke-width:1.15;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .ink{fill:#000;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .gray{fill:#666;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .muted{fill:#999;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .title{font-size:18px;font-weight:500}
+      .body{font-size:12px;font-weight:300}
+      .small{font-size:10px;font-weight:300}
+      .label{font-size:14px;font-weight:500}
+    </style>
+    <filter id="softShadow" x="-10%" y="-30%" width="120%" height="170%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#b7c0ca" flood-opacity=".12"/>
+    </filter>
+    <linearGradient id="device" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".58" stop-color="#eef2f5"/>
+      <stop offset="1" stop-color="#cfd7de"/>
+    </linearGradient>
+  </defs>
+
+  <rect class="canvas" width="520" height="620"/>
+  <text class="ink title" x="60" y="54">注册产品卡片方案</text>
+  <text class="gray body" x="60" y="78">均按现有设计系统：335px 卡片、6px 圆角、黑白灰、无橙色强调</text>
+
+  <g transform="translate(60 116)">
+    <text class="ink label" x="0" y="-14">方案 A：稳妥入口型</text>
+    <rect class="card" x="0" y="0" width="335" height="116" rx="6" filter="url(#softShadow)"/>
+    <rect class="soft" x="20" y="20" width="78" height="76" rx="5.333"/>
+    <g transform="translate(38 37)">
+      <rect x="12.5" y="1.5" width="17" height="38" rx="6.5" fill="url(#device)" stroke="#000" stroke-width="1.1"/>
+      <path d="M17 14h8M17 20h8" class="muted-stroke"/>
+      <circle cx="21" cy="29" r="3.2" fill="#d9dee3"/>
+    </g>
+    <text class="ink title" x="116" y="48">注册产品</text>
+    <text class="muted body" x="116" y="74">注册后查看质保与售后服务</text>
+    <path d="M306 53l5 5-5 5" class="muted-stroke"/>
+  </g>
+
+  <g transform="translate(60 282)">
+    <text class="ink label" x="0" y="-14">方案 B：产品资产型</text>
+    <rect class="card" x="0" y="0" width="335" height="116" rx="6" filter="url(#softShadow)"/>
+    <text class="ink title" x="20" y="40">注册产品</text>
+    <text class="muted body" x="20" y="66">绑定产品，管理质保与服务记录</text>
+    <line class="line" x1="20" y1="88" x2="178" y2="88"/>
+    <text class="gray body" x="20" y="104">查看全部产品</text>
+    <path d="M104 96l4 4-4 4" class="muted-stroke"/>
+    <g transform="translate(224 20)">
+      <ellipse cx="42" cy="70" rx="39" ry="7" fill="#edf0f3"/>
+      <rect x="24" y="0" width="36" height="72" rx="13" fill="url(#device)" stroke="#cbd3da"/>
+      <rect x="31" y="13" width="22" height="36" rx="8" fill="#fff" opacity=".55"/>
+      <path d="M36 20h12M36 28h12" class="muted-stroke"/>
+      <circle cx="42" cy="54" r="4" fill="#d5dbe0"/>
+    </g>
+  </g>
+
+  <g transform="translate(60 448)">
+    <text class="ink label" x="0" y="-14">方案 C：轻任务型</text>
+    <rect class="card" x="0" y="0" width="335" height="116" rx="6" filter="url(#softShadow)"/>
+    <rect class="soft" x="16" y="16" width="303" height="84" rx="6" stroke="#dbdbdb" stroke-width="1" stroke-dasharray="4 4"/>
+    <circle cx="59" cy="58" r="19" fill="#fff" stroke="#f0f0f0"/>
+    <path d="M59 49v18M50 58h18" class="stroke"/>
+    <text class="ink title" x="94" y="50">注册产品</text>
+    <text class="muted body" x="94" y="76">添加产品后，可快速申请售后</text>
+    <path d="M292 53l5 5-5 5" class="muted-stroke"/>
+  </g>
+</svg>

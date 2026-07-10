@@ -1,0 +1,150 @@
+<svg width="920" height="980" viewBox="0 0 920 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #eef1f5; }
+    .phone { fill: #f9f9f9; stroke: #d9dde3; stroke-width: 1; }
+    .nav { fill: #ffffff; }
+    .card { fill: #ffffff; stroke: #d8d8d8; stroke-width: 1; }
+    .soft { fill: #f2f3f5; stroke: #dbdbdb; stroke-width: 1; }
+    .warranty { fill: #ffffff; stroke: #bfc6cc; stroke-width: 1.2; stroke-dasharray: 0; }
+    .line { stroke: #d8d8d8; stroke-width: 1; }
+    .dash { stroke: #c9c9c9; stroke-width: 1; stroke-dasharray: 5 5; }
+    .btn { fill: #111111; }
+    .pill { fill: #ffffff; stroke: #111111; stroke-width: 1; }
+    .mutedPill { fill: #ffffff; stroke: #dbdbdb; stroke-width: 1; }
+    .ink { fill: #111111; }
+    .muted { fill: #666666; }
+    .weak { fill: #999999; }
+    .white { fill: #ffffff; }
+    .h1 { font: 500 22px "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+    .h2 { font: 500 18px "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+    .h3 { font: 500 15px "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+    .body { font: 400 14px "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+    .small { font: 400 12px "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+    .micro { font: 400 10px "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+  </style>
+
+  <rect class="bg" width="920" height="980"/>
+  <text class="h1 ink" x="52" y="48">产品资产页线框图：vivo 结构启发版</text>
+  <text class="small muted" x="52" y="76">只借鉴信息结构：产品资产封面 + 电子保修卡 + 当前产品服务；不复制蓝色大卡、图标风格或营销视觉。</text>
+
+  <defs>
+    <g id="phoneChrome">
+      <rect class="phone" x="0" y="0" width="375" height="812" rx="18"/>
+      <rect class="nav" x="1" y="1" width="373" height="88" rx="18"/>
+      <text class="small ink" x="24" y="32">9:41</text>
+      <path d="M31 62L23 70L31 78" stroke="#111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="274" y="50" width="84" height="32" rx="16" fill="#f9f9f9" stroke="#f0f0f0"/>
+      <circle cx="334" cy="66" r="9" stroke="#777" stroke-width="1.5"/>
+      <circle cx="302" cy="66" r="2" fill="#777"/>
+      <circle cx="310" cy="66" r="2" fill="#777"/>
+      <circle cx="318" cy="66" r="2" fill="#777"/>
+    </g>
+    <g id="productIcon">
+      <rect class="soft" x="0" y="0" width="86" height="86" rx="6"/>
+      <rect x="33" y="16" width="20" height="54" rx="8" fill="#e5e9ec" stroke="#cfd7dd"/>
+      <line x1="38" y1="30" x2="49" y2="30" stroke="#999" stroke-width="1"/>
+      <line x1="38" y1="38" x2="49" y2="38" stroke="#999" stroke-width="1"/>
+      <circle cx="43" cy="56" r="4" fill="#d6dde3"/>
+    </g>
+    <g id="arrow">
+      <path d="M0 0L6 6L0 12" stroke="#999" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <!-- All product list -->
+  <g transform="translate(52 116)">
+    <text class="h2 ink" x="0" y="-22">全部产品列表：标准列表入口</text>
+    <use href="#phoneChrome"/>
+    <text class="h2 ink" x="132" y="70">全部产品</text>
+
+    <text class="small muted" x="20" y="118">共 2 个产品</text>
+
+    <g transform="translate(20 140)">
+      <rect class="card" width="335" height="96" rx="6"/>
+      <use href="#productIcon" x="16" y="16"/>
+      <text class="h3 ink" x="122" y="38">净水器 X1</text>
+      <text class="small weak" x="122" y="66">SN：SN-OK-001</text>
+      <use href="#arrow" x="315" y="42"/>
+    </g>
+
+    <g transform="translate(20 252)">
+      <rect class="card" width="335" height="96" rx="6"/>
+      <rect class="soft" x="16" y="16" width="86" height="64" rx="6"/>
+      <path d="M50 28V68" stroke="#cfd7dd" stroke-width="6" stroke-linecap="round"/>
+      <path d="M68 28V68" stroke="#cfd7dd" stroke-width="6" stroke-linecap="round"/>
+      <text class="h3 ink" x="122" y="38">焦点触控笔</text>
+      <text class="small weak" x="122" y="66">SN：SN-OK-002</text>
+      <use href="#arrow" x="315" y="42"/>
+    </g>
+
+    <g transform="translate(20 384)">
+      <rect class="card" width="335" height="88" rx="6"/>
+      <text class="body ink" x="129" y="38">注册产品</text>
+      <text class="small weak" x="102" y="62">绑定后享受更多服务</text>
+    </g>
+
+    <text class="micro weak" x="20" y="742">空状态：仅显示注册产品卡。</text>
+  </g>
+
+  <!-- Product detail -->
+  <g transform="translate(493 116)">
+    <text class="h2 ink" x="0" y="-22">产品详情：产品资产 + 电子保修卡</text>
+    <use href="#phoneChrome"/>
+    <text class="h2 ink" x="132" y="70">产品详情</text>
+
+    <!-- product asset header -->
+    <g transform="translate(20 108)">
+      <text class="h1 ink" x="0" y="32">净水器 X1</text>
+      <text class="body muted" x="0" y="58">已陪伴您 42 天</text>
+      <text class="small weak" x="0" y="88">SN-OK-001</text>
+      <text class="small weak" x="86" y="88">全部参数</text>
+      <use href="#productIcon" x="232" y="0"/>
+    </g>
+
+    <!-- warranty card -->
+    <g transform="translate(20 230)">
+      <rect class="warranty" width="335" height="182" rx="10"/>
+      <text class="h2 ink" x="18" y="36">电子保修卡</text>
+      <rect class="mutedPill" x="120" y="16" width="58" height="24" rx="12"/>
+      <text class="micro ink" x="135" y="32">保修中</text>
+      <text class="body muted" x="18" y="66">保修期至 2027-10-23</text>
+      <text class="small weak" x="18" y="92">保修详情</text>
+      <use href="#arrow" x="78" y="82"/>
+
+      <line class="dash" x1="18" y1="112" x2="317" y2="112"/>
+      <text class="small muted" x="18" y="140">SN</text>
+      <text class="small ink" x="72" y="140">SN-OK-001</text>
+      <text class="small muted" x="254" y="140">复制</text>
+      <text class="small muted" x="18" y="164">订单号</text>
+      <text class="small ink" x="72" y="164">TB202607100001</text>
+      <text class="small muted" x="254" y="164">复制</text>
+    </g>
+
+    <!-- high frequency services -->
+    <g transform="translate(20 430)">
+      <rect class="card" width="335" height="74" rx="6"/>
+      <text class="small ink" x="24" y="46">售后申请</text>
+      <line class="line" x1="84" y1="18" x2="84" y2="56"/>
+      <text class="small ink" x="106" y="46">服务进度</text>
+      <line class="line" x1="168" y1="18" x2="168" y2="56"/>
+      <text class="small ink" x="190" y="46">产品知识</text>
+      <line class="line" x1="252" y1="18" x2="252" y2="56"/>
+      <text class="small ink" x="274" y="46">维修价格</text>
+    </g>
+
+    <!-- all services -->
+    <g transform="translate(20 528)">
+      <text class="h3 ink" x="0" y="0">更多服务</text>
+      <rect class="card" x="0" y="16" width="335" height="114" rx="6"/>
+      <text class="body ink" x="16" y="50">申请开票</text><use href="#arrow" x="315" y="40"/>
+      <line class="line" x1="16" y1="70" x2="319" y2="70"/>
+      <text class="body ink" x="16" y="104">保修政策</text><use href="#arrow" x="315" y="94"/>
+    </g>
+  </g>
+
+  <g transform="translate(52 890)">
+    <rect class="card" width="816" height="58" rx="6"/>
+    <text class="small muted" x="18" y="24">结构说明：列表页采用轻量产品卡；详情页把保修卡提升为主模块，服务入口分为高频服务和更多服务。</text>
+    <text class="small muted" x="18" y="44">已按反馈：高频服务新增维修价格；更多服务仅保留申请开票和保修政策。</text>
+  </g>
+</svg>

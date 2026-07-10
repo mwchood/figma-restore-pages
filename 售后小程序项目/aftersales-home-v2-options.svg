@@ -1,0 +1,264 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="1040" viewBox="0 0 1460 1040">
+  <defs>
+    <style>
+      .page-bg{fill:#e7ebf0}
+      .phone{fill:#111;filter:url(#phoneShadow)}
+      .screen{fill:#f9f9f9}
+      .white{fill:#fff}
+      .soft{fill:#f9f9f9}
+      .soft2{fill:#f4f6f8}
+      .black{fill:#000}
+      .accent{fill:#ed6319}
+      .accent-soft{fill:#ffebdd}
+      .line{stroke:#f0f0f0;stroke-width:1}
+      .dash{stroke:#d8d8d8;stroke-width:1;stroke-dasharray:3 3}
+      .ink{fill:#000;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .gray{fill:#666;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .muted{fill:#999;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .inverse{fill:#fff;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .h0{font-size:26px;font-weight:600}
+      .note{font-size:13px;font-weight:300}
+      .h1{font-size:22px;font-weight:500}
+      .h2{font-size:18px;font-weight:500}
+      .h3{font-size:16px;font-weight:500}
+      .body{font-size:14px;font-weight:400}
+      .bodyL{font-size:14px;font-weight:300}
+      .small{font-size:12px;font-weight:300}
+      .micro{font-size:10px;font-weight:300}
+      .stroke{stroke:#000;stroke-width:1.25;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .strokeG{stroke:#999;stroke-width:1.15;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .strokeO{stroke:#ed6319;stroke-width:1.25;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+    <filter id="phoneShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#1d2632" flood-opacity=".18"/>
+    </filter>
+    <linearGradient id="deviceSkin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".55" stop-color="#edf1f4"/>
+      <stop offset="1" stop-color="#cfd7de"/>
+    </linearGradient>
+    <linearGradient id="orderTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f9f9f9"/>
+    </linearGradient>
+    <linearGradient id="assetCardOverlay" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity=".62"/>
+      <stop offset=".58" stop-color="#000" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".08"/>
+    </linearGradient>
+    <clipPath id="phoneClipA"><rect x="0" y="0" width="375" height="812" rx="28"/></clipPath>
+    <clipPath id="phoneClipB"><rect x="0" y="0" width="375" height="812" rx="28"/></clipPath>
+    <clipPath id="phoneClipC"><rect x="0" y="0" width="375" height="812" rx="28"/></clipPath>
+  </defs>
+
+  <rect class="page-bg" width="1460" height="1040"/>
+  <text class="ink h0" x="60" y="58">售后小程序首页设计方案 v2</text>
+  <text class="gray note" x="60" y="86">基于 design-system-v2：375px 画布、20px 边距、335px 卡片、6px 圆角、黑白灰 + 少量 #ed6319。</text>
+
+  <!-- Option A -->
+  <g transform="translate(70 150)">
+    <text class="ink h2" x="0" y="-36">方案 A：服务页直系</text>
+    <text class="gray small" x="0" y="-14">参考 service.html：顶部产品氛围图、两张服务大卡、Care 横卡、更多功能列表。</text>
+    <rect class="phone" x="-8" y="-8" width="391" height="828" rx="34"/>
+    <g clip-path="url(#phoneClipA)">
+      <rect class="screen" width="375" height="812"/>
+      <image href="assets/service-banner-reference.png" x="0" y="0" width="375" height="200" preserveAspectRatio="xMidYMid slice"/>
+      <text class="inverse small" x="22" y="31" font-weight="600">9:41</text>
+      <rect x="280" y="50" width="74" height="32" rx="16" fill="#fff" opacity=".25"/>
+      <circle cx="303" cy="66" r="3" fill="#fff"/>
+      <circle cx="316" cy="66" r="3" fill="#fff"/>
+      <circle cx="329" cy="66" r="3" fill="#fff"/>
+      <circle cx="343" cy="66" r="8" fill="none" stroke="#fff" stroke-width="1.4"/>
+      <text class="inverse h1" x="22" y="132">售后与支持</text>
+
+      <g transform="translate(20 222)">
+        <rect class="soft" width="161" height="167" rx="6"/>
+        <image href="assets/service-icon-product.svg" x="16" y="18" width="26" height="26"/>
+        <text class="ink body" x="16" y="74">我的产品</text>
+        <text class="muted micro" x="16" y="99">净水器 X1｜质保中</text>
+        <line class="line" x1="16" y1="120" x2="145" y2="120"/>
+        <text class="gray small" x="16" y="148">查看全部产品</text>
+        <path d="M132 140l5 5-5 5" class="strokeG"/>
+      </g>
+      <g transform="translate(194 222)">
+        <rect class="soft" width="161" height="167" rx="6"/>
+        <image href="assets/service-icon-after.svg" x="16" y="18" width="26" height="26"/>
+        <text class="ink body" x="16" y="74">售后服务申请</text>
+        <text class="muted micro" x="16" y="99">退换修/补寄</text>
+        <line class="line" x1="16" y1="120" x2="145" y2="120"/>
+        <text class="gray small" x="16" y="148">查看服务进度</text>
+        <path d="M132 140l5 5-5 5" class="strokeG"/>
+      </g>
+
+      <g transform="translate(20 403)">
+        <rect class="white" width="335" height="82" rx="6"/>
+        <path d="M28 24v18c0 16 18 20 18 20s18-4 18-20V24l-18-9z" class="stroke"/>
+        <path d="M40 40h13M46 34v13" class="stroke"/>
+        <text class="ink body" x="70" y="34">Care+服务</text>
+        <text class="muted small" x="70" y="58">为您带来，全方位保障</text>
+        <rect x="238" y="23" width="76" height="36" rx="18" fill="#fff" stroke="#dbdbdb"/>
+        <text class="gray small" x="254" y="46">购买记录</text>
+      </g>
+
+      <text class="ink h2" x="20" y="536">更多功能</text>
+      <g transform="translate(20 562)">
+        <text class="ink body" x="0" y="20">申请开票</text>
+        <path d="M318 10a10 10 0 1 1-1 0M315 7l4 4-4 4" class="stroke"/>
+        <line class="line" x1="0" y1="42" x2="335" y2="42"/>
+        <text class="ink body" x="0" y="74">产品知识</text>
+        <path d="M318 64a10 10 0 1 1-1 0M315 61l4 4-4 4" class="stroke"/>
+        <line class="line" x1="0" y1="96" x2="335" y2="96"/>
+        <text class="ink body" x="0" y="128">VIP专属客服</text>
+        <path d="M318 118a10 10 0 1 1-1 0M315 115l4 4-4 4" class="stroke"/>
+      </g>
+
+      <g transform="translate(0 724)">
+        <rect class="white" width="375" height="88"/>
+        <line class="line" x1="0" y1="0" x2="375" y2="0"/>
+        <path d="M61 36V25l12-9 12 9v11c0 2-1 3-3 3H64c-2 0-3-1-3-3z" class="stroke"/>
+        <text class="ink micro" x="63" y="66">首页</text>
+        <circle cx="188" cy="27" r="10" class="strokeG"/>
+        <text class="muted micro" x="168" y="66">会员中心</text>
+        <circle cx="312" cy="24" r="5" class="strokeG"/>
+        <path d="M302 40c1-7 19-7 20 0" class="strokeG"/>
+        <text class="muted micro" x="302" y="66">我的</text>
+        <rect x="121" y="78" width="134" height="5" rx="3" fill="#000"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Option B -->
+  <g transform="translate(535 150)">
+    <text class="ink h2" x="0" y="-36">方案 B：我的页直系</text>
+    <text class="gray small" x="0" y="-14">参考 v5.html：浅渐变顶部、深色资产卡、我的服务四入口、留言信箱式卡片。</text>
+    <rect class="phone" x="-8" y="-8" width="391" height="828" rx="34"/>
+    <g clip-path="url(#phoneClipB)">
+      <rect class="screen" width="375" height="812"/>
+      <image href="assets/v5-top-bg-reference.png" x="0" y="0" width="375" height="300" preserveAspectRatio="xMidYMin slice"/>
+      <text class="ink small" x="22" y="31" font-weight="600">9:41</text>
+      <rect x="280" y="50" width="74" height="32" rx="16" fill="#fff" opacity=".55"/>
+      <circle cx="303" cy="66" r="3" fill="#000"/>
+      <circle cx="316" cy="66" r="3" fill="#000"/>
+      <circle cx="329" cy="66" r="3" fill="#000"/>
+      <circle cx="343" cy="66" r="8" fill="none" stroke="#000" stroke-width="1.4"/>
+      <text class="ink h1" x="26" y="134">Hi，欢迎回来</text>
+      <text class="gray bodyL" x="26" y="164">一起照顾好你的产品</text>
+
+      <g transform="translate(20 202)">
+        <image href="assets/v5-member-card-reference.png" width="335" height="184" preserveAspectRatio="xMidYMid slice"/>
+        <rect width="335" height="184" rx="6" fill="url(#assetCardOverlay)"/>
+        <text class="inverse h2" x="22" y="42">我的产品</text>
+        <text class="inverse small" x="22" y="72" opacity=".78">1 台产品可申请售后服务</text>
+        <text class="inverse" x="22" y="126" font-size="26" font-weight="500" font-family="Noto Sans SC, PingFang SC, Microsoft YaHei, Arial">净水器 X1</text>
+        <text class="inverse small" x="22" y="154" opacity=".72">质保至 2027-10-23</text>
+        <rect x="246" y="20" width="72" height="30" rx="15" fill="#fff" opacity=".18" stroke="rgba(255,255,255,.5)"/>
+        <text class="inverse small" x="262" y="40">查看全部</text>
+      </g>
+
+      <text class="ink h2" x="20" y="436">我的服务</text>
+      <g transform="translate(20 464)">
+        <rect class="white" width="335" height="78" rx="6"/>
+        <g transform="translate(26 18)">
+          <path d="M4 0h18v22H4zM9 6h8M9 12h8" class="strokeO"/>
+          <text class="ink micro" x="-3" y="46">售后申请</text>
+        </g>
+        <g transform="translate(110 18)">
+          <path d="M2 4h22v18H2zM6 4l7 7 7-7" class="stroke"/>
+          <text class="ink micro" x="-3" y="46">服务进度</text>
+        </g>
+        <g transform="translate(195 18)">
+          <path d="M4 0h18v22H4zM8 6h10M8 12h8" class="stroke"/>
+          <text class="ink micro" x="-3" y="46">申请开票</text>
+        </g>
+        <g transform="translate(280 18)">
+          <path d="M5 2h16v20H5zM9 8h8M9 14h8" class="stroke"/>
+          <text class="ink micro" x="-3" y="46">产品知识</text>
+        </g>
+      </g>
+
+      <text class="ink h2" x="20" y="592">服务记录</text>
+      <g transform="translate(20 620)">
+        <rect class="white" width="335" height="78" rx="6"/>
+        <text class="ink body" x="18" y="31">暂无进行中的售后单</text>
+        <text class="muted small" x="18" y="56">有问题时可以从售后申请开始</text>
+        <path d="M318 32a10 10 0 1 1-1 0M315 29l4 4-4 4" class="stroke"/>
+      </g>
+
+      <g transform="translate(0 724)">
+        <rect class="white" width="375" height="88"/>
+        <line class="line" x1="0" y1="0" x2="375" y2="0"/>
+        <path d="M61 36V25l12-9 12 9v11c0 2-1 3-3 3H64c-2 0-3-1-3-3z" class="stroke"/>
+        <text class="ink micro" x="63" y="66">首页</text>
+        <circle cx="188" cy="27" r="10" class="strokeG"/>
+        <text class="muted micro" x="168" y="66">会员中心</text>
+        <circle cx="312" cy="24" r="5" class="strokeG"/>
+        <path d="M302 40c1-7 19-7 20 0" class="strokeG"/>
+        <text class="muted micro" x="302" y="66">我的</text>
+        <rect x="121" y="78" width="134" height="5" rx="3" fill="#000"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Option C -->
+  <g transform="translate(1000 150)">
+    <text class="ink h2" x="0" y="-36">方案 C：订单页直系</text>
+    <text class="gray small" x="0" y="-14">参考 order/checkout：状态卡、产品摘要、列表行、底部黑色主按钮，偏办理效率。</text>
+    <rect class="phone" x="-8" y="-8" width="391" height="828" rx="34"/>
+    <g clip-path="url(#phoneClipC)">
+      <rect class="screen" width="375" height="812"/>
+      <rect width="375" height="194" fill="url(#orderTop)"/>
+      <text class="ink small" x="50" y="31" font-weight="600">9:41</text>
+      <rect x="280" y="50" width="74" height="32" rx="16" fill="#fff" stroke="#e5e5e5"/>
+      <text class="ink h2" x="20" y="92">首页</text>
+      <text class="gray bodyL" x="20" y="122">售后服务中心</text>
+
+      <g transform="translate(28 146)">
+        <rect class="white" width="319" height="164" rx="0"/>
+        <text class="ink h2" x="20" y="38">售后服务</text>
+        <text class="gray small" x="20" y="64">提交申请后，可在服务进度中查看处理状态</text>
+        <g transform="translate(20 88)">
+          <circle cx="16" cy="16" r="4" class="accent"/>
+          <line x1="20" y1="16" x2="130" y2="16" stroke="#ed6319"/>
+          <circle cx="136" cy="16" r="4" class="accent"/>
+          <line x1="140" y1="16" x2="250" y2="16" stroke="#dbdbdb"/>
+          <circle cx="256" cy="16" r="4" fill="#dbdbdb"/>
+          <text class="ink micro" x="-5" y="45">申请</text>
+          <text class="ink micro" x="116" y="45">处理中</text>
+          <text class="muted micro" x="238" y="45">完成</text>
+        </g>
+        <line class="dash" x1="20" y1="138" x2="299" y2="138"/>
+      </g>
+
+      <g transform="translate(28 330)">
+        <rect class="white" width="319" height="160"/>
+        <text class="ink body" x="20" y="32">我的产品</text>
+        <rect class="soft" x="20" y="58" width="96" height="96" rx="5.333"/>
+        <rect x="54" y="76" width="28" height="56" rx="12" fill="url(#deviceSkin)" stroke="#cfd7dd"/>
+        <text class="ink body" x="134" y="82">净水器 X1</text>
+        <text class="gray small" x="134" y="110">SN：A1B2C3D4</text>
+        <text class="ink body" x="134" y="139">质保至 2027-10-23</text>
+        <path d="M288 88l5 5-5 5" class="strokeG"/>
+      </g>
+
+      <g transform="translate(28 510)">
+        <rect class="white" width="319" height="144"/>
+        <text class="ink body" x="20" y="32">自助服务</text>
+        <line class="line" x1="20" y1="54" x2="299" y2="54"/>
+        <text class="ink body" x="20" y="84">申请开票</text>
+        <path d="M286 74l5 5-5 5" class="strokeG"/>
+        <line class="line" x1="20" y1="104" x2="299" y2="104"/>
+        <text class="ink body" x="20" y="134">产品知识</text>
+        <path d="M286 124l5 5-5 5" class="strokeG"/>
+      </g>
+
+      <g transform="translate(0 666)">
+        <rect class="white" width="375" height="146"/>
+        <rect x="20" y="24" width="160" height="48" rx="24" fill="#fff" stroke="#000"/>
+        <text class="ink body" x="64" y="55">服务进度</text>
+        <rect x="194" y="24" width="160" height="48" rx="24" fill="#000"/>
+        <text class="inverse body" x="225" y="55">售后服务申请</text>
+        <rect x="121" y="112" width="134" height="5" rx="3" fill="#000"/>
+      </g>
+    </g>
+  </g>
+</svg>

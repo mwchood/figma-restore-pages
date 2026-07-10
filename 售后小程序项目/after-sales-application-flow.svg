@@ -1,0 +1,151 @@
+<svg width="1280" height="920" viewBox="0 0 1280 920" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1L9 5L1 9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      text {
+        font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      }
+      .title {
+        fill: #000;
+        font-size: 30px;
+        font-weight: 500;
+      }
+      .subtitle {
+        fill: #666;
+        font-size: 15px;
+        font-weight: 300;
+      }
+      .lane-title {
+        fill: #000;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .node-title {
+        fill: #000;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .node-text {
+        fill: #666;
+        font-size: 14px;
+        font-weight: 300;
+      }
+      .micro {
+        fill: #999;
+        font-size: 12px;
+        font-weight: 300;
+      }
+      .card {
+        fill: #fff;
+        stroke: #dbdbdb;
+        stroke-width: 1;
+      }
+      .soft {
+        fill: #f9f9f9;
+      }
+      .accent {
+        fill: #ed6319;
+      }
+      .line {
+        stroke: #999;
+        stroke-width: 1.5;
+        marker-end: url(#arrow);
+      }
+      .dash {
+        stroke: #d8d8d8;
+        stroke-width: 1;
+        stroke-dasharray: 5 5;
+      }
+      .badge {
+        fill: #000;
+      }
+    </style>
+  </defs>
+
+  <rect width="1280" height="920" fill="#f9f9f9"/>
+
+  <text x="56" y="62" class="title">售后服务申请业务流程</text>
+  <text x="56" y="92" class="subtitle">首页自助服务进入后进入售后申请页，商品申请和 SN 申请作为两个 Tab；产品详情页可直接带入当前产品信息。</text>
+
+  <rect x="56" y="128" width="1168" height="700" rx="6" fill="#fff"/>
+  <line x1="56" y1="216" x2="1224" y2="216" class="dash"/>
+  <line x1="56" y1="442" x2="1224" y2="442" class="dash"/>
+  <line x1="56" y1="642" x2="1224" y2="642" class="dash"/>
+
+  <text x="80" y="180" class="lane-title">入口与申请方式</text>
+  <text x="80" y="270" class="lane-title">产品确认</text>
+  <text x="80" y="496" class="lane-title">申请表单</text>
+  <text x="80" y="696" class="lane-title">提交后进度</text>
+
+  <rect x="188" y="148" width="220" height="88" rx="6" class="card"/>
+  <text x="218" y="184" class="node-title">首页自助服务</text>
+  <text x="218" y="211" class="node-text">点击「售后服务申请」</text>
+
+  <rect x="470" y="148" width="220" height="88" rx="6" class="card"/>
+  <text x="500" y="184" class="node-title">售后申请页</text>
+  <text x="500" y="211" class="node-text">商品申请 / SN 申请 Tab</text>
+
+  <rect x="780" y="148" width="220" height="88" rx="6" class="card"/>
+  <text x="810" y="184" class="node-title">产品详情页</text>
+  <text x="810" y="211" class="node-text">点击「售后申请」</text>
+
+  <line x1="408" y1="192" x2="470" y2="192" class="line"/>
+
+  <rect x="318" y="282" width="240" height="124" rx="6" class="card"/>
+  <text x="348" y="322" class="node-title">商品申请</text>
+  <text x="348" y="350" class="node-text">选择已注册产品</text>
+  <text x="348" y="374" class="micro">自动带出产品名、SN、保修期</text>
+
+  <rect x="626" y="282" width="240" height="124" rx="6" class="card"/>
+  <text x="656" y="322" class="node-title">商品申请</text>
+  <text x="656" y="350" class="node-text">从总商品列表选择商品</text>
+  <text x="656" y="374" class="micro">需要手动填写 SN</text>
+
+  <rect x="934" y="282" width="220" height="124" rx="6" class="card"/>
+  <text x="964" y="322" class="node-title">SN 申请</text>
+  <text x="964" y="350" class="node-text">输入或扫码 SN</text>
+  <text x="964" y="374" class="micro">识别后带出产品信息</text>
+
+  <line x1="560" y1="236" x2="472" y2="282" class="line"/>
+  <line x1="626" y1="236" x2="708" y2="282" class="line"/>
+  <line x1="690" y1="192" x2="1044" y2="282" class="line"/>
+
+  <rect x="270" y="500" width="220" height="96" rx="6" class="card"/>
+  <text x="300" y="538" class="node-title">产品信息</text>
+  <text x="300" y="566" class="node-text">产品名、SN、保修期</text>
+
+  <rect x="540" y="500" width="220" height="96" rx="6" class="card"/>
+  <text x="570" y="538" class="node-title">故障信息</text>
+  <text x="570" y="566" class="node-text">故障类型、问题描述</text>
+  <text x="570" y="590" class="micro">图片/视频可选</text>
+
+  <rect x="810" y="500" width="244" height="96" rx="6" class="card"/>
+  <text x="840" y="538" class="node-title">寄件信息</text>
+  <text x="840" y="566" class="node-text">上门取件 / 自行寄回</text>
+  <text x="840" y="590" class="micro">联系人、电话、地址、预约时间</text>
+
+  <line x1="438" y1="406" x2="380" y2="500" class="line"/>
+  <line x1="746" y1="406" x2="380" y2="500" class="line"/>
+  <line x1="1044" y1="406" x2="380" y2="500" class="line"/>
+  <line x1="890" y1="236" x2="380" y2="500" class="line"/>
+  <line x1="490" y1="548" x2="540" y2="548" class="line"/>
+  <line x1="760" y1="548" x2="810" y2="548" class="line"/>
+
+  <rect x="456" y="690" width="220" height="88" rx="6" class="card"/>
+  <text x="486" y="726" class="node-title">提交服务单</text>
+  <text x="486" y="753" class="node-text">生成服务单号</text>
+
+  <rect x="752" y="674" width="360" height="120" rx="6" class="soft"/>
+  <text x="782" y="710" class="node-title">服务进度</text>
+  <text x="782" y="742" class="node-text">客服审核 → 取件/寄回 → 工厂质检</text>
+  <text x="782" y="770" class="node-text">生成维修报价单 → 寄回商品</text>
+
+  <line x1="932" y1="596" x2="566" y2="690" class="line"/>
+  <line x1="676" y1="734" x2="752" y2="734" class="line"/>
+
+  <rect x="56" y="852" width="1168" height="36" rx="6" fill="#fff"/>
+  <circle cx="80" cy="870" r="4" class="accent"/>
+  <text x="96" y="875" class="micro">待确认细节：故障类型枚举、平台收件地址展示方式、报价单确认/支付是否作为独立节点。</text>
+</svg>

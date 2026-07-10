@@ -1,0 +1,274 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="980" viewBox="0 0 1120 980">
+  <defs>
+    <style>
+      .canvas { fill: #e7ebf0; }
+      .phone-shell { fill: #111; }
+      .screen { fill: #f9f9f9; }
+      .top-bg { fill: url(#topGradient); }
+      .card { fill: #fff; }
+      .soft-card { fill: #f6f7f8; }
+      .line { stroke: #f0f0f0; stroke-width: 1; }
+      .hairline { stroke: rgba(0,0,0,.08); stroke-width: 1; }
+      .dark { fill: #000; font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+      .gray { fill: #666; font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+      .muted { fill: #999; font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+      .orange { fill: #ed6319; font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+      .whiteText { fill: #fff; font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+      .title { font-size: 24px; font-weight: 600; }
+      .caption { font-size: 13px; font-weight: 300; }
+      .page-title { font-size: 22px; font-weight: 500; }
+      .section-title { font-size: 16px; font-weight: 500; }
+      .body { font-size: 14px; font-weight: 400; }
+      .body-light { font-size: 14px; font-weight: 300; }
+      .small { font-size: 12px; font-weight: 300; }
+      .mini { font-size: 10px; font-weight: 300; }
+      .tab { font-size: 10px; font-weight: 400; }
+      .btn { font-size: 12px; font-weight: 400; }
+      .stroke-black { stroke: #000; stroke-width: 1.3; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-gray { stroke: #999; stroke-width: 1.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-orange { stroke: #ed6319; stroke-width: 1.35; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .shadow { filter: url(#phoneShadow); }
+    </style>
+    <linearGradient id="topGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef2f5"/>
+      <stop offset=".58" stop-color="#f3f5f7"/>
+      <stop offset="1" stop-color="#f9f9f9"/>
+    </linearGradient>
+    <linearGradient id="productGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fcfcfc"/>
+      <stop offset=".55" stop-color="#edf0f3"/>
+      <stop offset="1" stop-color="#dfe4e8"/>
+    </linearGradient>
+    <linearGradient id="orangeSoft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff3eb"/>
+      <stop offset="1" stop-color="#ffe4d3"/>
+    </linearGradient>
+    <filter id="phoneShadow" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#1d2632" flood-opacity=".18"/>
+    </filter>
+    <clipPath id="leftScreenClip" clipPathUnits="objectBoundingBox">
+      <rect x="0" y="0" width="1" height="1" rx=".075" ry=".075"/>
+    </clipPath>
+    <clipPath id="rightScreenClip" clipPathUnits="objectBoundingBox">
+      <rect x="0" y="0" width="1" height="1" rx=".075" ry=".075"/>
+    </clipPath>
+  </defs>
+
+  <rect class="canvas" width="1120" height="980"/>
+  <text class="dark title" x="70" y="58">售后小程序首页高保真稿</text>
+  <text class="gray caption" x="70" y="84">基于服务页、我的页、订单/商品页视觉母版：浅灰背景、白色卡片、黑色主操作、少量橙色强调。</text>
+
+  <!-- Existing product state -->
+  <g transform="translate(115 122)" class="shadow">
+    <rect class="phone-shell" x="-8" y="-8" width="391" height="828" rx="34"/>
+    <g clip-path="url(#leftScreenClip)">
+      <rect class="screen" width="375" height="812"/>
+      <rect class="top-bg" x="0" y="0" width="375" height="198"/>
+      <circle cx="310" cy="34" r="44" fill="#fff" opacity=".32"/>
+      <circle cx="344" cy="112" r="70" fill="#fff" opacity=".22"/>
+      <text class="dark small" x="23" y="31" font-weight="600">9:41</text>
+      <g transform="translate(292 18)" opacity=".9">
+        <rect x="0" y="6" width="3" height="7" rx="1" fill="#000"/>
+        <rect x="5" y="3" width="3" height="10" rx="1" fill="#000"/>
+        <rect x="10" y="0" width="3" height="13" rx="1" fill="#000"/>
+        <path d="M24 5c4-3 9-3 13 0M27 9c2-2 5-2 7 0" class="stroke-black" stroke-width="1"/>
+        <rect x="49" y="2" width="23" height="11" rx="3" stroke="#000" fill="none" stroke-width="1"/>
+        <rect x="51" y="4" width="17" height="7" rx="2" fill="#000"/>
+      </g>
+      <rect x="282" y="49" width="72" height="30" rx="15" fill="#fff" opacity=".64" stroke="rgba(0,0,0,.08)"/>
+      <circle cx="304" cy="64" r="3.3" fill="#000"/>
+      <circle cx="316" cy="64" r="3.3" fill="#000"/>
+      <circle cx="328" cy="64" r="3.3" fill="#000"/>
+      <circle cx="342" cy="64" r="8.2" fill="none" stroke="#000" stroke-width="1.5"/>
+
+      <text class="dark page-title" x="22" y="92">首页</text>
+      <text class="gray body-light" x="22" y="121">欢迎使用售后服务</text>
+
+      <g transform="translate(16 148)">
+        <rect class="card" width="343" height="178" rx="8"/>
+        <text class="dark section-title" x="16" y="31">我的产品</text>
+        <text class="muted small" x="16" y="54">1 台设备可申请售后服务</text>
+        <g transform="translate(256 15)">
+          <rect x="0" y="0" width="71" height="30" rx="15" fill="#fff" stroke="#dbdbdb"/>
+          <text class="dark btn" x="12" y="20">查看全部</text>
+        </g>
+        <g transform="translate(16 74)">
+          <rect class="soft-card" width="92" height="76" rx="6"/>
+          <ellipse cx="46" cy="57" rx="30" ry="8" fill="#d8dde2"/>
+          <rect x="29" y="14" width="35" height="44" rx="12" fill="url(#productGradient)" stroke="#cdd3d9"/>
+          <path d="M37 23h19M37 31h19" stroke="#c2c9d0" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="46" cy="45" r="5" fill="#d2d8de"/>
+        </g>
+        <text class="dark body" x="126" y="95">净水器 X1</text>
+        <text class="gray small" x="126" y="121">SN：A1B2C3D4</text>
+        <text class="gray small" x="126" y="146">质保至：2027-10-23</text>
+        <path d="M316 105l5 5-5 5" class="stroke-gray"/>
+      </g>
+
+      <text class="dark section-title" x="22" y="370">自助服务</text>
+      <g transform="translate(16 388)">
+        <rect class="card" width="343" height="204" rx="8"/>
+        <g transform="translate(16 18)">
+          <rect x="0" y="0" width="148" height="72" rx="8" fill="url(#orangeSoft)"/>
+          <circle cx="32" cy="36" r="19" fill="#fff"/>
+          <path d="M25 31h14M25 37h14M25 43h9" class="stroke-orange"/>
+          <text class="dark body" x="62" y="31">售后服务申请</text>
+          <text class="muted mini" x="62" y="52">退换修/补寄</text>
+        </g>
+        <g transform="translate(179 18)">
+          <rect class="soft-card" width="148" height="72" rx="8"/>
+          <circle cx="32" cy="36" r="19" fill="#fff"/>
+          <path d="M26 45c5 5 17 5 22-2M28 31h12M28 37h18" class="stroke-black"/>
+          <text class="dark body" x="62" y="31">服务进度</text>
+          <text class="muted mini" x="62" y="52">查看处理状态</text>
+        </g>
+        <g transform="translate(16 112)">
+          <rect class="soft-card" width="148" height="72" rx="8"/>
+          <circle cx="32" cy="36" r="19" fill="#fff"/>
+          <path d="M25 25h18v22H25zM29 31h10M29 37h10M29 43h7" class="stroke-black"/>
+          <text class="dark body" x="62" y="31">申请开票</text>
+          <text class="muted mini" x="62" y="52">订单发票服务</text>
+        </g>
+        <g transform="translate(179 112)">
+          <rect class="soft-card" width="148" height="72" rx="8"/>
+          <circle cx="32" cy="36" r="19" fill="#fff"/>
+          <path d="M25 27h14c3 0 5 2 5 5v15H30c-3 0-5-2-5-5zM31 34h8M31 40h8" class="stroke-black"/>
+          <text class="dark body" x="62" y="31">产品知识</text>
+          <text class="muted mini" x="62" y="52">使用/保养指南</text>
+        </g>
+      </g>
+
+      <g transform="translate(16 616)">
+        <rect class="card" width="343" height="82" rx="8"/>
+        <text class="dark section-title" x="16" y="31">服务提示</text>
+        <text class="gray small" x="16" y="57">售后申请前，请准备订单信息和产品照片</text>
+        <path d="M316 34l5 5-5 5" class="stroke-gray"/>
+      </g>
+
+      <g transform="translate(0 724)">
+        <rect class="card" width="375" height="88"/>
+        <line class="line" x1="0" y1="0" x2="375" y2="0"/>
+        <g transform="translate(61 16)">
+          <path d="M0 20V9L12 0l12 9v11c0 2-1 3-3 3H3c-2 0-3-1-3-3z" class="stroke-black"/>
+          <text class="dark tab" x="2" y="50">首页</text>
+        </g>
+        <g transform="translate(176 16)">
+          <path d="M2 23h20M5 23V8l7-5 7 5v15M9 23v-8h6v8" class="stroke-gray"/>
+          <text class="muted tab" x="-10" y="50">会员中心</text>
+        </g>
+        <g transform="translate(300 16)">
+          <circle cx="12" cy="8" r="5" class="stroke-gray"/>
+          <path d="M2 24c1-7 19-7 20 0" class="stroke-gray"/>
+          <text class="muted tab" x="2" y="50">我的</text>
+        </g>
+        <rect x="121" y="78" width="134" height="5" rx="3" fill="#000"/>
+      </g>
+    </g>
+  </g>
+  <text class="dark section-title" x="115" y="930">状态 A：已有产品</text>
+  <text class="gray caption" x="115" y="953">产品卡 + 自助服务宫格 + 服务提示。</text>
+
+  <!-- Empty product state -->
+  <g transform="translate(630 122)" class="shadow">
+    <rect class="phone-shell" x="-8" y="-8" width="391" height="828" rx="34"/>
+    <g clip-path="url(#rightScreenClip)">
+      <rect class="screen" width="375" height="812"/>
+      <rect class="top-bg" x="0" y="0" width="375" height="198"/>
+      <circle cx="310" cy="34" r="44" fill="#fff" opacity=".32"/>
+      <circle cx="344" cy="112" r="70" fill="#fff" opacity=".22"/>
+      <text class="dark small" x="23" y="31" font-weight="600">9:41</text>
+      <g transform="translate(292 18)" opacity=".9">
+        <rect x="0" y="6" width="3" height="7" rx="1" fill="#000"/>
+        <rect x="5" y="3" width="3" height="10" rx="1" fill="#000"/>
+        <rect x="10" y="0" width="3" height="13" rx="1" fill="#000"/>
+        <path d="M24 5c4-3 9-3 13 0M27 9c2-2 5-2 7 0" class="stroke-black" stroke-width="1"/>
+        <rect x="49" y="2" width="23" height="11" rx="3" stroke="#000" fill="none" stroke-width="1"/>
+        <rect x="51" y="4" width="17" height="7" rx="2" fill="#000"/>
+      </g>
+      <rect x="282" y="49" width="72" height="30" rx="15" fill="#fff" opacity=".64" stroke="rgba(0,0,0,.08)"/>
+      <circle cx="304" cy="64" r="3.3" fill="#000"/>
+      <circle cx="316" cy="64" r="3.3" fill="#000"/>
+      <circle cx="328" cy="64" r="3.3" fill="#000"/>
+      <circle cx="342" cy="64" r="8.2" fill="none" stroke="#000" stroke-width="1.5"/>
+
+      <text class="dark page-title" x="22" y="92">首页</text>
+      <text class="gray body-light" x="22" y="121">欢迎使用售后服务</text>
+
+      <g transform="translate(16 148)">
+        <rect class="card" width="343" height="190" rx="8"/>
+        <text class="dark section-title" x="16" y="31">我的产品</text>
+        <g transform="translate(256 15)">
+          <rect x="0" y="0" width="71" height="30" rx="15" fill="#fff" stroke="#dbdbdb"/>
+          <text class="dark btn" x="12" y="20">查看全部</text>
+        </g>
+        <g transform="translate(117 57)">
+          <rect class="soft-card" x="0" y="0" width="110" height="72" rx="10"/>
+          <rect x="34" y="18" width="42" height="34" rx="10" fill="#fff" stroke="#dfe3e8"/>
+          <path d="M55 25v20M45 35h20" class="stroke-orange"/>
+        </g>
+        <text class="dark body" x="144" y="154">注册产品</text>
+        <text class="muted small" x="65" y="178">注册后可申请售后并查看服务进度</text>
+      </g>
+
+      <text class="dark section-title" x="22" y="382">自助服务</text>
+      <g transform="translate(16 400)">
+        <rect class="card" width="343" height="204" rx="8"/>
+        <g transform="translate(16 18)">
+          <rect x="0" y="0" width="148" height="72" rx="8" fill="url(#orangeSoft)"/>
+          <circle cx="32" cy="36" r="19" fill="#fff"/>
+          <path d="M25 31h14M25 37h14M25 43h9" class="stroke-orange"/>
+          <text class="dark body" x="62" y="31">售后服务申请</text>
+          <text class="muted mini" x="62" y="52">退换修/补寄</text>
+        </g>
+        <g transform="translate(179 18)">
+          <rect class="soft-card" width="148" height="72" rx="8"/>
+          <circle cx="32" cy="36" r="19" fill="#fff"/>
+          <path d="M26 45c5 5 17 5 22-2M28 31h12M28 37h18" class="stroke-black"/>
+          <text class="dark body" x="62" y="31">服务进度</text>
+          <text class="muted mini" x="62" y="52">查看处理状态</text>
+        </g>
+        <g transform="translate(16 112)">
+          <rect class="soft-card" width="148" height="72" rx="8"/>
+          <circle cx="32" cy="36" r="19" fill="#fff"/>
+          <path d="M25 25h18v22H25zM29 31h10M29 37h10M29 43h7" class="stroke-black"/>
+          <text class="dark body" x="62" y="31">申请开票</text>
+          <text class="muted mini" x="62" y="52">订单发票服务</text>
+        </g>
+        <g transform="translate(179 112)">
+          <rect class="soft-card" width="148" height="72" rx="8"/>
+          <circle cx="32" cy="36" r="19" fill="#fff"/>
+          <path d="M25 27h14c3 0 5 2 5 5v15H30c-3 0-5-2-5-5zM31 34h8M31 40h8" class="stroke-black"/>
+          <text class="dark body" x="62" y="31">产品知识</text>
+          <text class="muted mini" x="62" y="52">使用/保养指南</text>
+        </g>
+      </g>
+
+      <g transform="translate(16 628)">
+        <rect class="card" width="343" height="70" rx="8"/>
+        <text class="dark section-title" x="16" y="29">服务提示</text>
+        <text class="gray small" x="16" y="53">未注册产品时，售后申请将先引导注册产品</text>
+      </g>
+
+      <g transform="translate(0 724)">
+        <rect class="card" width="375" height="88"/>
+        <line class="line" x1="0" y1="0" x2="375" y2="0"/>
+        <g transform="translate(61 16)">
+          <path d="M0 20V9L12 0l12 9v11c0 2-1 3-3 3H3c-2 0-3-1-3-3z" class="stroke-black"/>
+          <text class="dark tab" x="2" y="50">首页</text>
+        </g>
+        <g transform="translate(176 16)">
+          <path d="M2 23h20M5 23V8l7-5 7 5v15M9 23v-8h6v8" class="stroke-gray"/>
+          <text class="muted tab" x="-10" y="50">会员中心</text>
+        </g>
+        <g transform="translate(300 16)">
+          <circle cx="12" cy="8" r="5" class="stroke-gray"/>
+          <path d="M2 24c1-7 19-7 20 0" class="stroke-gray"/>
+          <text class="muted tab" x="2" y="50">我的</text>
+        </g>
+        <rect x="121" y="78" width="134" height="5" rx="3" fill="#000"/>
+      </g>
+    </g>
+  </g>
+  <text class="dark section-title" x="630" y="930">状态 B：未注册产品</text>
+  <text class="gray caption" x="630" y="953">空状态主入口直接显示“注册产品”，不再重复放按钮。</text>
+</svg>

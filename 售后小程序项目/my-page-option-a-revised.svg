@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="980" viewBox="0 0 520 980">
+  <defs>
+    <style>
+      .canvas{fill:#e7ebf0}
+      .phone{fill:#111;filter:url(#shadow)}
+      .screen{fill:#f9f9f9}
+      .white{fill:#fff}
+      .soft{fill:#f9f9f9}
+      .line{stroke:#f0f0f0;stroke-width:1}
+      .ink{fill:#000;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .gray{fill:#666;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .muted{fill:#999;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .inverse{fill:#fff;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif}
+      .h1{font-size:22px;font-weight:500}
+      .h2{font-size:18px;font-weight:500}
+      .h3{font-size:14px;font-weight:400}
+      .body{font-size:12px;font-weight:300}
+      .small{font-size:10px;font-weight:300}
+      .stroke{stroke:#000;stroke-width:1.25;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .strokeG{stroke:#999;stroke-width:1.15;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+    <filter id="shadow" x="-18%" y="-10%" width="136%" height="125%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#1d2632" flood-opacity=".18"/>
+    </filter>
+    <linearGradient id="avatarBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".58" stop-color="#edf1f4"/>
+      <stop offset="1" stop-color="#cfd7de"/>
+    </linearGradient>
+    <clipPath id="phoneClip"><rect x="0" y="0" width="375" height="812" rx="28"/></clipPath>
+  </defs>
+
+  <rect class="canvas" width="520" height="980"/>
+  <text class="ink h2" x="60" y="58">我的页面方案 A 修正版</text>
+  <text class="gray body" x="60" y="82">去掉登录按钮和说明文案，调整顶部个人信息区与下方模块间距</text>
+
+  <g transform="translate(72 118)">
+    <rect class="phone" x="-8" y="-8" width="391" height="828" rx="34"/>
+    <g clip-path="url(#phoneClip)">
+      <rect class="screen" width="375" height="812"/>
+
+      <image href="assets/v5-top-bg-reference.png" x="0" y="0" width="375" height="250" preserveAspectRatio="xMidYMid slice"/>
+      <rect x="0" y="0" width="375" height="250" fill="#fff" opacity=".06"/>
+
+      <text class="ink body" x="22" y="31" font-weight="600">9:41</text>
+      <rect x="280" y="50" width="84" height="32" rx="16" fill="#fff" opacity=".38"/>
+      <circle cx="303" cy="66" r="2.5" fill="#000" opacity=".55"/>
+      <circle cx="316" cy="66" r="2.5" fill="#000" opacity=".55"/>
+      <circle cx="329" cy="66" r="2.5" fill="#000" opacity=".55"/>
+      <circle cx="345" cy="66" r="8" fill="none" stroke="#000" stroke-width="1.25" opacity=".55"/>
+
+      <g transform="translate(20 110)">
+        <circle cx="30" cy="30" r="30" fill="#f9f9f9"/>
+        <circle cx="30" cy="24" r="9" class="stroke"/>
+        <path d="M14 50c3.2-11.5 10-17 16-17s12.8 5.5 16 17" class="stroke"/>
+        <text class="ink h1" x="78" y="39">登录 / 注册</text>
+        <path d="M320 24l5 5-5 5" class="strokeG"/>
+      </g>
+
+      <g transform="translate(20 206)">
+        <rect class="white" width="335" height="192" rx="6"/>
+        <g transform="translate(0 0)">
+          <text class="ink h3" x="18" y="39">我的产品</text>
+          <path d="M302 27l5 5-5 5" class="strokeG"/>
+          <line class="line" x1="18" y1="64" x2="317" y2="64"/>
+        </g>
+        <g transform="translate(0 64)">
+          <text class="ink h3" x="18" y="34">售后服务记录</text>
+          <path d="M302 24l5 5-5 5" class="strokeG"/>
+          <line class="line" x1="18" y1="64" x2="317" y2="64"/>
+        </g>
+        <g transform="translate(0 128)">
+          <text class="ink h3" x="18" y="34">地址管理</text>
+          <path d="M302 24l5 5-5 5" class="strokeG"/>
+        </g>
+      </g>
+
+      <g transform="translate(20 412)">
+        <rect class="white" width="335" height="128" rx="6"/>
+        <g transform="translate(0 0)">
+          <text class="ink h3" x="18" y="39">用户服务协议</text>
+          <path d="M302 27l5 5-5 5" class="strokeG"/>
+          <line class="line" x1="18" y1="64" x2="317" y2="64"/>
+        </g>
+        <g transform="translate(0 64)">
+          <text class="ink h3" x="18" y="34">隐私政策</text>
+          <path d="M302 24l5 5-5 5" class="strokeG"/>
+        </g>
+      </g>
+
+      <g transform="translate(0 724)">
+        <rect class="white" width="375" height="88"/>
+        <line class="line" x1="0" y1="0" x2="375" y2="0"/>
+        <path d="M61 36V25l12-9 12 9v11c0 2-1 3-3 3H64c-2 0-3-1-3-3z" class="strokeG"/>
+        <text class="muted small" x="63" y="66">首页</text>
+        <path d="M176 21h24v20h-24zM183 21v-4h10v4" class="strokeG"/>
+        <text class="muted small" x="168" y="66">会员中心</text>
+        <circle cx="312" cy="24" r="5" class="stroke"/>
+        <path d="M302 40c1-7 19-7 20 0" class="stroke"/>
+        <text class="ink small" x="302" y="66">我的</text>
+        <rect x="121" y="78" width="134" height="5" rx="3" fill="#000"/>
+      </g>
+    </g>
+  </g>
+</svg>

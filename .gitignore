@@ -2,9 +2,12 @@ _figma_tmp/
 .agents/
 .git.invalid-backup/
 中文总结文档/
-售后小程序项目/
 scripts/
 RESTORE_*.md
 RESTORE_LESSONS.md
 server.mjs
 *.log
+售后小程序项目/design-system/
+售后小程序项目/design-system-v2/
+售后小程序项目/server-*.out
+售后小程序项目/server-*.err

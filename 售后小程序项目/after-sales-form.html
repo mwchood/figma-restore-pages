@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>售后小程序 - 填写售后申请</title>
+    <link rel="stylesheet" href="./after-sales.css" />
+  </head>
+  <body>
+    <main class="preview-shell">
+      <section class="miniapp-frame" aria-label="填写售后申请">
+        <header class="page-header">
+          <span class="status-time">9:41</span>
+          <a class="back-link" href="./after-sales.html" aria-label="返回售后申请" data-back></a>
+          <h1 class="page-title">填写售后申请</h1>
+          <span class="mini-capsule" aria-hidden="true"></span>
+        </header>
+
+        <form class="form-content form-content--after-sales" id="after-sales-form">
+          <section class="form-card">
+            <h2 class="section-label">产品信息</h2>
+            <div class="product-summary">
+              <span class="option-thumb" aria-hidden="true"><img data-product-image alt="" /></span>
+              <span class="option-info">
+                <strong data-product-name>净水器 X1</strong>
+                <small data-product-warranty>保修期至 2027-10-23</small>
+              </span>
+            </div>
+            <div class="field-stack" data-sn-field hidden>
+              <label>
+                <span class="field-label">SN</span>
+                <input class="compact-field" id="sn-input" type="text" placeholder="请输入 SN" autocomplete="off" />
+              </label>
+            </div>
+          </section>
+
+          <section class="form-card">
+            <h2 class="section-label">故障信息</h2>
+            <div class="chip-row" data-fault-list>
+              <button class="channel-chip is-active" type="button">无法开机</button>
+              <button class="channel-chip" type="button">功能异常</button>
+              <button class="channel-chip" type="button">外观破损</button>
+              <button class="channel-chip" type="button">其他</button>
+            </div>
+            <div class="field-stack">
+              <label>
+                <span class="field-label">问题描述</span>
+                <textarea class="textarea-field" id="fault-desc" placeholder="请描述遇到的问题"></textarea>
+              </label>
+            </div>
+            <div class="field-stack">
+              <span class="field-label">图片/视频</span>
+              <div class="upload-row">
+                <span class="upload-box">+</span>
+                <span class="upload-box">+</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-card">
+            <h2 class="section-label">寄件信息</h2>
+            <div class="ship-tabs">
+              <button class="ship-tab is-active" type="button" data-ship="pickup">上门取件</button>
+              <button class="ship-tab" type="button" data-ship="mail">自行寄回</button>
+            </div>
+            <p class="ship-tip" data-ship-tip>请填写取件地址，客服审核后安排上门取件。</p>
+            <div class="field-stack">
+              <input class="compact-field" id="contact-name" type="text" placeholder="联系人" autocomplete="off" />
+              <input class="compact-field" id="contact-phone" type="tel" placeholder="手机号" autocomplete="off" />
+              <input class="compact-field" id="contact-address" type="text" placeholder="省市区及详细地址" autocomplete="off" />
+              <input class="compact-field" id="pickup-time" type="text" placeholder="预约时间" autocomplete="off" />
+            </div>
+          </section>
+        </form>
+
+        <div class="bottom-action">
+          <button class="primary-button" type="submit" form="after-sales-form">提交服务单</button>
+          <span class="home-indicator" aria-hidden="true"></span>
+        </div>
+        <div class="toast" role="status" aria-live="polite" data-toast></div>
+      </section>
+    </main>
+
+    <script>
+      const fallbackProducts = [
+        { name: "净水器 X1", sn: "SN-OK-001", warranty: "2027-10-23", kind: "water" },
+        { name: "焦点触控笔", sn: "SN-OK-002", warranty: "2026-12-07", kind: "stylus" },
+        { name: "智能手环 S9", sn: "SN-OK-003", warranty: "2027-03-10", kind: "band" },
+        { name: "空气净化器 A3", sn: "SN-OK-004", warranty: "2028-01-18", kind: "air" }
+      ];
+      const catalogProducts = {
+        water: fallbackProducts[0],
+        "water-pro": { name: "台式净饮机 W2", warranty: "2028-02-16", kind: "water" },
+        stylus: fallbackProducts[1],
+        band: fallbackProducts[2],
+        watch: { name: "智能手表 W3", warranty: "2027-09-12", kind: "band" },
+        air: fallbackProducts[3],
+        "air-desk": { name: "桌面净化器 P1", warranty: "2027-11-20", kind: "air" },
+        "ac-vertical": { name: "立式空调 A1", warranty: "2028-06-30", kind: "air" },
+        "ac-wall": { name: "壁挂空调 C2", warranty: "2028-05-18", kind: "air" }
+      };
+      const productAssets = {
+        water: "./assets/product-water-purifier-real.png",
+        stylus: "./assets/product-stylus-real.png",
+        band: "./assets/product-smart-band-real.png",
+        air: "./assets/product-air-purifier-real.png"
+      };
+      const safeParse = (value) => {
+        try {
+          return JSON.parse(value || "[]");
+        } catch {
+          return [];
+        }
+      };
+      const inferKind = (product) => {
+        if (product.kind && product.kind !== "default") return product.kind;
+        if (product.name?.includes("触控笔")) return "stylus";
+        if (product.name?.includes("手环")) return "band";
+        if (product.name?.includes("空气净化器")) return "air";
+        return "water";
+      };
+      const params = new URLSearchParams(location.search);
+      const querySN = params.get("sn");
+      const queryProduct = params.get("product");
+      const registeredProducts = safeParse(localStorage.getItem("aftersalesProducts"));
+      let product = registeredProducts.find((item) => item.sn === querySN) || fallbackProducts.find((item) => item.sn === querySN);
+      const needsSN = !product;
+      if (!product) product = catalogProducts[queryProduct] || fallbackProducts[0];
+      product.kind = inferKind(product);
+
+      document.querySelector("[data-product-name]").textContent = product.name;
+      document.querySelector("[data-product-warranty]").textContent = `保修期至 ${product.warranty}`;
+      document.querySelector("[data-product-image]").src = productAssets[product.kind] || productAssets.water;
+      document.querySelector("[data-sn-field]").hidden = !needsSN;
+      if (!needsSN) document.querySelector("#sn-input").value = product.sn || "";
+
+      document.querySelectorAll("[data-fault-list] .channel-chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          document.querySelectorAll("[data-fault-list] .channel-chip").forEach((item) => item.classList.remove("is-active"));
+          chip.classList.add("is-active");
+        });
+      });
+      document.querySelectorAll("[data-ship]").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document.querySelectorAll("[data-ship]").forEach((item) => item.classList.toggle("is-active", item === tab));
+          const isMail = tab.dataset.ship === "mail";
+          document.querySelector("[data-ship-tip]").textContent = isMail ? "客服审核后将展示平台收件地址，请自行寄回商品。" : "请填写取件地址，客服审核后安排上门取件。";
+          document.querySelector("#pickup-time").placeholder = isMail ? "寄出时间" : "预约时间";
+        });
+      });
+
+      const toast = document.querySelector("[data-toast]");
+      let toastTimer;
+      const showToast = (message) => {
+        clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+        toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 1600);
+      };
+      document.querySelector("#after-sales-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const sn = document.querySelector("#sn-input").value.trim().toUpperCase();
+        if (!sn) {
+          showToast("请输入 SN");
+          return;
+        }
+        if (!document.querySelector("#fault-desc").value.trim()) {
+          showToast("请填写问题描述");
+          return;
+        }
+        if (!document.querySelector("#contact-name").value.trim() || !document.querySelector("#contact-phone").value.trim() || !document.querySelector("#contact-address").value.trim()) {
+          showToast("请完善寄件信息");
+          return;
+        }
+        const serviceNo = `AS${Date.now().toString().slice(-10)}`;
+        const orders = safeParse(localStorage.getItem("afterSalesServiceOrders"));
+        orders.unshift({
+          serviceNo,
+          productName: product.name,
+          sn,
+          warranty: product.warranty,
+          faultType: document.querySelector("[data-fault-list] .is-active").textContent.trim(),
+          faultDesc: document.querySelector("#fault-desc").value.trim(),
+          shipType: document.querySelector("[data-ship].is-active").dataset.ship,
+          createdAt: new Date().toISOString()
+        });
+        localStorage.setItem("afterSalesServiceOrders", JSON.stringify(orders));
+        location.href = `./after-sales-success.html?serviceNo=${encodeURIComponent(serviceNo)}`;
+      });
+      document.querySelector("[data-back]")?.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (history.length > 1) history.back();
+        else location.href = "./after-sales.html";
+      });
+    </script>
+  </body>
+</html>

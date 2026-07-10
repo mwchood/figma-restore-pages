@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>售后小程序 - 注册产品</title>
+    <link rel="stylesheet" href="./register.css" />
+  </head>
+  <body>
+    <main class="preview-shell">
+      <section class="miniapp-frame" aria-label="注册产品">
+        <header class="page-header">
+          <span class="status-time">9:41</span>
+          <a class="back-link" href="./index.html" aria-label="返回首页" data-back></a>
+          <h1 class="page-title">注册产品</h1>
+          <span class="mini-capsule" aria-hidden="true"></span>
+        </header>
+
+        <form class="form-content" id="register-form">
+          <section class="form-section">
+            <div class="field-head">
+              <h2>购买渠道</h2>
+            </div>
+            <div class="channel-list" aria-label="购买渠道">
+              <button class="channel-chip is-active" type="button">淘宝</button>
+              <button class="channel-chip" type="button">京东</button>
+              <button class="channel-chip" type="button">抖音</button>
+              <button class="channel-chip" type="button">拼多多</button>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <div class="field-head">
+              <h2>订单号</h2>
+              <button type="button" data-help-target="order-help">如何查看订单号？</button>
+            </div>
+            <input class="text-field" id="order-input" type="text" placeholder="请输入购买渠道订单号" autocomplete="off" />
+            <p class="help-tip" id="order-help">打开购买平台的订单详情页，复制订单编号后粘贴到这里。</p>
+          </section>
+
+          <section class="form-section">
+            <div class="field-head">
+              <h2>SN 码</h2>
+              <button type="button" data-help-target="sn-help">如何查看 SN？</button>
+            </div>
+            <div class="sn-field-wrap">
+              <input class="text-field" id="sn-input" type="text" placeholder="请输入或扫码识别 SN" autocomplete="off" />
+              <a class="scan-entry" href="./scan-sn.html" aria-label="扫码识别 SN">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 4H5a1 1 0 0 0-1 1v2"></path>
+                  <path d="M17 4h2a1 1 0 0 1 1 1v2"></path>
+                  <path d="M20 17v2a1 1 0 0 1-1 1h-2"></path>
+                  <path d="M7 20H5a1 1 0 0 1-1-1v-2"></path>
+                  <path d="M7 12h10"></path>
+                  <path d="M9 9h6"></path>
+                  <path d="M9 15h6"></path>
+                </svg>
+              </a>
+            </div>
+            <p class="help-tip" id="sn-help">SN 通常位于产品机身铭牌、底部标签或包装标签上。</p>
+          </section>
+
+        </form>
+
+        <div class="bottom-action">
+          <button class="primary-button" type="submit" form="register-form">提交注册</button>
+          <span class="home-indicator" aria-hidden="true"></span>
+        </div>
+        <div class="toast" role="status" aria-live="polite" data-toast></div>
+      </section>
+    </main>
+    <script>
+      document.querySelectorAll(".channel-chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          document.querySelectorAll(".channel-chip").forEach((item) => item.classList.remove("is-active"));
+          chip.classList.add("is-active");
+        });
+      });
+
+      document.querySelectorAll("[data-help-target]").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.getElementById(button.dataset.helpTarget).classList.toggle("is-visible");
+        });
+      });
+
+      const productsByOrder = {
+        TB202607100001: { sn: "SN-OK-001", name: "净水器 X1", warranty: "2027-10-23", kind: "water" },
+        JD202607100002: { sn: "SN-OK-002", name: "焦点触控笔", warranty: "2026-12-07", kind: "stylus" },
+        DY202607100003: { sn: "SN-OK-003", name: "智能手环 S9", warranty: "2027-03-10", kind: "band" },
+        PDD202607100004: { sn: "SN-OK-004", name: "空气净化器 A3", warranty: "2028-01-18", kind: "air" }
+      };
+      const boundSNs = ["SN-BINDED-001"];
+      const orderInput = document.querySelector("#order-input");
+      const snInput = document.querySelector("#sn-input");
+
+      const getProducts = () => {
+        try {
+          return JSON.parse(localStorage.getItem("aftersalesProducts") || "[]");
+        } catch {
+          return [];
+        }
+      };
+
+      const toast = document.querySelector("[data-toast]");
+      let toastTimer;
+      const showToast = (message) => {
+        clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+        toastTimer = setTimeout(() => {
+          toast.classList.remove("is-visible");
+        }, 1800);
+      };
+
+      document.querySelector(".form-content").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const orderNo = orderInput.value.trim().toUpperCase();
+        const sn = snInput.value.trim().toUpperCase();
+        if (!orderNo) {
+          showToast("请输入订单号");
+          return;
+        }
+        if (!sn) {
+          showToast("请输入 SN");
+          return;
+        }
+
+        const products = getProducts();
+        if (boundSNs.includes(sn) || products.some((product) => product.sn === sn)) {
+          showToast("该 SN 已被绑定");
+          return;
+        }
+
+        const matched = productsByOrder[orderNo];
+        if (!matched || matched.sn !== sn) {
+          showToast("订单号和 SN 不匹配");
+          return;
+        }
+
+        products.push({
+          name: matched.name,
+          sn,
+          warranty: matched.warranty,
+          kind: matched.kind,
+          orderNo,
+          registeredAt: new Date().toISOString().slice(0, 10),
+          channel: document.querySelector(".channel-chip.is-active")?.textContent.trim() || ""
+        });
+        localStorage.setItem("aftersalesProducts", JSON.stringify(products));
+        localStorage.setItem("aftersalesProductRegistered", "1");
+        location.href = "./register-success.html";
+      });
+
+      document.querySelector("[data-back]")?.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (history.length > 1) {
+          history.back();
+        } else {
+          location.href = "./index.html";
+        }
+      });
+    </script>
+  </body>
+</html>
