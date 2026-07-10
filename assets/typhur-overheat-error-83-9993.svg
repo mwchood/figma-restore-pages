@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="ic_error" clip-path="url(#clip0_0_60)">
+<path id="Polygon 19" d="M53.0718 12C56.151 6.66667 63.849 6.66667 66.9282 12L118.024 100.5C121.103 105.833 117.254 112.5 111.095 112.5H8.9045C2.7461 112.5 -1.1029 105.833 1.9763 100.5L53.0718 12Z" fill="var(--fill-0, #FA3939)"/>
+<path id="Union" d="M60 86C61.6569 86 63 87.3431 63 89C63 90.6569 61.6569 92 60 92C58.3431 92 57 90.6569 57 89C57 87.3431 58.3431 86 60 86ZM60 46C61.6569 46 63 47.3431 63 49V78C63 79.6569 61.6569 81 60 81C58.3431 81 57 79.6569 57 78V49C57 47.3431 58.3431 46 60 46Z" fill="var(--fill-0, #F7F7F7)"/>
+</g>
+<defs>
+<clipPath id="clip0_0_60">
+<rect width="120" height="120" fill="white"/>
+</clipPath>
+</defs>
+</svg>

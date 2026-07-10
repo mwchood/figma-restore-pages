@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Typhur Dome Cooking</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      if (new URLSearchParams(location.search).has("bare")) {
+        document.documentElement.dataset.restoreBare = "1";
+      }
+    </script>
+  </head>
+  <body>
+    <main id="restore-bare" class="preview-shell">
+      <section class="figma-frame typhur-frame typhur-cook-frame" data-figma-id="80:9748" data-figma-frame-width="750" data-figma-frame-height="1624" data-render-scale="0.5" data-figma-name="Cook">
+        <section class="cook-status" data-figma-id="80:9749" data-figma-name="System bar">
+          <img class="cook-time ty-figma-svg" data-figma-id="80:9769" src="./assets/typhur-cook-status-time-80-9769.svg" alt="" />
+          <img class="cook-status-right ty-figma-svg" data-figma-id="80:9752" src="./assets/typhur-cook-status-right-80-9752.svg" alt="" />
+        </section>
+
+        <header class="cook-nav" data-figma-id="80:9771" data-figma-name="Navigation bar/Light">
+          <img class="cook-back ty-figma-svg" data-figma-id="I80:9771;473:3480" src="./assets/typhur-cook-back-80-9771.svg" alt="" />
+          <h1 data-figma-id="I80:9771;466:3427">Typhur Dome</h1>
+          <img class="cook-settings ty-figma-svg" data-figma-id="I80:9771;473:3489" src="./assets/typhur-cook-settings-80-9771.svg" alt="" />
+        </header>
+
+        <section class="cook-title" data-figma-id="80:9777" data-figma-name="Title">
+          <img class="ty-figma-svg" data-figma-id="80:9778" src="./assets/typhur-cook-title-icon-80-9778.svg" alt="" />
+          <h2 data-figma-id="80:9785">Cooking</h2>
+        </section>
+
+        <section class="cook-temp" data-figma-id="80:9772" data-figma-name="Temp">
+          <img class="cook-ring-base ty-figma-svg" data-figma-id="80:9773" src="./assets/typhur-cook-ring-base-80-9773.svg" alt="" />
+          <img class="cook-ring-progress ty-figma-svg" data-figma-id="80:9774" src="./assets/typhur-cook-ring-progress-80-9774.svg" alt="" />
+          <strong data-figma-id="80:9775">2:30:00</strong>
+          <span data-figma-id="80:9776">Remaining Time</span>
+        </section>
+
+        <section class="cook-list" data-figma-id="80:9786" data-figma-name="List">
+          <article class="cook-row" data-figma-id="80:9787" data-figma-name="Text">
+            <span class="cook-row-label" data-figma-id="I80:9787;362:3155">Target Temp</span>
+            <span class="cook-row-value" data-figma-id="I80:9787;362:3159">190°F</span>
+            <img class="cook-row-arrow ty-figma-svg" data-figma-id="I80:9787;748:4353" src="./assets/typhur-cook-arrow-forward-80-9787.svg" alt="" />
+          </article>
+          <article class="cook-row" data-figma-id="80:9788" data-figma-name="Text">
+            <span class="cook-row-label" data-figma-id="I80:9788;362:3155">Cooking Time</span>
+            <span class="cook-row-value" data-figma-id="I80:9788;362:3159">02h 30min</span>
+            <img class="cook-row-arrow ty-figma-svg" data-figma-id="I80:9788;748:4353" src="./assets/typhur-cook-arrow-forward-80-9787.svg" alt="" />
+          </article>
+        </section>
+
+        <button class="cook-button pause" data-figma-id="80:9790" type="button">Pause</button>
+        <button class="cook-button stop" data-figma-id="80:9789" type="button">Stop</button>
+      </section>
+    </main>
+  </body>
+</html>

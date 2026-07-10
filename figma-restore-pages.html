@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>figma还原页面</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="restore-hub-body">
+    <main class="restore-hub">
+      <aside class="restore-hub-sidebar" aria-label="页面导航">
+        <h1>figma还原页面</h1>
+        <nav class="restore-hub-nav" aria-label="figma还原页面">
+          <details class="restore-nav-group" open>
+            <summary>sy 设计稿还原</summary>
+            <div class="restore-nav-items">
+              <button class="restore-page-button active" type="button" data-page="sy-v1.html" data-title="我的 V1">我的 V1</button>
+              <button class="restore-page-button" type="button" data-page="v3.html" data-title="我的 V3">我的 V3</button>
+              <button class="restore-page-button" type="button" data-page="v5.html" data-title="我的 V5">我的 V5</button>
+              <button class="restore-page-button" type="button" data-page="service.html" data-title="服务">服务</button>
+              <button class="restore-page-button" type="button" data-page="mall.html" data-title="商城">商城</button>
+              <button class="restore-page-button" type="button" data-page="activity-form.html" data-title="活动信息填写">活动信息填写</button>
+              <button class="restore-page-button" type="button" data-page="order-detail.html" data-title="订单详情-待收货">订单详情-待收货</button>
+              <button class="restore-page-button" type="button" data-page="checkout.html" data-title="订单结算">订单结算</button>
+              <button class="restore-page-button" type="button" data-page="order-list.html" data-title="小程序商城订单">小程序商城订单</button>
+              <button class="restore-page-button" type="button" data-page="order-pay-detail.html" data-title="订单详情-待付款">订单详情-待付款</button>
+              <button class="restore-page-button" type="button" data-page="product-detail.html" data-title="商品详情">商品详情</button>
+              <button class="restore-page-button" type="button" data-page="community-activity.html" data-title="社区活动">社区活动</button>
+            </div>
+          </details>
+          <details class="restore-nav-group" open>
+            <summary>typhur测试还原页面</summary>
+            <div class="restore-nav-items">
+              <button class="restore-page-button" type="button" data-page="typhur-calendar.html" data-title="Typhur 月历">Typhur 月历</button>
+              <button class="restore-page-button" type="button" data-page="typhur-wellness.html" data-title="AI Wellness">AI Wellness</button>
+              <button class="restore-page-button" type="button" data-page="typhur-ice-maker.html" data-title="制冰机详情">制冰机详情</button>
+              <button class="restore-page-button" type="button" data-page="typhur-cook.html" data-title="Typhur 烹饪中">Typhur 烹饪中</button>
+              <button class="restore-page-button" type="button" data-page="typhur-probe-cooking.html" data-title="Typhur 探针烹饪">Typhur 探针烹饪</button>
+              <button class="restore-page-button" type="button" data-page="typhur-probe-lost.html" data-title="Typhur 探针未配对">Typhur 探针未配对</button>
+              <button class="restore-page-button" type="button" data-page="typhur-overheat.html" data-title="Typhur 探针过热">Typhur 探针过热</button>
+              <button class="restore-page-button" type="button" data-page="typhur-share-cooking.html" data-title="Typhur 分享烹饪">Typhur 分享烹饪</button>
+              <button class="restore-page-button" type="button" data-page="typhur-alerts-temperature.html" data-title="Typhur 温度提醒">Typhur 温度提醒</button>
+              <button class="restore-page-button" type="button" data-page="typhur-alerts-v2.html" data-title="Typhur 添加提醒 V2">Typhur 添加提醒 V2</button>
+              <button class="restore-page-button" type="button" data-page="typhur-alerts.html" data-title="Typhur 添加提醒">Typhur 添加提醒</button>
+              <button class="restore-page-button" type="button" data-page="typhur-recipe-detail.html" data-title="Typhur 食谱详情">Typhur 食谱详情</button>
+              <button class="restore-page-button" type="button" data-page="typhur-custom-time.html" data-title="Typhur 自定义烹饪时间">Typhur 自定义烹饪时间</button>
+              <button class="restore-page-button" type="button" data-page="typhur-test-custom.html" data-title="Typhur Test Custom">Typhur Test Custom</button>
+            </div>
+          </details>
+        </nav>
+      </aside>
+
+      <section class="restore-hub-preview" aria-live="polite">
+        <header class="restore-hub-preview-header">
+          <h2 id="restoreHubTitle">我的 V1</h2>
+          <a id="restoreHubOpen" href="./sy-v1.html" target="_blank" rel="noreferrer">打开页面</a>
+        </header>
+        <iframe id="restoreHubFrame" title="我的 V1" src="./sy-v1.html"></iframe>
+      </section>
+    </main>
+
+    <script>
+      const buttons = Array.from(document.querySelectorAll(".restore-page-button"));
+      const frame = document.getElementById("restoreHubFrame");
+      const title = document.getElementById("restoreHubTitle");
+      const openLink = document.getElementById("restoreHubOpen");
+
+      function selectPage(button, replaceHash = false) {
+        buttons.forEach((item) => item.classList.toggle("active", item === button));
+        const page = button.dataset.page;
+        const pageTitle = button.dataset.title;
+        frame.src = `./${page}`;
+        frame.title = pageTitle;
+        title.textContent = pageTitle;
+        openLink.href = `./${page}`;
+        if (!replaceHash) window.location.hash = page;
+      }
+
+      const initialPage = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+      const initialButton = buttons.find((button) => button.dataset.page === initialPage) || buttons[0];
+      selectPage(initialButton, true);
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => selectPage(button));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon" clip-path="url(#clip0_0_453)">
+<circle id="Ellipse 396" cx="40" cy="40" r="40" fill="var(--fill-0, #F7F7F7)"/>
+<g id="ic_dish">
+<path id="Ellipse 214" d="M58 46C58 41.2261 56.1036 36.6477 52.7279 33.2721C49.3523 29.8964 44.7739 28 40 28C35.2261 28 30.6477 29.8964 27.2721 33.2721C23.8964 36.6477 22 41.2261 22 46L24.52 46C24.52 41.8944 26.1509 37.957 29.054 35.054C31.9571 32.1509 35.8944 30.52 40 30.52C44.1056 30.52 48.043 32.1509 50.946 35.054C53.8491 37.9571 55.48 41.8944 55.48 46H58Z" fill="var(--fill-0, #212121)"/>
+<path id="Vector 454" d="M37 29V27C37 25.3431 38.3432 24 40 24C41.6569 24 43 25.3431 43 27V29" stroke="var(--stroke-0, #212121)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector 484" d="M21 47.0588H59" stroke="var(--stroke-0, #212121)" stroke-width="2.5" stroke-linecap="round"/>
+<path id="Vector 485" d="M23 47L25.8944 52.7889C26.572 54.144 27.957 55 29.4721 55H50.5279C52.043 55 53.428 54.144 54.1056 52.7889L57 47" stroke="var(--stroke-0, #212121)" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_453">
+<rect width="80" height="80" fill="white"/>
+</clipPath>
+</defs>
+</svg>
