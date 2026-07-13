@@ -40,6 +40,7 @@ const pages = [
   ["typhur-test-custom.html", "Typhur Test Custom"],
   ["typhur-test-professional.html", "Typhur Test Professional"],
   ["typhur-test-schedule.html", "Typhur Test Schedule"],
+  ["typhur-test-preheat.html", "Typhur Test Preheat"],
   ["售后小程序项目/index.html", "售后小程序-首页"],
   ["售后小程序项目/my.html", "售后小程序-我的"],
   ["售后小程序项目/products.html", "售后小程序-全部产品"],

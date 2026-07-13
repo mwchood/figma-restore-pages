@@ -1,0 +1,49 @@
+{
+  "name": "Typhur Test Preheat",
+  "page": "typhur-test-preheat.html",
+  "fileKey": "H9GTGgnI0rzfnrKSt1Hlui",
+  "nodeId": "23:2102",
+  "sourceFrame": { "width": 750, "height": 1624 },
+  "renderScale": 0.5,
+  "viewport": { "width": 375, "height": 812 },
+  "frameSelector": ".typhur-test-preheat-frame",
+  "stylesheet": "styles.css",
+  "texts": [
+    "Typhur Sous Vide Station",
+    "Preheating",
+    "92.0",
+    "°F",
+    "Current Temp",
+    "Target Temp",
+    "190°F",
+    "Cooking Time",
+    "02h 30min",
+    "Stop"
+  ],
+  "assets": [
+    { "path": "assets/typhur-preheat-status-right-23-2106.svg", "naturalSize": [133.32, 22.0765] },
+    { "path": "assets/typhur-preheat-status-time-23-2123.svg", "naturalSize": [108, 40.8919] },
+    { "path": "assets/typhur-preheat-back-23-2125.svg", "naturalSize": [48, 48] },
+    { "path": "assets/typhur-preheat-settings-23-2125.svg", "naturalSize": [48, 48] },
+    { "path": "assets/typhur-preheat-temperature-23-2134.svg", "naturalSize": [48, 48] },
+    { "path": "assets/typhur-preheat-arrow-23-2146.svg", "naturalSize": [36, 36] },
+    { "path": "assets/typhur-preheat-ring-base-23-2127.svg", "naturalSize": [478.964, 478.858] },
+    { "path": "assets/typhur-preheat-ring-left-23-2128.svg", "naturalSize": [239.87, 239.87] },
+    { "path": "assets/typhur-preheat-ring-progress-23-2129.svg", "naturalSize": [172.882, 84.5653] }
+  ],
+  "cssChecks": [
+    { "selector": ".typhur-test-preheat-frame", "declarations": ["width: 375px;", "height: 812px;"] },
+    { "selector": ".ty-preheat-title", "declarations": ["left: 124.5px;", "top: 132px;"] },
+    { "selector": ".ty-preheat-temp", "declarations": ["left: 67.5px;", "top: 190px;", "width: 240px;", "height: 240px;"] },
+    { "selector": ".ty-preheat-ring-base", "declarations": ["width: 239.482px;", "height: 239.429px;"] },
+    { "selector": ".ty-preheat-ring-progress", "declarations": ["left: 33.552px;", "top: 197.64px;", "width: 86.441px;", "height: 42.283px;"] },
+    { "selector": ".ty-preheat-temp strong", "declarations": ["left: 80.5px;", "top: 86.5px;", "font-size: 40px;"] },
+    { "selector": ".ty-preheat-unit", "declarations": ["left: 159.5px;", "top: 92px;"] },
+    { "selector": ".ty-schedule-list", "declarations": ["top: 517px;"] },
+    { "selector": ".ty-schedule-stop", "declarations": ["top: 742px;", "width: 335px;"] }
+  ],
+  "audits": [
+    "scripts/audit-typhur-pages.cjs",
+    "scripts/audit-restore-hub.cjs"
+  ]
+}
