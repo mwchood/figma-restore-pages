@@ -9733,3 +9733,242 @@ html:has(#restore-bare:target) .figma-frame {
   left: 193.5px;
   background: #db4f4f;
 }
+.typhur-test-schedule-frame {
+  width: 375px;
+  height: 812px;
+  overflow: hidden;
+  color: #212121;
+  background: #fff;
+  font-family: "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+  font-synthesis: none;
+}
+
+.typhur-test-schedule-frame img {
+  display: block;
+}
+
+.ty-schedule-status {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 44px;
+}
+
+.ty-schedule-time {
+  position: absolute;
+  left: 21px;
+  top: 11.685px;
+  width: 54px;
+  height: 20.446px;
+}
+
+.ty-schedule-status-right {
+  position: absolute;
+  right: 14.67px;
+  top: 16.875px;
+  width: 66.66px;
+  height: 11.038px;
+}
+
+.ty-schedule-nav {
+  position: absolute;
+  left: 0;
+  top: 44px;
+  width: 375px;
+  height: 48px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.ty-schedule-back,
+.ty-schedule-settings {
+  position: absolute;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+}
+
+.ty-schedule-back { left: 20px; }
+.ty-schedule-settings { left: 331px; }
+
+.ty-schedule-nav h1 {
+  position: absolute;
+  left: 64px;
+  top: 10px;
+  width: 247px;
+  margin: 0;
+  color: #212121;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ty-schedule-title {
+  position: absolute;
+  left: 135px;
+  top: 132px;
+  width: 105px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ty-schedule-title img {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.ty-schedule-title h2 {
+  margin: 0;
+  color: #212121;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.ty-schedule-temp {
+  position: absolute;
+  left: 67.5px;
+  top: 190px;
+  width: 240px;
+  height: 240px;
+}
+
+.ty-schedule-ring-base {
+  position: absolute;
+  left: 0.528px;
+  top: 0;
+  width: 239.482px;
+  height: 239.429px;
+}
+
+.ty-schedule-ring-red {
+  position: absolute;
+  left: 0.528px;
+  top: 0;
+  width: 224.462px;
+  height: 112.869px;
+}
+
+.ty-schedule-ring-blue,
+.ty-schedule-ring-pink {
+  position: absolute;
+  left: 0;
+  top: 120px;
+  width: 120px;
+  height: 120px;
+}
+
+.ty-schedule-temp strong {
+  position: absolute;
+  left: 52px;
+  top: 86.5px;
+  width: 136.5px;
+  color: #212121;
+  font-family: "OPlusSans 3.1 En", "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ty-schedule-temp span {
+  position: absolute;
+  left: 74.5px;
+  top: 136.5px;
+  width: 91px;
+  color: #999;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ty-schedule-current {
+  position: absolute;
+  left: 78px;
+  top: 460px;
+  width: 219px;
+  margin: 0;
+  color: #999;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.ty-schedule-list {
+  position: absolute;
+  left: 0.5px;
+  top: 517px;
+  width: 375px;
+  height: 112px;
+}
+
+.ty-schedule-row {
+  position: relative;
+  width: 375px;
+  height: 56px;
+  background: #fff;
+  border-bottom: 0.5px solid #f0f0f0;
+}
+
+.ty-schedule-row-label,
+.ty-schedule-row-value {
+  position: absolute;
+  top: 17px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.ty-schedule-row-label {
+  left: 19.5px;
+  color: #999;
+}
+
+.ty-schedule-row-value {
+  right: 44px;
+  color: #212121;
+  text-align: right;
+}
+
+.ty-schedule-row img {
+  position: absolute;
+  right: 20px;
+  top: 19px;
+  width: 18px;
+  height: 18px;
+}
+
+.ty-schedule-stop {
+  position: absolute;
+  left: 20px;
+  top: 742px;
+  width: 335px;
+  height: 50px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0;
+  color: #fff;
+  background: #db4f4f;
+  font-family: "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0;
+  text-align: center;
+}

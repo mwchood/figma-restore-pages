@@ -56,6 +56,7 @@ const recipeDetail = read("typhur-recipe-detail.html");
 const customTime = read("typhur-custom-time.html");
 const testCustom = read("typhur-test-custom.html");
 const testProfessional = read("typhur-test-professional.html");
+const testSchedule = read("typhur-test-schedule.html");
 
 check(calendar.includes('data-figma-id="66:7779"'), "calendar donor id missing");
 check(calendar.includes('data-figma-frame-width="393"'), "calendar width mismatch");
@@ -738,6 +739,46 @@ checkDecl(".ty-prof-chart", "top: 362px;");
 checkDecl(".ty-prof-card", "top: 617.5px;");
 checkDecl(".ty-prof-bottom", "top: 722px;");
 check(!cssBlock(".ty-prof-back").includes("transform:"), "test professional back icon must not be flipped");
+
+check(testSchedule.includes('data-figma-id="18:2025"'), "test schedule donor id missing");
+check(testSchedule.includes('data-figma-file-key="H9GTGgnI0rzfnrKSt1Hlui"'), "test schedule file key missing");
+check(testSchedule.includes('data-figma-frame-width="750"'), "test schedule source width mismatch");
+check(testSchedule.includes('data-figma-frame-height="1624"'), "test schedule source height mismatch");
+check(testSchedule.includes('data-render-scale="0.5"'), "test schedule 2x render scale must be explicit");
+check(!testSchedule.includes("figma.com/api/mcp/asset"), "test schedule must not depend on temporary MCP URLs");
+check(!testSchedule.includes("figma-crop-fallback"), "test schedule must not use screenshot crop fallbacks");
+check(!testSchedule.includes("-crop.png"), "test schedule must not use cropped screenshot assets");
+check(!testSchedule.includes("<svg"), "test schedule must not inline hand-drawn SVG; use localized Figma assets");
+for (const text of ["Typhur Sous Vide..", "Cooking", "2:30:00", "Remaining Time", "Current 190°F · Ready at 2:00 PM Today", "Target Temp", "190°F", "Cooking Time", "02h 30min", "Stop"]) {
+  check(testSchedule.includes(text), `test schedule missing text ${text}`);
+}
+for (const file of [
+  "typhur-schedule-status-right-18-2029.svg",
+  "typhur-schedule-status-time-18-2046.svg",
+  "typhur-schedule-back-18-2048.svg",
+  "typhur-schedule-settings-18-2048.svg",
+  "typhur-schedule-title-18-2050.svg",
+  "typhur-schedule-arrow-18-2060.svg",
+  "typhur-schedule-ring-base-18-2064.svg",
+  "typhur-schedule-ring-red-18-2065.svg",
+  "typhur-schedule-ring-blue-18-2066.svg",
+  "typhur-schedule-ring-pink-18-2067.svg",
+]) {
+  check(hasLocalAsset(testSchedule, file), `test schedule missing Figma asset ${file}`);
+  checkAssetFile(file);
+  checkSvgHasNoExportedBackground(file);
+}
+checkDecl(".typhur-test-schedule-frame", "width: 375px;");
+checkDecl(".typhur-test-schedule-frame", "height: 812px;");
+checkDecl(".ty-schedule-title", "top: 132px;");
+checkDecl(".ty-schedule-temp", "top: 190px;");
+checkDecl(".ty-schedule-ring-base", "width: 239.482px;");
+checkDecl(".ty-schedule-ring-red", "width: 224.462px;");
+checkDecl(".ty-schedule-ring-blue,\n.ty-schedule-ring-pink", "top: 120px;");
+checkDecl(".ty-schedule-current", "top: 460px;");
+checkDecl(".ty-schedule-list", "top: 517px;");
+checkDecl(".ty-schedule-stop", "top: 742px;");
+check(!cssBlock(".ty-schedule-back").includes("transform:"), "test schedule back icon must not be flipped");
 
 if (failures.length) {
   console.error("Typhur pages audit failed:");

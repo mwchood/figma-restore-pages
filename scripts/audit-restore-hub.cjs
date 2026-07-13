@@ -39,6 +39,7 @@ const pages = [
   ["typhur-custom-time.html", "Typhur 自定义烹饪时间"],
   ["typhur-test-custom.html", "Typhur Test Custom"],
   ["typhur-test-professional.html", "Typhur Test Professional"],
+  ["typhur-test-schedule.html", "Typhur Test Schedule"],
   ["售后小程序项目/index.html", "售后小程序-首页"],
   ["售后小程序项目/my.html", "售后小程序-我的"],
   ["售后小程序项目/products.html", "售后小程序-全部产品"],
