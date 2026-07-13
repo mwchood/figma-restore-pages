@@ -9450,3 +9450,286 @@ html:has(#restore-bare:target) .figma-frame {
   font: 500 16px/22px "Helvetica Now Display", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
   letter-spacing: 0;
 }
+.typhur-test-professional-frame {
+  width: 375px;
+  height: 812px;
+  overflow: hidden;
+  color: #fff;
+  background: #000;
+  font-family: "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+  font-synthesis: none;
+}
+
+.typhur-test-professional-frame img {
+  display: block;
+}
+
+.ty-prof-status {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 44px;
+}
+
+.ty-prof-time {
+  position: absolute;
+  left: 21px;
+  top: 11.685px;
+  width: 54px;
+  height: 20.446px;
+}
+
+.ty-prof-status-right {
+  position: absolute;
+  right: 14.67px;
+  top: 16.875px;
+  width: 66.66px;
+  height: 11.038px;
+}
+
+.ty-prof-nav {
+  position: absolute;
+  left: 0;
+  top: 44px;
+  width: 375px;
+  height: 48px;
+  overflow: hidden;
+}
+
+.ty-prof-back,
+.ty-prof-edit,
+.ty-prof-switch {
+  position: absolute;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+}
+
+.ty-prof-back { left: 20px; }
+.ty-prof-edit { left: 291px; }
+.ty-prof-switch { left: 331px; }
+
+.ty-prof-nav h1 {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 375px;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.ty-prof-nav p {
+  position: absolute;
+  left: 0;
+  top: 34px;
+  width: 375px;
+  margin: 0;
+  color: #707073;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.ty-prof-scrollbar {
+  position: absolute;
+  left: 176px;
+  top: 98px;
+  width: 23px;
+  height: 5px;
+}
+
+.ty-prof-notify {
+  position: absolute;
+  left: 16px;
+  top: 115px;
+  width: 343px;
+  height: 56px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: rgba(64, 131, 255, 0.2);
+}
+
+.ty-prof-notify img {
+  position: absolute;
+  left: 13px;
+  top: 14px;
+  width: 14px;
+  height: 14px;
+}
+
+.ty-prof-notify p {
+  position: absolute;
+  left: 37px;
+  top: 12px;
+  width: 294px;
+  margin: 0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+.ty-prof-title {
+  position: absolute;
+  left: 20px;
+  top: 183px;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0;
+}
+
+.ty-prof-battery {
+  position: absolute;
+  left: 336px;
+  top: 192px;
+  width: 19px;
+  height: 10px;
+}
+
+.ty-prof-recipe {
+  position: absolute;
+  left: 20px;
+  top: 215px;
+  margin: 0;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0;
+}
+
+.ty-prof-sensors {
+  position: absolute;
+  left: 21px;
+  top: 252px;
+  width: 330px;
+  height: 98px;
+}
+
+.ty-prof-chart {
+  position: absolute;
+  left: 20px;
+  top: 362px;
+  width: 336px;
+  height: 239.5px;
+}
+
+.ty-prof-card {
+  position: absolute;
+  left: 16px;
+  top: 617.5px;
+  width: 343px;
+  height: 140.5px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #19191a;
+}
+
+.ty-prof-current {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  margin: 0;
+  color: #fff;
+  font-family: "OPlusSans 3.1 En", "Helvetica Neue", Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 39px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.ty-prof-current span {
+  margin-left: 1px;
+  font-family: "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 21px;
+  vertical-align: 8px;
+}
+
+.ty-prof-alerts {
+  position: absolute;
+  left: 287px;
+  top: 20px;
+  width: 36px;
+  height: 36px;
+}
+
+.ty-prof-stat {
+  position: absolute;
+  top: 75px;
+  color: #999;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ty-prof-stat span,
+.ty-prof-stat strong {
+  display: block;
+}
+
+.ty-prof-stat span {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.ty-prof-stat strong {
+  margin-top: 6px;
+  color: #fff;
+  font-family: "OPlusSans 3.1 En", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.5px;
+}
+
+.ty-prof-stat.target { left: 21px; width: 54px; }
+.ty-prof-stat.ambient { left: 92px; width: 56px; }
+.ty-prof-stat.remaining { left: 164px; width: 60px; }
+.ty-prof-stat.duration { left: 240px; width: 83px; }
+
+.ty-prof-bottom {
+  position: absolute;
+  left: 0;
+  top: 722px;
+  width: 375px;
+  height: 90px;
+  border-top: 0.5px solid #19191a;
+  background: #000;
+}
+
+.ty-prof-button {
+  position: absolute;
+  top: 20px;
+  width: 161.5px;
+  height: 50px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-family: "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0;
+}
+
+.ty-prof-button.edit {
+  left: 20px;
+  background: #29292b;
+}
+
+.ty-prof-button.stop {
+  left: 193.5px;
+  background: #db4f4f;
+}
