@@ -37,6 +37,14 @@ function checkManifest(manifest) {
   }
 }
 
+function checkDocumentation() {
+  const expected = new Set(["README.md", "还原规则.md", "还原流水线.md"]);
+  const rootDocs = fs.readdirSync(root).filter((file) => file.toLowerCase().endsWith(".md"));
+  for (const file of expected) if (!rootDocs.includes(file)) fail(`missing documentation entry ${file}`);
+  for (const file of rootDocs) if (!expected.has(file)) fail(`root documentation must be archived: ${file}`);
+  if (!fs.existsSync(path.join(root, "docs", "history", "README.md"))) fail("missing docs/history/README.md");
+}
+
 function checkPage(manifest) {
   const pagePath = path.join(root, manifest.page);
   if (!fs.existsSync(pagePath)) return fail(`missing page ${manifest.page}`);
@@ -207,6 +215,7 @@ async function main() {
   }
 
   const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+  checkDocumentation();
   checkManifest(manifest);
   const html = checkPage(manifest);
   if (html) checkAssets(manifest, html);

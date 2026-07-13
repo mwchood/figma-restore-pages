@@ -5,6 +5,8 @@ _figma_tmp/
 scripts/
 RESTORE_*.md
 RESTORE_LESSONS.md
+!docs/history/
+!docs/history/*.md
 server.mjs
 *.log
 售后小程序项目/design-system/
