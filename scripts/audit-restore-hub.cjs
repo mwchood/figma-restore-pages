@@ -41,6 +41,9 @@ const pages = [
   ["typhur-test-professional.html", "Typhur Test Professional"],
   ["typhur-test-schedule.html", "Typhur Test Schedule"],
   ["typhur-test-preheat.html", "Typhur Test Preheat"],
+  ["untitled-date-picker.html", "类型日期"],
+  ["untitled-coupon-redemption.html", "优惠券核销"],
+  ["untitled-schedule.html", "Schedule"],
   ["售后小程序项目/index.html", "售后小程序-首页"],
   ["售后小程序项目/my.html", "售后小程序-我的"],
   ["售后小程序项目/products.html", "售后小程序-全部产品"],
@@ -55,7 +58,8 @@ check((html.match(/class="restore-page-button/g) || []).length === pages.length,
 check(html.includes("sy 设计稿还原"), "sy design group title missing");
 check(html.includes("typhur测试还原页面"), "typhur test group title missing");
 check(html.includes("sy售后小程序设计"), "after-sales mini program group title missing");
-check((html.match(/class="restore-nav-group"/g) || []).length === 3, "restore nav groups mismatch");
+check(html.includes("Untitled 一级 Frame"), "Untitled frame group title missing");
+check((html.match(/class="restore-nav-group"/g) || []).length === 4, "restore nav groups mismatch");
 check(html.includes("<details class=\"restore-nav-group\" open>"), "restore nav groups must be collapsible details");
 check(html.includes('id="restoreHubFrame"'), "preview iframe missing");
 check(html.includes('id="restoreRegisterNote"'), "register product SN hint missing");

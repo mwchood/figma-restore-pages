@@ -1,0 +1,30 @@
+{
+  "name": "Untitled Coupon Redemption",
+  "page": "untitled-coupon-redemption.html",
+  "fileKey": "N1keD7MNsju5qwTUBlI75U",
+  "nodeId": "2:49",
+  "sourceFrame": { "width": 375, "height": 812 },
+  "renderScale": 1,
+  "viewport": { "width": 375, "height": 812 },
+  "frameSelector": ".untitled-coupon-frame",
+  "stylesheet": "styles.css",
+  "texts": ["优惠券核销", "扫一扫或输入", "请扫描二维码或输入核销码进行核销", "SS6217002220003381", "立即核销", "核销记录"],
+  "assets": [
+    { "path": "assets/untitled-coupon-miniprogram.svg", "naturalSize": [87, 32] },
+    { "path": "assets/untitled-coupon-battery.svg", "naturalSize": [24.328, 11.3333] },
+    { "path": "assets/untitled-coupon-wifi.svg", "naturalSize": [15.2725, 10.966] },
+    { "path": "assets/untitled-coupon-cellular.svg", "naturalSize": [17, 10.667] },
+    { "path": "assets/untitled-coupon-back.svg", "naturalSize": [26, 26] },
+    { "path": "assets/untitled-coupon-scan.svg", "naturalSize": [14.5, 14.5] },
+    { "path": "assets/untitled-coupon-forward.svg", "naturalSize": [18, 18] },
+    { "path": "assets/untitled-coupon-qr.svg", "naturalSize": [147, 151] },
+    { "path": "assets/untitled-coupon-home.svg", "naturalSize": [375, 34] }
+  ],
+  "cssChecks": [
+    { "selector": ".untitled-coupon-frame", "declarations": ["width: 375px;", "height: 812px;"] },
+    { "selector": ".untitled-coupon-card", "declarations": ["left: 20px;", "top: 108px;", "width: 335px;", "height: 397px;"] },
+    { "selector": ".untitled-coupon-qr", "declarations": ["left: 94px;", "top: 30px;", "width: 147px;", "height: 151px;"] },
+    { "selector": ".untitled-coupon-record", "declarations": ["left: 20px;", "top: 515px;", "height: 56px;"] }
+  ],
+  "audits": ["scripts/audit-restore-hub.cjs"]
+}

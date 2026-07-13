@@ -10086,3 +10086,557 @@ html:has(#restore-bare:target) .figma-frame {
   text-align: center;
   white-space: nowrap;
 }
+
+/* Untitled / 1:2 */
+.untitled-date-frame {
+  width: 375px;
+  height: 812px;
+  background: #f9f9f9;
+  font-family: "Noto Sans SC Restore", "PingFang SC", sans-serif;
+}
+
+.untitled-date-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 375px;
+  height: 962px;
+  object-fit: cover;
+}
+
+.untitled-date-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.untitled-date-sheet {
+  position: absolute;
+  left: 0;
+  top: 312px;
+  width: 375px;
+  height: 500px;
+}
+
+.untitled-date-header h1 {
+  position: absolute;
+  left: 20px;
+  top: 328px;
+  margin: 0;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.untitled-date-header img {
+  position: absolute;
+  left: 337px;
+  top: 331px;
+  width: 18px;
+  height: 18px;
+}
+
+.untitled-date-divider {
+  position: absolute;
+  left: 0;
+  top: 368px;
+  width: 375px;
+  height: 1px;
+}
+
+.untitled-date-month h2 {
+  position: absolute;
+  left: 145px;
+  top: 388px;
+  margin: 0;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.untitled-date-month-arrows {
+  position: absolute;
+  top: 390px;
+  display: flex;
+  gap: 12px;
+  width: 52px;
+  height: 20px;
+}
+
+.untitled-date-month-arrows.left { left: 64px; }
+.untitled-date-month-arrows.right { left: 260px; }
+
+.untitled-date-month-arrows img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.untitled-date-month-arrows.left img { transform: rotate(90deg); }
+.untitled-date-month-arrows.right img { transform: rotate(-90deg); }
+
+.untitled-date-week {
+  position: absolute;
+  left: 21px;
+  top: 432px;
+  display: grid;
+  grid-template-columns: repeat(7, 44px);
+  column-gap: 4px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  text-align: center;
+}
+
+.untitled-date-grid {
+  position: absolute;
+  left: 25px;
+  top: 464px;
+  display: grid;
+  grid-template-columns: repeat(7, 36px);
+  grid-auto-rows: 36px;
+  gap: 4px 12px;
+  width: 324px;
+}
+
+.untitled-date-grid span {
+  display: grid;
+  place-items: center;
+  border-radius: 4px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.untitled-date-grid .selected { color: #fff; background: #000; }
+.untitled-date-grid .disabled { color: #bbb; }
+.untitled-date-grid .empty { color: transparent; }
+
+.untitled-date-reset,
+.untitled-date-confirm {
+  position: absolute;
+  top: 720px;
+  width: 160px;
+  height: 48px;
+  padding: 0;
+  border-radius: 100px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.untitled-date-reset {
+  left: 20px;
+  top: 720px;
+  width: 160px;
+  border: 1px solid #000;
+  color: #000;
+  background: #fff;
+  font-weight: 300;
+}
+
+.untitled-date-confirm {
+  left: 194px;
+  top: 720px;
+  width: 160px;
+  border: 0;
+  color: #fff;
+  background: #000;
+  font-weight: 400;
+}
+
+.untitled-date-home,
+.untitled-coupon-home {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 375px;
+  height: 34px;
+}
+
+/* Untitled / 2:49 */
+.untitled-coupon-frame {
+  width: 375px;
+  height: 812px;
+  background: #f9f9f9;
+  font-family: "Noto Sans SC Restore", "PingFang SC", sans-serif;
+}
+
+.untitled-coupon-header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 375px;
+  height: 88px;
+  background: #fff;
+}
+
+.untitled-coupon-time {
+  position: absolute;
+  left: 12px;
+  top: 15px;
+  width: 54px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  letter-spacing: -0.28px;
+  text-align: center;
+}
+
+.untitled-coupon-cellular { position: absolute; left: 294px; top: 16.5px; width: 17px; height: 10.667px; }
+.untitled-coupon-wifi { position: absolute; left: 315.5px; top: 16.5px; width: 15.273px; height: 10.966px; }
+.untitled-coupon-battery { position: absolute; left: 336px; top: 16.33px; width: 24.328px; height: 11.333px; }
+
+.untitled-coupon-back {
+  position: absolute;
+  left: 12px;
+  top: 53px;
+  width: 26px;
+  height: 26px;
+  transform: rotate(180deg) scaleY(-1);
+}
+
+.untitled-coupon-header h1 {
+  position: absolute;
+  left: 142px;
+  top: 53px;
+  margin: 0;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+.untitled-coupon-miniprogram {
+  position: absolute;
+  left: 280px;
+  top: 50px;
+  width: 87px;
+  height: 32px;
+}
+
+.untitled-coupon-card {
+  position: absolute;
+  left: 20px;
+  top: 108px;
+  width: 335px;
+  height: 397px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.untitled-coupon-qr {
+  position: absolute;
+  left: 94px;
+  top: 30px;
+  width: 147px;
+  height: 151px;
+}
+
+.untitled-coupon-card h2 {
+  position: absolute;
+  left: 120px;
+  top: 181px;
+  margin: 0;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.untitled-coupon-card > p {
+  position: absolute;
+  left: 56px;
+  top: 213px;
+  margin: 0;
+  color: #999;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.untitled-coupon-code {
+  position: absolute;
+  left: 20px;
+  top: 255px;
+  width: 295px;
+  height: 46px;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+}
+
+.untitled-coupon-code span {
+  position: absolute;
+  left: 11px;
+  top: 10px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.untitled-coupon-code img {
+  position: absolute;
+  left: 231px;
+  top: 13px;
+  width: 18px;
+  height: 18px;
+  padding: 1.75px;
+}
+
+.untitled-coupon-code em {
+  position: absolute;
+  left: 254px;
+  top: 10px;
+  color: #ed6319;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.untitled-coupon-card button {
+  position: absolute;
+  left: 68px;
+  top: 325px;
+  width: 200px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 100px;
+  color: #fff;
+  background: #000;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.untitled-coupon-record {
+  position: absolute;
+  left: 20px;
+  top: 515px;
+  width: 335px;
+  height: 56px;
+  border-radius: 6px;
+  color: #000;
+  background: #fff;
+  text-decoration: none;
+}
+
+.untitled-coupon-record span {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.untitled-coupon-record img {
+  position: absolute;
+  left: 299px;
+  top: 19px;
+  width: 18px;
+  height: 18px;
+  transform: scaleY(-1);
+}
+
+/* Untitled / 2:182, rendered at 0.5 */
+.untitled-schedule-frame {
+  width: 375px;
+  height: 812px;
+  color: #212121;
+  background: #fff;
+  font-family: "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+  font-synthesis: none;
+}
+
+.untitled-schedule-status { position: absolute; inset: 0 0 auto; height: 44px; }
+.untitled-schedule-time { position: absolute; left: 21px; top: 11.685px; width: 54px; height: 20.446px; }
+.untitled-schedule-status-right { position: absolute; right: 14.67px; top: 16.875px; width: 66.66px; height: 11.038px; }
+
+.untitled-schedule-nav {
+  position: absolute;
+  left: 0;
+  top: 44px;
+  width: 375px;
+  height: 48px;
+  background: #fff;
+}
+
+.untitled-schedule-back,
+.untitled-schedule-settings { position: absolute; top: 12px; width: 24px; height: 24px; }
+.untitled-schedule-back { left: 20px; }
+.untitled-schedule-settings { left: 331px; }
+
+.untitled-schedule-nav h1 {
+  position: absolute;
+  left: 64px;
+  top: 10px;
+  width: 247px;
+  margin: 0;
+  color: #212121;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.untitled-schedule-finish {
+  position: absolute;
+  left: 102px;
+  top: 122px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 18px;
+}
+
+.untitled-schedule-finish img { width: 18px; height: 18px; }
+.untitled-schedule-finish p { margin: 0; font-size: 13px; line-height: 17px; white-space: nowrap; }
+.untitled-schedule-finish span { color: #999; }
+
+.untitled-schedule-picker {
+  position: absolute;
+  left: 25px;
+  top: 160px;
+  width: 325px;
+  height: 184px;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.untitled-schedule-picker::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 76px;
+  width: 325px;
+  height: 33px;
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+
+.untitled-schedule-hours,
+.untitled-schedule-minutes {
+  position: absolute;
+  top: 0;
+  width: 36px;
+  height: 184px;
+}
+
+.untitled-schedule-hours { left: 117px; }
+.untitled-schedule-minutes { left: 200px; }
+
+.untitled-schedule-picker span,
+.untitled-schedule-picker strong {
+  position: absolute;
+  left: 0;
+  width: 36px;
+  height: 24px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.untitled-schedule-picker span:nth-child(1) { top: 0; }
+.untitled-schedule-picker span:nth-child(2) { top: 24px; }
+.untitled-schedule-picker span:nth-child(3) { top: 48px; }
+.untitled-schedule-picker strong:nth-child(4) { top: 76px; }
+.untitled-schedule-picker span:nth-child(5) { top: 114px; }
+.untitled-schedule-picker span:nth-child(6) { top: 138px; }
+.untitled-schedule-picker span:nth-child(7) { top: 162px; }
+
+.untitled-schedule-picker span:nth-child(1),
+.untitled-schedule-picker span:nth-child(7) { opacity: 0.12; }
+.untitled-schedule-picker span:nth-child(2),
+.untitled-schedule-picker span:nth-child(6) { opacity: 0.24; }
+.untitled-schedule-picker span:nth-child(3),
+.untitled-schedule-picker span:nth-child(5) { opacity: 0.36; }
+.untitled-schedule-picker strong { font-size: 20px; font-weight: 500; line-height: 28px; }
+
+.untitled-schedule-picker > img {
+  position: absolute;
+  left: 161px;
+  top: 87px;
+  width: 2.5px;
+  height: 10px;
+}
+
+.untitled-schedule-picker > b {
+  position: absolute;
+  left: 258px;
+  top: 81px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.untitled-schedule-divider { position: absolute; left: 0; top: 368px; width: 375px; height: 0.5px; background: #f0f0f0; }
+
+.untitled-schedule-ice {
+  position: absolute;
+  left: 0;
+  top: 393px;
+  width: 375px;
+  height: 55px;
+  text-align: center;
+}
+
+.untitled-schedule-ice strong { font-family: "Arial", sans-serif; font-size: 40px; font-weight: 700; line-height: 52px; }
+.untitled-schedule-ice span { margin-left: 3px; font-size: 15px; font-weight: 400; line-height: 21px; }
+
+.untitled-schedule-copy {
+  position: absolute;
+  left: 30px;
+  top: 446.5px;
+  width: 315px;
+  margin: 0;
+  color: #999;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.untitled-schedule-sous-vide { position: absolute; left: 127.5px; top: 534.5px; width: 120px; height: 120px; }
+
+.untitled-schedule-guidelines {
+  position: absolute;
+  left: 78.5px;
+  top: 695px;
+  display: flex;
+  align-items: center;
+  color: #999;
+  font-size: 13px;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+.untitled-schedule-guidelines img { width: 14px; height: 14px; }
+
+.untitled-schedule-set {
+  position: absolute;
+  left: 20px;
+  top: 742px;
+  width: 335px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: #db4f4f;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Untitled Date Picker",
+  "page": "untitled-date-picker.html",
+  "fileKey": "N1keD7MNsju5qwTUBlI75U",
+  "nodeId": "1:2",
+  "sourceFrame": { "width": 375, "height": 812 },
+  "renderScale": 1,
+  "viewport": { "width": 375, "height": 812 },
+  "frameSelector": ".untitled-date-frame",
+  "stylesheet": "styles.css",
+  "texts": ["时间选择", "2025年11月", "重置", "确认"],
+  "assets": [
+    { "path": "assets/untitled-date-background.png" },
+    { "path": "assets/untitled-date-sheet.svg", "naturalSize": [375, 500] },
+    { "path": "assets/untitled-date-home.svg", "naturalSize": [375, 34] },
+    { "path": "assets/untitled-date-close.svg", "naturalSize": [18, 18] },
+    { "path": "assets/untitled-date-divider.svg", "naturalSize": [375, 1] },
+    { "path": "assets/untitled-date-arrow-outer.svg", "naturalSize": [20, 20] },
+    { "path": "assets/untitled-date-arrow-inner.svg", "naturalSize": [11.2, 12.7] },
+    { "path": "assets/untitled-date-arrow-outer-left.svg", "naturalSize": [20, 20] }
+  ],
+  "cssChecks": [
+    { "selector": ".untitled-date-frame", "declarations": ["width: 375px;", "height: 812px;"] },
+    { "selector": ".untitled-date-sheet", "declarations": ["top: 312px;", "height: 500px;"] },
+    { "selector": ".untitled-date-grid", "declarations": ["left: 25px;", "top: 464px;", "grid-template-columns: repeat(7, 36px);"] },
+    { "selector": ".untitled-date-reset", "declarations": ["left: 20px;", "top: 720px;", "width: 160px;"] },
+    { "selector": ".untitled-date-confirm", "declarations": ["left: 194px;", "top: 720px;", "width: 160px;"] }
+  ],
+  "audits": ["scripts/audit-restore-hub.cjs"]
+}

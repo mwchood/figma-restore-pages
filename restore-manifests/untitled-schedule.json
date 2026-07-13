@@ -1,0 +1,30 @@
+{
+  "name": "Untitled Schedule",
+  "page": "untitled-schedule.html",
+  "fileKey": "N1keD7MNsju5qwTUBlI75U",
+  "nodeId": "2:182",
+  "sourceFrame": { "width": 750, "height": 1624 },
+  "renderScale": 0.5,
+  "viewport": { "width": 375, "height": 812 },
+  "frameSelector": ".untitled-schedule-frame",
+  "stylesheet": "styles.css",
+  "texts": ["Typhur Sous Vide Station", "Set Finish Time:", "Tomorrow", "12", "lbs", "Please add the recommended amount of ice", "View Full Guidelines", "Set"],
+  "assets": [
+    { "path": "assets/untitled-schedule-status-right.svg", "naturalSize": [133.32, 22.0765] },
+    { "path": "assets/untitled-schedule-time.svg", "naturalSize": [108, 40.8919] },
+    { "path": "assets/untitled-schedule-back.svg", "naturalSize": [48, 48] },
+    { "path": "assets/untitled-schedule-settings.svg", "naturalSize": [48, 48] },
+    { "path": "assets/untitled-schedule-sous-vide.svg", "naturalSize": [240, 240] },
+    { "path": "assets/untitled-schedule-timer.svg", "naturalSize": [36, 36] },
+    { "path": "assets/untitled-schedule-forward.svg", "naturalSize": [28, 28] },
+    { "path": "assets/untitled-schedule-colon.svg", "naturalSize": [5, 20] }
+  ],
+  "cssChecks": [
+    { "selector": ".untitled-schedule-frame", "declarations": ["width: 375px;", "height: 812px;"] },
+    { "selector": ".untitled-schedule-picker", "declarations": ["left: 25px;", "top: 160px;", "width: 325px;"] },
+    { "selector": ".untitled-schedule-divider", "declarations": ["top: 368px;", "width: 375px;"] },
+    { "selector": ".untitled-schedule-sous-vide", "declarations": ["left: 127.5px;", "top: 534.5px;", "width: 120px;"] },
+    { "selector": ".untitled-schedule-set", "declarations": ["left: 20px;", "top: 742px;", "width: 335px;"] }
+  ],
+  "audits": ["scripts/audit-restore-hub.cjs"]
+}
