@@ -1,4 +1,5 @@
 const fs = require("node:fs");
+const crypto = require("node:crypto");
 const http = require("node:http");
 const path = require("node:path");
 const { spawn, spawnSync } = require("node:child_process");
@@ -13,6 +14,14 @@ function fail(message) {
 
 function read(file) {
   return fs.readFileSync(path.join(root, file), "utf8");
+}
+
+function pngDataUrl(file) {
+  return `data:image/png;base64,${fs.readFileSync(file).toString("base64")}`;
+}
+
+function writeDataUrl(file, dataUrl) {
+  fs.writeFileSync(file, Buffer.from(dataUrl.replace(/^data:image\/png;base64,/, ""), "base64"));
 }
 
 function cssBlock(css, selector) {
@@ -36,11 +45,28 @@ function withinTolerance(actual, expected, tolerance = 0.5) {
 }
 
 function checkManifest(manifest) {
-  for (const field of ["name", "page", "fileKey", "nodeId", "sourceFrame", "renderScale", "viewport", "frameSelector", "assets", "browserChecks", "visualRegions"]) {
+  for (const field of ["name", "page", "fileKey", "nodeId", "sourceFrame", "renderScale", "viewport", "frameSelector", "assets", "browserChecks", "visualBaseline", "visualBaselineSha256", "visualDiff", "visualRegions"]) {
     if (manifest[field] == null) fail(`manifest missing ${field}`);
   }
   if (!Array.isArray(manifest.browserChecks)) fail("manifest browserChecks must be an array");
   if (!Array.isArray(manifest.visualRegions)) fail("manifest visualRegions must be an array");
+  if (manifest.visualDiff?.rawColorDelta == null) fail("manifest visualDiff missing rawColorDelta");
+  if (manifest.visualDiff?.colorDelta == null) fail("manifest visualDiff missing colorDelta");
+  if (manifest.visualDiff?.maxMismatchRatio == null) fail("manifest visualDiff missing maxMismatchRatio");
+}
+
+function checkVisualBaseline(manifest) {
+  const baselinePath = path.join(root, manifest.visualBaseline || "");
+  if (!fs.existsSync(baselinePath)) return fail(`missing visual baseline ${manifest.visualBaseline}`);
+  const png = fs.readFileSync(baselinePath);
+  const hash = crypto.createHash("sha256").update(png).digest("hex");
+  if (hash !== manifest.visualBaselineSha256.toLowerCase()) {
+    fail(`visual baseline hash mismatch for ${manifest.visualBaseline}`);
+  }
+  const size = [png.readUInt32BE(16), png.readUInt32BE(20)];
+  if (size[0] !== manifest.sourceFrame.width || size[1] !== manifest.sourceFrame.height) {
+    fail(`visual baseline mismatch: expected ${manifest.sourceFrame.width}x${manifest.sourceFrame.height}, got ${size.join("x")}`);
+  }
 }
 
 function checkDocumentation() {
@@ -64,7 +90,7 @@ function checkPage(manifest) {
     `data-render-scale="${manifest.renderScale}"`,
   ];
   for (const value of required) if (!html.includes(value)) fail(`${manifest.page} missing ${value}`);
-  for (const banned of ["figma.com/api/mcp/asset", "figma-crop-fallback", "-crop.png", "<svg"]) {
+  for (const banned of ["figma.com/api/mcp/asset", "figma-crop-fallback", "-crop.png", "visual-baselines/", "<svg"]) {
     if (html.includes(banned)) fail(`${manifest.page} contains banned fallback ${banned}`);
   }
   for (const value of manifest.texts || []) if (!html.includes(value)) fail(`${manifest.page} missing text ${value}`);
@@ -183,6 +209,8 @@ async function capture(manifest) {
   const browser = await playwright.chromium.launch({ headless: true, executablePath: chrome });
   const page = await browser.newPage({ viewport: manifest.viewport, deviceScaleFactor: 1 });
   await page.goto(url, { waitUntil: "networkidle" });
+  await page.evaluate(() => document.fonts?.ready);
+  await page.addStyleTag({ content: "*,*::before,*::after{animation:none!important;transition:none!important;caret-color:transparent!important}" });
   const browserCheck = await page.evaluate((selector) => {
     const frame = document.querySelector(selector)?.getBoundingClientRect();
     return {
@@ -246,27 +274,199 @@ async function capture(manifest) {
 
   await page.screenshot({ path: screenshot });
 
-  const regionScreenshots = [];
+  const baselinePath = path.join(root, manifest.visualBaseline);
+  const baselineUrl = pngDataUrl(baselinePath);
+  const browserUrl = pngDataUrl(screenshot);
+  const regions = [{
+    name: "full-page",
+    rect: { x: 0, y: 0, width: manifest.viewport.width, height: manifest.viewport.height },
+    colorDelta: manifest.visualDiff.colorDelta,
+    rawColorDelta: manifest.visualDiff.rawColorDelta,
+    blurRadius: manifest.visualDiff.blurRadius,
+    maxMismatchRatio: manifest.visualDiff.maxMismatchRatio,
+  }];
+
   for (const region of manifest.visualRegions || []) {
-    const box = await page.locator(region.selector).first().boundingBox();
+    let box = region.rect;
+    if (!box) box = await page.locator(region.selector).first().boundingBox();
     if (!box) {
       fail(`visual region could not find ${region.selector}`);
       continue;
     }
     const padding = region.padding || 0;
-    const x = Math.max(0, box.x - padding);
-    const y = Math.max(0, box.y - padding);
-    const clip = {
-      x,
-      y,
-      width: Math.min(manifest.viewport.width, box.x + box.width + padding) - x,
-      height: Math.min(manifest.viewport.height, box.y + box.height + padding) - y,
-    };
-    const safeName = region.name.replace(/[^a-z0-9_-]+/gi, "-").toLowerCase();
-    const regionPath = path.join(outputDir, `${path.basename(manifest.page, ".html")}--${safeName}.png`);
-    await page.screenshot({ path: regionPath, clip });
-    regionScreenshots.push(path.relative(root, regionPath));
+    const x = Math.max(0, Math.floor(box.x - padding));
+    const y = Math.max(0, Math.floor(box.y - padding));
+    regions.push({
+      name: region.name,
+      rect: {
+        x,
+        y,
+        width: Math.min(manifest.viewport.width, Math.ceil(box.x + box.width + padding)) - x,
+        height: Math.min(manifest.viewport.height, Math.ceil(box.y + box.height + padding)) - y,
+      },
+      colorDelta: region.colorDelta ?? manifest.visualDiff.colorDelta,
+      rawColorDelta: region.rawColorDelta ?? manifest.visualDiff.rawColorDelta,
+      blurRadius: region.blurRadius ?? manifest.visualDiff.blurRadius,
+      maxMismatchRatio: region.maxMismatchRatio ?? manifest.visualDiff.maxMismatchRatio,
+    });
   }
+
+  const comparison = await page.evaluate(async ({ baselineUrl, browserUrl, viewport, regions }) => {
+    const load = (src) => new Promise((resolve, reject) => {
+      const image = new Image();
+      image.onload = () => resolve(image);
+      image.onerror = reject;
+      image.src = src;
+    });
+    const [baselineImage, browserImage] = await Promise.all([load(baselineUrl), load(browserUrl)]);
+    const makeCanvas = (width, height) => {
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      return canvas;
+    };
+    const baselineCanvas = makeCanvas(viewport.width, viewport.height);
+    baselineCanvas.getContext("2d").drawImage(baselineImage, 0, 0, viewport.width, viewport.height);
+    const browserCanvas = makeCanvas(viewport.width, viewport.height);
+    browserCanvas.getContext("2d").drawImage(browserImage, 0, 0, viewport.width, viewport.height);
+
+    return regions.map((region) => {
+      const { x, y, width, height } = region.rect;
+      const reference = makeCanvas(width, height);
+      const actual = makeCanvas(width, height);
+      reference.getContext("2d").drawImage(baselineCanvas, x, y, width, height, 0, 0, width, height);
+      actual.getContext("2d").drawImage(browserCanvas, x, y, width, height, 0, 0, width, height);
+      const referenceData = reference.getContext("2d").getImageData(0, 0, width, height);
+      const actualData = actual.getContext("2d").getImageData(0, 0, width, height);
+      const compareReference = makeCanvas(width, height);
+      const compareActual = makeCanvas(width, height);
+      const referenceCompareContext = compareReference.getContext("2d");
+      const actualCompareContext = compareActual.getContext("2d");
+      referenceCompareContext.filter = `blur(${region.blurRadius || 0}px)`;
+      actualCompareContext.filter = `blur(${region.blurRadius || 0}px)`;
+      referenceCompareContext.drawImage(reference, 0, 0);
+      actualCompareContext.drawImage(actual, 0, 0);
+      const compareReferenceData = referenceCompareContext.getImageData(0, 0, width, height);
+      const compareActualData = actualCompareContext.getImageData(0, 0, width, height);
+      const diff = makeCanvas(width, height);
+      const diffContext = diff.getContext("2d");
+      const diffData = diffContext.createImageData(width, height);
+      let mismatchPixels = 0;
+      let rawMismatchPixels = 0;
+      let deltaTotal = 0;
+      let maxDelta = 0;
+      let minX = width;
+      let minY = height;
+      let maxX = -1;
+      let maxY = -1;
+
+      for (let index = 0; index < referenceData.data.length; index += 4) {
+        const rawDr = referenceData.data[index] - actualData.data[index];
+        const rawDg = referenceData.data[index + 1] - actualData.data[index + 1];
+        const rawDb = referenceData.data[index + 2] - actualData.data[index + 2];
+        const rawDa = referenceData.data[index + 3] - actualData.data[index + 3];
+        const rawDelta = Math.sqrt(rawDr * rawDr + rawDg * rawDg + rawDb * rawDb + rawDa * rawDa * 0.25);
+        if (rawDelta > region.rawColorDelta) rawMismatchPixels += 1;
+        const dr = compareReferenceData.data[index] - compareActualData.data[index];
+        const dg = compareReferenceData.data[index + 1] - compareActualData.data[index + 1];
+        const db = compareReferenceData.data[index + 2] - compareActualData.data[index + 2];
+        const da = compareReferenceData.data[index + 3] - compareActualData.data[index + 3];
+        const delta = Math.sqrt(dr * dr + dg * dg + db * db + da * da * 0.25);
+        deltaTotal += delta;
+        maxDelta = Math.max(maxDelta, delta);
+        const pixel = index / 4;
+        const px = pixel % width;
+        const py = Math.floor(pixel / width);
+        const different = delta > region.colorDelta;
+        if (different) {
+          mismatchPixels += 1;
+          minX = Math.min(minX, px);
+          minY = Math.min(minY, py);
+          maxX = Math.max(maxX, px);
+          maxY = Math.max(maxY, py);
+          diffData.data[index] = 255;
+          diffData.data[index + 1] = 45;
+          diffData.data[index + 2] = 85;
+          diffData.data[index + 3] = 255;
+        } else {
+          const luminance = Math.round(referenceData.data[index] * 0.299 + referenceData.data[index + 1] * 0.587 + referenceData.data[index + 2] * 0.114);
+          diffData.data[index] = luminance;
+          diffData.data[index + 1] = luminance;
+          diffData.data[index + 2] = luminance;
+          diffData.data[index + 3] = 45;
+        }
+      }
+      diffContext.putImageData(diffData, 0, 0);
+      const totalPixels = width * height;
+      return {
+        name: region.name,
+        rect: region.rect,
+        colorDelta: region.colorDelta,
+        rawColorDelta: region.rawColorDelta,
+        blurRadius: region.blurRadius,
+        maxMismatchRatio: region.maxMismatchRatio,
+        mismatchPixels,
+        mismatchRatio: mismatchPixels / totalPixels,
+        rawMismatchPixels,
+        rawMismatchRatio: rawMismatchPixels / totalPixels,
+        meanDelta: deltaTotal / totalPixels,
+        maxDelta,
+        differenceBounds: mismatchPixels ? { x: minX, y: minY, width: maxX - minX + 1, height: maxY - minY + 1 } : null,
+        figma: reference.toDataURL("image/png"),
+        browser: actual.toDataURL("image/png"),
+        diff: diff.toDataURL("image/png"),
+      };
+    });
+  }, { baselineUrl, browserUrl, viewport: manifest.viewport, regions });
+
+  const pageName = path.basename(manifest.page, ".html");
+  const visualDir = path.join(outputDir, `${pageName}-visual-diff`);
+  fs.mkdirSync(visualDir, { recursive: true });
+  const visualReport = [];
+  for (const result of comparison) {
+    const safeName = result.name.replace(/[^a-z0-9_-]+/gi, "-").toLowerCase();
+    const figmaPath = path.join(visualDir, `${safeName}--figma.png`);
+    const browserPath = path.join(visualDir, `${safeName}--browser.png`);
+    const diffPath = path.join(visualDir, `${safeName}--diff.png`);
+    writeDataUrl(figmaPath, result.figma);
+    writeDataUrl(browserPath, result.browser);
+    writeDataUrl(diffPath, result.diff);
+    const reportEntry = { ...result };
+    delete reportEntry.figma;
+    delete reportEntry.browser;
+    delete reportEntry.diff;
+    reportEntry.images = {
+      figma: path.relative(root, figmaPath),
+      browser: path.relative(root, browserPath),
+      diff: path.relative(root, diffPath),
+    };
+    reportEntry.status = result.mismatchRatio > result.maxMismatchRatio ? "fail" : "pass";
+    visualReport.push(reportEntry);
+    if (result.mismatchRatio > result.maxMismatchRatio) {
+      fail(`visual diff ${result.name} mismatch ${(result.mismatchRatio * 100).toFixed(2)}% exceeds ${(result.maxMismatchRatio * 100).toFixed(2)}%`);
+    }
+  }
+  const reportPath = path.join(visualDir, "report.json");
+  fs.writeFileSync(reportPath, `${JSON.stringify({
+    page: manifest.page,
+    baseline: manifest.visualBaseline,
+    baselineSha256: manifest.visualBaselineSha256,
+    regions: visualReport,
+  }, null, 2)}\n`);
+  const reviewPath = path.join(visualDir, "index.html");
+  const cards = visualReport.map((region) => `
+    <section class="region ${region.status}">
+      <h2>${region.name} <span>${region.status.toUpperCase()}</span></h2>
+      <p>raw ${(region.rawMismatchRatio * 100).toFixed(2)}% · gate ${(region.mismatchRatio * 100).toFixed(2)}% / ${(region.maxMismatchRatio * 100).toFixed(2)}%</p>
+      <div class="images">
+        <figure><figcaption>Figma</figcaption><img src="${path.basename(region.images.figma)}" alt="Figma baseline"></figure>
+        <figure><figcaption>Browser</figcaption><img src="${path.basename(region.images.browser)}" alt="Browser render"></figure>
+        <figure><figcaption>Diff</figcaption><img src="${path.basename(region.images.diff)}" alt="Visual difference"></figure>
+      </div>
+    </section>`).join("");
+  fs.writeFileSync(reviewPath, `<!doctype html><html><head><meta charset="utf-8"><title>${manifest.name} visual diff</title><style>
+    body{margin:0;padding:24px;background:#f5f5f5;color:#171717;font:14px/1.5 Arial,sans-serif}h1{margin:0 0 20px}.region{margin:0 0 24px;padding:16px;background:#fff;border-left:5px solid #1f9d55}.region.fail{border-color:#e11d48}.region h2{margin:0}.region h2 span{font-size:12px;color:#1f9d55}.region.fail h2 span{color:#e11d48}.region p{margin:4px 0 12px;color:#666}.images{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}figure{margin:0}figcaption{margin-bottom:6px;font-weight:700}img{display:block;max-width:100%;border:1px solid #ddd;background:#fff;image-rendering:auto}@media(max-width:800px){.images{grid-template-columns:1fr}}
+  </style></head><body><h1>${manifest.name} visual diff</h1>${cards}</body></html>`);
   await browser.close();
   server?.kill();
 
@@ -285,7 +485,12 @@ async function capture(manifest) {
   if (size[0] !== manifest.viewport.width || size[1] !== manifest.viewport.height) {
     fail(`screenshot size mismatch: expected ${manifest.viewport.width}x${manifest.viewport.height}, got ${size.join("x")}`);
   }
-  return { screenshot: path.relative(root, screenshot), regions: regionScreenshots };
+  return {
+    screenshot: path.relative(root, screenshot),
+    visualReport: path.relative(root, reportPath),
+    visualReview: path.relative(root, reviewPath),
+    regions: visualReport,
+  };
 }
 
 async function main() {
@@ -297,6 +502,7 @@ async function main() {
   const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
   checkDocumentation();
   checkManifest(manifest);
+  checkVisualBaseline(manifest);
   const html = checkPage(manifest);
   if (html) checkAssets(manifest, html);
   checkCss(manifest);
@@ -310,7 +516,11 @@ async function main() {
   }
   console.log(`Restore pipeline passed: ${manifest.name}`);
   console.log(`Screenshot: ${captureResult.screenshot}`);
-  for (const region of captureResult.regions) console.log(`Visual region: ${region}`);
+  console.log(`Visual report: ${captureResult.visualReport}`);
+  console.log(`Visual review: ${captureResult.visualReview}`);
+  for (const region of captureResult.regions) {
+    console.log(`Visual region ${region.name}: ${(region.mismatchRatio * 100).toFixed(2)}% mismatch`);
+  }
 }
 
 main().catch((error) => {

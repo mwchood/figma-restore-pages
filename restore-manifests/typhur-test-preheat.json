@@ -8,6 +8,9 @@
   "viewport": { "width": 375, "height": 812 },
   "frameSelector": ".typhur-test-preheat-frame",
   "stylesheet": "styles.css",
+  "visualBaseline": "visual-baselines/typhur-test-preheat.png",
+  "visualBaselineSha256": "a262d488d52e3f7c50b81b394bf1b2db0d988cad164594bd6a8cc2adf7f02326",
+  "visualDiff": { "rawColorDelta": 16, "colorDelta": 48, "blurRadius": 0, "maxMismatchRatio": 0.03 },
   "texts": [
     "Typhur Sous Vide Station",
     "Preheating",
@@ -48,8 +51,8 @@
     { "type": "textFit", "selector": ".ty-preheat-title h2" }
   ],
   "visualRegions": [
-    { "name": "preheat-ring", "selector": ".ty-preheat-temp", "padding": 8 },
-    { "name": "bottom-action", "selector": ".ty-schedule-stop", "padding": 8 }
+    { "name": "preheat-ring", "selector": ".ty-preheat-temp", "padding": 8, "maxMismatchRatio": 0.03 },
+    { "name": "bottom-action", "selector": ".ty-schedule-stop", "padding": 8, "maxMismatchRatio": 0.02 }
   ],
   "audits": [
     "scripts/audit-typhur-pages.cjs",

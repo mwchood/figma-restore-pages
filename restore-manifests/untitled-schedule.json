@@ -8,6 +8,9 @@
   "viewport": { "width": 375, "height": 812 },
   "frameSelector": ".untitled-schedule-frame",
   "stylesheet": "styles.css",
+  "visualBaseline": "visual-baselines/untitled-schedule.png",
+  "visualBaselineSha256": "c4fa3b017c90918a25bcbf192adc8da4a6cd80d0ae3fab4f0fc768730be68dc2",
+  "visualDiff": { "rawColorDelta": 16, "colorDelta": 48, "blurRadius": 0, "maxMismatchRatio": 0.05 },
   "texts": ["Typhur Sous Vide Station", "Set Finish Time:", "Tomorrow", "12", "lbs", "Please add the recommended amount of ice", "View Full Guidelines", "Set"],
   "assets": [
     { "path": "assets/untitled-schedule-status-right.svg", "naturalSize": [133.32, 22.0765] },
@@ -34,8 +37,8 @@
     { "type": "textFit", "selector": ".untitled-schedule-nav h1" }
   ],
   "visualRegions": [
-    { "name": "time-picker", "selector": ".untitled-schedule-picker", "padding": 8 },
-    { "name": "ice-guidance", "selector": ".untitled-schedule-copy", "padding": 12 }
+    { "name": "time-picker", "selector": ".untitled-schedule-picker", "padding": 8, "maxMismatchRatio": 0.04 },
+    { "name": "ice-guidance", "selector": ".untitled-schedule-copy", "padding": 12, "colorDelta": 96, "maxMismatchRatio": 0.1 }
   ],
   "audits": ["scripts/audit-restore-hub.cjs"]
 }

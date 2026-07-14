@@ -8,6 +8,9 @@
   "viewport": { "width": 375, "height": 812 },
   "frameSelector": ".untitled-date-frame",
   "stylesheet": "styles.css",
+  "visualBaseline": "visual-baselines/untitled-date-picker.png",
+  "visualBaselineSha256": "24fc6e01d55cbdc3463709441f818a617c4c1952498b43381b679915cf8b8496",
+  "visualDiff": { "rawColorDelta": 16, "colorDelta": 48, "blurRadius": 0, "maxMismatchRatio": 0.03 },
   "texts": ["时间选择", "2025年11月", "重置", "确认"],
   "assets": [
     { "path": "assets/untitled-date-background.png" },
@@ -33,8 +36,8 @@
     { "type": "textFit", "selector": ".untitled-date-month h2" }
   ],
   "visualRegions": [
-    { "name": "calendar", "selector": ".untitled-date-grid", "padding": 8 },
-    { "name": "bottom-actions", "selector": ".untitled-date-reset", "padding": 8 }
+    { "name": "calendar", "selector": ".untitled-date-grid", "padding": 8, "maxMismatchRatio": 0.04 },
+    { "name": "bottom-actions", "selector": ".untitled-date-reset", "padding": 8, "maxMismatchRatio": 0.04 }
   ],
   "audits": ["scripts/audit-restore-hub.cjs"]
 }

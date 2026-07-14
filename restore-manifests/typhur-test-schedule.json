@@ -8,6 +8,9 @@
   "viewport": { "width": 375, "height": 812 },
   "frameSelector": ".typhur-test-schedule-frame",
   "stylesheet": "styles.css",
+  "visualBaseline": "visual-baselines/typhur-test-schedule.png",
+  "visualBaselineSha256": "24b81fd1465aefd6e0cc03179fd8f77daaaea4fdbe1a81106ddac5e25f69e0f1",
+  "visualDiff": { "rawColorDelta": 16, "colorDelta": 48, "blurRadius": 0, "maxMismatchRatio": 0.04 },
   "texts": [
     "Typhur Sous Vide..",
     "Cooking",
@@ -48,8 +51,8 @@
     { "type": "textFit", "selector": ".ty-schedule-nav h1" }
   ],
   "visualRegions": [
-    { "name": "temperature-ring", "selector": ".ty-schedule-temp", "padding": 8 },
-    { "name": "bottom-action", "selector": ".ty-schedule-stop", "padding": 8 }
+    { "name": "temperature-ring", "selector": ".ty-schedule-temp", "padding": 8, "maxMismatchRatio": 0.06 },
+    { "name": "bottom-action", "selector": ".ty-schedule-stop", "padding": 8, "maxMismatchRatio": 0.02 }
   ],
   "audits": [
     "scripts/audit-typhur-pages.cjs",

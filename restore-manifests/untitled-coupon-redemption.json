@@ -8,6 +8,9 @@
   "viewport": { "width": 375, "height": 812 },
   "frameSelector": ".untitled-coupon-frame",
   "stylesheet": "styles.css",
+  "visualBaseline": "visual-baselines/untitled-coupon-redemption.png",
+  "visualBaselineSha256": "3e2bc6b33367951d3c9b5b800be96826f1da9095ddcda6c576e76c2021dfb379",
+  "visualDiff": { "rawColorDelta": 16, "colorDelta": 48, "blurRadius": 0, "maxMismatchRatio": 0.03 },
   "texts": ["优惠券核销", "扫一扫或输入", "请扫描二维码或输入核销码进行核销", "SS6217002220003381", "立即核销", "核销记录"],
   "assets": [
     { "path": "assets/untitled-coupon-miniprogram.svg", "naturalSize": [87, 32] },
@@ -33,8 +36,8 @@
     { "type": "textFit", "selector": ".untitled-coupon-code span" }
   ],
   "visualRegions": [
-    { "name": "redemption-card", "selector": ".untitled-coupon-card", "padding": 0 },
-    { "name": "navigation", "selector": ".untitled-coupon-header", "padding": 0 }
+    { "name": "redemption-card", "selector": ".untitled-coupon-card", "padding": 0, "maxMismatchRatio": 0.04 },
+    { "name": "navigation", "selector": ".untitled-coupon-header", "padding": 0, "maxMismatchRatio": 0.06 }
   ],
   "audits": ["scripts/audit-restore-hub.cjs"]
 }
