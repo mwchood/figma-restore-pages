@@ -26,5 +26,16 @@
     { "selector": ".untitled-schedule-sous-vide", "declarations": ["left: 127.5px;", "top: 534.5px;", "width: 120px;"] },
     { "selector": ".untitled-schedule-set", "declarations": ["left: 20px;", "top: 742px;", "width: 335px;"] }
   ],
+  "browserChecks": [
+    { "type": "align", "selector": ".untitled-schedule-hours strong:nth-child(4)", "relativeTo": ".untitled-schedule-selection", "axis": "centerY", "tolerance": 1 },
+    { "type": "align", "selector": ".untitled-schedule-minutes strong:nth-child(4)", "relativeTo": ".untitled-schedule-selection", "axis": "centerY", "tolerance": 1 },
+    { "type": "align", "selector": ".untitled-schedule-picker > b", "relativeTo": ".untitled-schedule-selection", "axis": "centerY", "tolerance": 1 },
+    { "type": "textFit", "selector": ".untitled-schedule-copy" },
+    { "type": "textFit", "selector": ".untitled-schedule-nav h1" }
+  ],
+  "visualRegions": [
+    { "name": "time-picker", "selector": ".untitled-schedule-picker", "padding": 8 },
+    { "name": "ice-guidance", "selector": ".untitled-schedule-copy", "padding": 12 }
+  ],
   "audits": ["scripts/audit-restore-hub.cjs"]
 }

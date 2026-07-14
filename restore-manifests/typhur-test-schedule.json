@@ -42,6 +42,15 @@
     { "selector": ".ty-schedule-list", "declarations": ["top: 517px;"] },
     { "selector": ".ty-schedule-stop", "declarations": ["top: 742px;", "width: 335px;"] }
   ],
+  "browserChecks": [
+    { "type": "bounds", "selector": ".ty-schedule-temp", "expected": { "x": 67.5, "y": 190, "width": 240, "height": 240 }, "tolerance": 0.5 },
+    { "type": "textFit", "selector": ".ty-schedule-current" },
+    { "type": "textFit", "selector": ".ty-schedule-nav h1" }
+  ],
+  "visualRegions": [
+    { "name": "temperature-ring", "selector": ".ty-schedule-temp", "padding": 8 },
+    { "name": "bottom-action", "selector": ".ty-schedule-stop", "padding": 8 }
+  ],
   "audits": [
     "scripts/audit-typhur-pages.cjs",
     "scripts/audit-restore-hub.cjs"

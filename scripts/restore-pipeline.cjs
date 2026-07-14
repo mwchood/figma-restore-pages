@@ -31,10 +31,16 @@ function closeEnough(actual, expected) {
   return Math.abs(actual - expected) < 0.02;
 }
 
+function withinTolerance(actual, expected, tolerance = 0.5) {
+  return Math.abs(actual - expected) <= tolerance;
+}
+
 function checkManifest(manifest) {
-  for (const field of ["name", "page", "fileKey", "nodeId", "sourceFrame", "renderScale", "viewport", "frameSelector", "assets"]) {
+  for (const field of ["name", "page", "fileKey", "nodeId", "sourceFrame", "renderScale", "viewport", "frameSelector", "assets", "browserChecks", "visualRegions"]) {
     if (manifest[field] == null) fail(`manifest missing ${field}`);
   }
+  if (!Array.isArray(manifest.browserChecks)) fail("manifest browserChecks must be an array");
+  if (!Array.isArray(manifest.visualRegions)) fail("manifest visualRegions must be an array");
 }
 
 function checkDocumentation() {
@@ -186,7 +192,81 @@ async function capture(manifest) {
       overflowY: document.documentElement.scrollHeight > document.documentElement.clientHeight,
     };
   }, manifest.frameSelector);
+
+  for (const check of manifest.browserChecks || []) {
+    const target = page.locator(check.selector).first();
+    const targetBox = await target.boundingBox();
+    if (!targetBox) {
+      fail(`browser check could not find ${check.selector}`);
+      continue;
+    }
+
+    if (check.type === "bounds") {
+      for (const key of ["x", "y", "width", "height"]) {
+        if (check.expected[key] == null) continue;
+        if (!withinTolerance(targetBox[key], check.expected[key], check.tolerance)) {
+          fail(`${check.selector} ${key} mismatch: expected ${check.expected[key]}, got ${targetBox[key]}`);
+        }
+      }
+    } else if (check.type === "align") {
+      const referenceBox = await page.locator(check.relativeTo).first().boundingBox();
+      if (!referenceBox) {
+        fail(`browser check could not find ${check.relativeTo}`);
+        continue;
+      }
+      const values = {
+        left: (box) => box.x,
+        right: (box) => box.x + box.width,
+        top: (box) => box.y,
+        bottom: (box) => box.y + box.height,
+        centerX: (box) => box.x + box.width / 2,
+        centerY: (box) => box.y + box.height / 2,
+      };
+      const value = values[check.axis];
+      if (!value) {
+        fail(`unsupported align axis ${check.axis}`);
+        continue;
+      }
+      const delta = Math.abs(value(targetBox) - value(referenceBox));
+      if (delta > (check.tolerance ?? 0.5)) {
+        fail(`${check.selector} ${check.axis} differs from ${check.relativeTo} by ${delta}px`);
+      }
+    } else if (check.type === "textFit") {
+      const fit = await target.evaluate((element) => ({
+        horizontal: element.scrollWidth <= element.clientWidth + 1,
+        vertical: element.scrollHeight <= element.clientHeight + 1,
+      }));
+      if (!fit.horizontal || !fit.vertical) {
+        fail(`${check.selector} text overflow: horizontal=${!fit.horizontal}, vertical=${!fit.vertical}`);
+      }
+    } else {
+      fail(`unsupported browser check type ${check.type}`);
+    }
+  }
+
   await page.screenshot({ path: screenshot });
+
+  const regionScreenshots = [];
+  for (const region of manifest.visualRegions || []) {
+    const box = await page.locator(region.selector).first().boundingBox();
+    if (!box) {
+      fail(`visual region could not find ${region.selector}`);
+      continue;
+    }
+    const padding = region.padding || 0;
+    const x = Math.max(0, box.x - padding);
+    const y = Math.max(0, box.y - padding);
+    const clip = {
+      x,
+      y,
+      width: Math.min(manifest.viewport.width, box.x + box.width + padding) - x,
+      height: Math.min(manifest.viewport.height, box.y + box.height + padding) - y,
+    };
+    const safeName = region.name.replace(/[^a-z0-9_-]+/gi, "-").toLowerCase();
+    const regionPath = path.join(outputDir, `${path.basename(manifest.page, ".html")}--${safeName}.png`);
+    await page.screenshot({ path: regionPath, clip });
+    regionScreenshots.push(path.relative(root, regionPath));
+  }
   await browser.close();
   server?.kill();
 
@@ -205,7 +285,7 @@ async function capture(manifest) {
   if (size[0] !== manifest.viewport.width || size[1] !== manifest.viewport.height) {
     fail(`screenshot size mismatch: expected ${manifest.viewport.width}x${manifest.viewport.height}, got ${size.join("x")}`);
   }
-  return path.relative(root, screenshot);
+  return { screenshot: path.relative(root, screenshot), regions: regionScreenshots };
 }
 
 async function main() {
@@ -221,7 +301,7 @@ async function main() {
   if (html) checkAssets(manifest, html);
   checkCss(manifest);
   runAudits(manifest);
-  const screenshot = await capture(manifest);
+  const captureResult = await capture(manifest);
 
   if (failures.length) {
     console.error(`Restore pipeline failed for ${manifest.name}:`);
@@ -229,7 +309,8 @@ async function main() {
     process.exit(1);
   }
   console.log(`Restore pipeline passed: ${manifest.name}`);
-  console.log(`Screenshot: ${screenshot}`);
+  console.log(`Screenshot: ${captureResult.screenshot}`);
+  for (const region of captureResult.regions) console.log(`Visual region: ${region}`);
 }
 
 main().catch((error) => {

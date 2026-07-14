@@ -26,5 +26,15 @@
     { "selector": ".untitled-coupon-qr", "declarations": ["left: 94px;", "top: 30px;", "width: 147px;", "height: 151px;"] },
     { "selector": ".untitled-coupon-record", "declarations": ["left: 20px;", "top: 515px;", "height: 56px;"] }
   ],
+  "browserChecks": [
+    { "type": "bounds", "selector": ".untitled-coupon-card", "expected": { "x": 20, "y": 108, "width": 335, "height": 397 }, "tolerance": 0.5 },
+    { "type": "bounds", "selector": ".untitled-coupon-qr", "expected": { "x": 114, "y": 138, "width": 147, "height": 151 }, "tolerance": 0.5 },
+    { "type": "textFit", "selector": ".untitled-coupon-card > p" },
+    { "type": "textFit", "selector": ".untitled-coupon-code span" }
+  ],
+  "visualRegions": [
+    { "name": "redemption-card", "selector": ".untitled-coupon-card", "padding": 0 },
+    { "name": "navigation", "selector": ".untitled-coupon-header", "padding": 0 }
+  ],
   "audits": ["scripts/audit-restore-hub.cjs"]
 }

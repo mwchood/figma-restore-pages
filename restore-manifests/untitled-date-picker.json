@@ -26,5 +26,15 @@
     { "selector": ".untitled-date-reset", "declarations": ["left: 20px;", "top: 720px;", "width: 160px;"] },
     { "selector": ".untitled-date-confirm", "declarations": ["left: 194px;", "top: 720px;", "width: 160px;"] }
   ],
+  "browserChecks": [
+    { "type": "bounds", "selector": ".untitled-date-sheet", "expected": { "x": 0, "y": 312, "width": 375, "height": 500 }, "tolerance": 0.5 },
+    { "type": "bounds", "selector": ".untitled-date-grid", "expected": { "x": 25, "y": 464, "width": 324, "height": 236 }, "tolerance": 0.5 },
+    { "type": "textFit", "selector": ".untitled-date-header h1" },
+    { "type": "textFit", "selector": ".untitled-date-month h2" }
+  ],
+  "visualRegions": [
+    { "name": "calendar", "selector": ".untitled-date-grid", "padding": 8 },
+    { "name": "bottom-actions", "selector": ".untitled-date-reset", "padding": 8 }
+  ],
   "audits": ["scripts/audit-restore-hub.cjs"]
 }
