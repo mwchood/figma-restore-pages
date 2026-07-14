@@ -1,0 +1,52 @@
+{
+  "name": "Typhur Test Custom Time",
+  "page": "typhur-test-custom-time.html",
+  "fileKey": "H9GTGgnI0rzfnrKSt1Hlui",
+  "nodeId": "27:2178",
+  "sourceFrame": { "width": 750, "height": 1720 },
+  "renderScale": 0.5,
+  "viewport": { "width": 375, "height": 860 },
+  "frameSelector": ".typhur-test-custom-time-frame",
+  "stylesheet": "styles.css",
+  "visualBaseline": "visual-baselines/typhur-test-custom-time.png",
+  "visualBaselineSha256": "876b2ce8e215f2e695469af6f23719b980f9e88447381e3ef305f0fd4451afbe",
+  "visualDiff": { "rawColorDelta": 16, "colorDelta": 48, "blurRadius": 0, "maxMismatchRatio": 0.03 },
+  "texts": ["Custom", "Name", "Name Your Cooking", "Main Ingredient", "Beef", "Pork", "Seafood", "Poultry", "Eggs", "Desserts", "Veggies", "Other", "Set Cooking Time", "03", "hr", "30", "min", "Cancel", "Set"],
+  "assets": [
+    { "path": "assets/typhur-custom-time-status-right-27-2182.svg", "naturalSize": [134, 23] },
+    { "path": "assets/typhur-custom-time-status-time-27-2199.svg", "naturalSize": [108, 41] },
+    { "path": "assets/typhur-custom-time-back-27-2201.svg", "naturalSize": [48, 48] },
+    { "path": "assets/typhur-custom-time-steak-27-2205.svg", "naturalSize": [80, 80] },
+    { "path": "assets/typhur-custom-time-pork-27-2206.svg", "naturalSize": [80, 80] },
+    { "path": "assets/typhur-custom-time-seafood-27-2207.svg", "naturalSize": [80, 80] },
+    { "path": "assets/typhur-custom-time-poultry-27-2208.svg", "naturalSize": [80, 80] },
+    { "path": "assets/typhur-custom-time-egg-27-2209.svg", "naturalSize": [80, 80] },
+    { "path": "assets/typhur-custom-time-dessert-27-2210.svg", "naturalSize": [80, 80] },
+    { "path": "assets/typhur-custom-time-vegetable-27-2211.svg", "naturalSize": [80, 80] },
+    { "path": "assets/typhur-custom-time-dish-27-2212.svg", "naturalSize": [80, 80] },
+    { "path": "assets/typhur-custom-time-forward-27-2215.svg", "naturalSize": [36, 36] }
+  ],
+  "cssChecks": [
+    { "selector": ".typhur-test-custom-time-frame", "declarations": ["width: 375px;", "height: 860px;"] },
+    { "selector": ".ty-custom-time-sheet", "declarations": ["top: 537px;", "width: 375px;", "height: 323px;"] },
+    { "selector": ".ty-custom-time-selection", "declarations": ["left: 25px;", "top: 139px;", "width: 325px;", "height: 32px;"] },
+    { "selector": ".ty-custom-time-cancel", "declarations": ["left: 20px;", "top: 253px;", "width: 161.5px;"] },
+    { "selector": ".ty-custom-time-set", "declarations": ["left: 193.5px;", "top: 253px;", "width: 161.5px;"] }
+  ],
+  "browserChecks": [
+    { "type": "bounds", "selector": ".ty-custom-time-sheet", "expected": { "x": 0, "y": 537, "width": 375, "height": 323 }, "tolerance": 0.5 },
+    { "type": "bounds", "selector": ".ty-custom-time-selection", "expected": { "x": 25, "y": 676, "width": 325, "height": 32 }, "tolerance": 0.5 },
+    { "type": "align", "selector": ".ty-custom-time-hours strong", "relativeTo": ".ty-custom-time-selection", "axis": "centerY", "tolerance": 1 },
+    { "type": "align", "selector": ".ty-custom-time-minutes strong", "relativeTo": ".ty-custom-time-selection", "axis": "centerY", "tolerance": 1 },
+    { "type": "align", "selector": ".ty-custom-time-hr", "relativeTo": ".ty-custom-time-selection", "axis": "centerY", "tolerance": 1 },
+    { "type": "align", "selector": ".ty-custom-time-min", "relativeTo": ".ty-custom-time-selection", "axis": "centerY", "tolerance": 1 },
+    { "type": "textFit", "selector": ".ty-custom-time-sheet > h2" },
+    { "type": "textFit", "selector": ".ty-test-input p" }
+  ],
+  "visualRegions": [
+    { "name": "ingredients", "rect": { "x": 12, "y": 222, "width": 351, "height": 315 }, "maxMismatchRatio": 0.04 },
+    { "name": "time-picker", "rect": { "x": 0, "y": 537, "width": 375, "height": 223 }, "maxMismatchRatio": 0.04 },
+    { "name": "bottom-actions", "rect": { "x": 12, "y": 782, "width": 351, "height": 66 }, "maxMismatchRatio": 0.03 }
+  ],
+  "audits": ["scripts/audit-restore-hub.cjs"]
+}

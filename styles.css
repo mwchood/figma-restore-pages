@@ -9972,6 +9972,188 @@ html:has(#restore-bare:target) .figma-frame {
   letter-spacing: 0;
   text-align: center;
 }
+.typhur-test-custom-time-frame {
+  width: 375px;
+  height: 860px;
+  overflow: hidden;
+  color: #212121;
+  background: #fff;
+  font-family: "Helvetica Now Display", "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  font-synthesis: none;
+}
+
+.typhur-test-custom-time-frame .ty-test-card img {
+  top: 17.5px;
+}
+
+.typhur-test-custom-time-frame .ty-test-save {
+  top: 780px;
+  bottom: auto;
+  color: #ccc;
+  background: #f7f7f7;
+}
+
+.ty-custom-time-dim {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.ty-custom-time-sheet {
+  position: absolute;
+  z-index: 11;
+  left: 0;
+  top: 537px;
+  width: 375px;
+  height: 323px;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  background: #fff;
+}
+
+.ty-custom-time-indicator {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 375px;
+  height: 4px;
+}
+
+.ty-custom-time-indicator i {
+  position: absolute;
+  left: 169.5px;
+  top: 0;
+  width: 36px;
+  height: 4px;
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+
+.ty-custom-time-sheet > h2 {
+  position: absolute;
+  left: 0;
+  top: 36px;
+  width: 375px;
+  margin: 0;
+  color: #212121;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  text-align: center;
+}
+
+.ty-custom-time-picker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 375px;
+  height: 223px;
+}
+
+.ty-custom-time-selection {
+  position: absolute;
+  left: 25px;
+  top: 139px;
+  width: 325px;
+  height: 32px;
+  border-radius: 4px;
+  background: #f0f0f0;
+}
+
+.ty-custom-time-hours,
+.ty-custom-time-minutes {
+  position: absolute;
+  top: 87px;
+  width: 25px;
+  height: 136px;
+  color: #999;
+  font-family: "OPlusSans 3.1 En", "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: center;
+}
+
+.ty-custom-time-hours { left: 134.5px; }
+.ty-custom-time-minutes { left: 216.5px; }
+
+.ty-custom-time-hours span,
+.ty-custom-time-hours strong,
+.ty-custom-time-minutes span,
+.ty-custom-time-minutes strong {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  height: 22px;
+  font-weight: 400;
+}
+
+.ty-custom-time-hours span:nth-child(1),
+.ty-custom-time-minutes span:nth-child(1) { top: 0; }
+.ty-custom-time-hours span:nth-child(2),
+.ty-custom-time-minutes span:nth-child(2) { top: 24px; }
+.ty-custom-time-hours strong:nth-child(3),
+.ty-custom-time-minutes strong:nth-child(3) {
+  top: 54px;
+  height: 28px;
+  color: #212121;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+.ty-custom-time-hours span:nth-child(4),
+.ty-custom-time-minutes span:nth-child(4) { top: 90px; }
+.ty-custom-time-hours span:nth-child(5),
+.ty-custom-time-minutes span:nth-child(5) { top: 114px; }
+
+.ty-custom-time-picker .near { opacity: 0.5; }
+.ty-custom-time-picker .faint { opacity: 0.3; }
+
+.ty-custom-time-hr,
+.ty-custom-time-min {
+  position: absolute;
+  top: 144px;
+  color: #212121;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+.ty-custom-time-hr { left: 163.5px; }
+.ty-custom-time-min { left: 245.5px; }
+
+.ty-custom-time-cancel,
+.ty-custom-time-set {
+  position: absolute;
+  top: 253px;
+  width: 161.5px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.ty-custom-time-cancel {
+  left: 20px;
+  top: 253px;
+  width: 161.5px;
+  color: #212121;
+  background: #f0f0f0;
+}
+
+.ty-custom-time-set {
+  left: 193.5px;
+  top: 253px;
+  width: 161.5px;
+  color: #fff;
+  background: #db4f4f;
+}
+
 .typhur-test-preheat-frame {
   width: 375px;
   height: 812px;

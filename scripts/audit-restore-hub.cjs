@@ -38,6 +38,7 @@ const pages = [
   ["typhur-recipe-detail.html", "Typhur 食谱详情"],
   ["typhur-custom-time.html", "Typhur 自定义烹饪时间"],
   ["typhur-test-custom.html", "Typhur Test Custom"],
+  ["typhur-test-custom-time.html", "Typhur Test Custom Time"],
   ["typhur-test-professional.html", "Typhur Test Professional"],
   ["typhur-test-schedule.html", "Typhur Test Schedule"],
   ["typhur-test-preheat.html", "Typhur Test Preheat"],
