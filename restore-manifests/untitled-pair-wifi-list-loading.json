@@ -1,0 +1,180 @@
+{
+  "name": "Untitled Pair - Wi-Fi List Loading",
+  "page": "untitled-pair-wifi-list-loading.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:11727",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".wifi-list-loading-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-wifi-list-loading.png",
+  "visualBaselineSha256": "4d6789356db6a2d8ccd6dc6d80463a9f72f062caa4836cb6bb647953c3997bba",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Select Wi-Fi Network",
+    "Supports 2.4GHz Wi-Fi",
+    "Typhur Device",
+    "Unable to find Wi-Fi",
+    "Refresh"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-back.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-spinner.svg",
+      "naturalSize": [
+        40,
+        40
+      ]
+    },
+    {
+      "path": "assets/pair-wifi.svg",
+      "naturalSize": [
+        80,
+        80
+      ]
+    },
+    {
+      "path": "assets/pair-wifi-mid.svg",
+      "naturalSize": [
+        80,
+        80
+      ]
+    },
+    {
+      "path": "assets/pair-wifi-low.svg",
+      "naturalSize": [
+        80,
+        80
+      ]
+    },
+    {
+      "path": "assets/pair-lock-filled.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-help.svg",
+      "naturalSize": [
+        36,
+        36
+      ]
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".wifi-list-loading-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".wifi-list",
+      "expected": {
+        "x": 0,
+        "y": 187,
+        "width": 375,
+        "height": 288
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".wifi-refresh",
+      "expected": {
+        "x": 20,
+        "y": 742,
+        "width": 335,
+        "height": 50
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".pair-title"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "wifi-header",
+      "rect": {
+        "x": 0,
+        "y": 44,
+        "width": 375,
+        "height": 130
+      },
+      "maxMismatchRatio": 0.07
+    },
+    {
+      "name": "wifi-list",
+      "rect": {
+        "x": 0,
+        "y": 180,
+        "width": 375,
+        "height": 310
+      },
+      "maxMismatchRatio": 0.04
+    },
+    {
+      "name": "wifi-bottom",
+      "rect": {
+        "x": 12,
+        "y": 694,
+        "width": 351,
+        "height": 108
+      },
+      "maxMismatchRatio": 0.04
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

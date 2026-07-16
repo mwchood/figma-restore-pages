@@ -1,0 +1,120 @@
+{
+  "name": "Untitled Pair - Pairing Progress",
+  "page": "untitled-pair-pairing-progress.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:11625",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".pairing-progress-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-pairing-progress.png",
+  "visualBaselineSha256": "50d1934213f3e7908ec3cff3b0d76d1bc067a8ad419d2396c972350655b417fe",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Pairing Device...",
+    "Keep your phone close to the device until it is paired",
+    "Typhur Sync Dual - MU4A",
+    "73%"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-back.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-device.png"
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".pairing-progress-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".pair-device-large",
+      "expected": {
+        "x": 97.5,
+        "y": 212,
+        "width": 180,
+        "height": 180
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".pair-progress-track",
+      "expected": {
+        "x": 40,
+        "y": 508,
+        "width": 295,
+        "height": 4
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".pair-state-copy"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "pairing-content",
+      "rect": {
+        "x": 20,
+        "y": 104,
+        "width": 335,
+        "height": 420
+      },
+      "maxMismatchRatio": 0.06
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

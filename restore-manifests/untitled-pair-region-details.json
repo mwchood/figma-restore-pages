@@ -1,0 +1,119 @@
+{
+  "name": "Untitled Pair - Region Details",
+  "page": "untitled-pair-region-details.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:12035",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".region-details-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-region-details.png",
+  "visualBaselineSha256": "0e914b1317af87e2186d252a7114b22d6316c853ca788052bd746ddce8ef15c8",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "The region of the device and your account dosen’t match",
+    "Go switch"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-back.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".region-details-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".region-title",
+      "expected": {
+        "x": 20,
+        "y": 112,
+        "width": 335,
+        "height": 56
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".region-copy",
+      "expected": {
+        "x": 20,
+        "y": 184,
+        "width": 333,
+        "height": 105
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".region-title"
+    },
+    {
+      "type": "textFit",
+      "selector": ".region-copy"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "region-content",
+      "rect": {
+        "x": 12,
+        "y": 104,
+        "width": 351,
+        "height": 205
+      },
+      "maxMismatchRatio": 0.22
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

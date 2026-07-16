@@ -1,0 +1,122 @@
+{
+  "name": "Untitled Pair - Bluetooth Confirmation",
+  "page": "untitled-pair-bluetooth-confirm.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:11877",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".bluetooth-confirm-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-bluetooth-confirm.png",
+  "visualBaselineSha256": "10fc50dbfbd95fb401686ed0d675628656deb1f6454036f8855285bc415a4eb9",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Pairing Device...",
+    "Confirm on Typhur Sync device in 30s",
+    "OK"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-back.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-device-base.png"
+    },
+    {
+      "path": "assets/pair-dialog-guide.png"
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".bluetooth-confirm-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".confirm-dialog",
+      "expected": {
+        "x": 25,
+        "y": 259,
+        "width": 325,
+        "height": 294
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".confirm-dialog .guide",
+      "expected": {
+        "x": 25,
+        "y": 259,
+        "width": 325,
+        "height": 165
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".confirm-dialog p"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "dialog",
+      "rect": {
+        "x": 17,
+        "y": 250,
+        "width": 341,
+        "height": 312
+      },
+      "maxMismatchRatio": 0.04
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "name": "Untitled Pair - Select Device",
+  "page": "untitled-pair-devices-list.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:11514",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".devices-list-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-devices-list.png",
+  "visualBaselineSha256": "3c88eb30ac7eafc321573ee762a3f8c2e0f39181b7e88565262c47877210b0ba",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Select Device",
+    "Typhur Sous Vide Station",
+    "Typhur Dome",
+    "Typhur Sync Dual",
+    "Typhur Sync Gold Quad",
+    "Typhur Sync Quad"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-back.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-sous-vide.png"
+    },
+    {
+      "path": "assets/pair-dome.png"
+    },
+    {
+      "path": "assets/pair-sync-dual.png"
+    },
+    {
+      "path": "assets/pair-sync-gold.png"
+    },
+    {
+      "path": "assets/pair-sync-quad.png"
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".devices-list-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".device-card:first-of-type",
+      "expected": {
+        "x": 16,
+        "y": 108,
+        "width": 343,
+        "height": 112
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".device-card:first-of-type h2"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "navigation",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 108
+      },
+      "maxMismatchRatio": 0.04
+    },
+    {
+      "name": "device-cards",
+      "rect": {
+        "x": 8,
+        "y": 104,
+        "width": 359,
+        "height": 640
+      },
+      "maxMismatchRatio": 0.04
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

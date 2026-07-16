@@ -1,0 +1,159 @@
+{
+  "name": "Untitled Pair - Devices Empty",
+  "page": "untitled-pair-devices-empty.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:11582",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".devices-empty-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-devices-empty.png",
+  "visualBaselineSha256": "371f0d4fde922fe3606e27b6b6358657498cf5171c84f279f9af0f27c1652d87",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Devices",
+    "You don’t have any connected devices yet",
+    "Add Device",
+    "Explore",
+    "Profile"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-feedback.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-empty.png"
+    },
+    {
+      "path": "assets/pair-plus.svg",
+      "naturalSize": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "assets/pair-tab-explore.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-tab-devices.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-tab-profile.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".devices-empty-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".devices-empty-art",
+      "expected": {
+        "x": 95.5,
+        "y": 292,
+        "width": 184,
+        "height": 112
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".pair-tabbar",
+      "expected": {
+        "x": 0,
+        "y": 732,
+        "width": 375,
+        "height": 80
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".devices-empty-copy"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "empty-state",
+      "rect": {
+        "x": 80,
+        "y": 280,
+        "width": 215,
+        "height": 250
+      },
+      "maxMismatchRatio": 0.04
+    },
+    {
+      "name": "tabbar",
+      "rect": {
+        "x": 0,
+        "y": 732,
+        "width": 375,
+        "height": 80
+      },
+      "maxMismatchRatio": 0.03
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

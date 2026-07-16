@@ -1,0 +1,137 @@
+{
+  "name": "Untitled Pair - Pairing Success",
+  "page": "untitled-pair-success.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:11636",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".pair-success-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-pair-success.png",
+  "visualBaselineSha256": "57be740906dd22d25b60c3392bb4ac354ea2febbd56f8ff286ff091c59b43499",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Success!",
+    "You've successfully paired with your device",
+    "Typhur Sync Dual",
+    "Next"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-success.svg",
+      "naturalSize": [
+        120,
+        120
+      ]
+    },
+    {
+      "path": "assets/pair-device.png"
+    },
+    {
+      "path": "assets/pair-edit.svg",
+      "naturalSize": [
+        36,
+        36
+      ]
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".pair-success-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".result-block img",
+      "expected": {
+        "x": 157.5,
+        "y": 140,
+        "width": 60,
+        "height": 60
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".pair-primary",
+      "expected": {
+        "x": 20,
+        "y": 742,
+        "width": 335,
+        "height": 50
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".result-block p"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "result",
+      "rect": {
+        "x": 20,
+        "y": 132,
+        "width": 335,
+        "height": 405
+      },
+      "maxMismatchRatio": 0.06
+    },
+    {
+      "name": "bottom-action",
+      "rect": {
+        "x": 12,
+        "y": 732,
+        "width": 351,
+        "height": 70
+      },
+      "maxMismatchRatio": 0.03
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

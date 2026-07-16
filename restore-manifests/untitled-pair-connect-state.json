@@ -1,0 +1,191 @@
+{
+  "name": "Untitled Pair - Connected Device",
+  "page": "untitled-pair-connect-state.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:11761",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".connected-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-connect-state.png",
+  "visualBaselineSha256": "3407c3e1156a2a562e8a9b727527b60299019b2362ab33dc9e21226ca96f9ffa",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Wi-Fi connection successfully",
+    "Typhur Sync Dual",
+    "Standby",
+    "132.8°F",
+    "105.3°F",
+    "Devices"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-finish.svg",
+      "naturalSize": [
+        40,
+        40
+      ]
+    },
+    {
+      "path": "assets/pair-sync-dual.png"
+    },
+    {
+      "path": "assets/pair-settings.svg",
+      "naturalSize": [
+        60,
+        60
+      ]
+    },
+    {
+      "path": "assets/pair-wifi-full.svg",
+      "naturalSize": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "assets/pair-bluetooth.svg",
+      "naturalSize": [
+        32,
+        32
+      ]
+    },
+    {
+      "path": "assets/pair-battery.svg",
+      "naturalSize": [
+        38,
+        20
+      ]
+    },
+    {
+      "path": "assets/pair-tab-explore.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-tab-devices.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-tab-profile.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".connected-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".connected-card",
+      "expected": {
+        "x": 16,
+        "y": 108,
+        "width": 343,
+        "height": 339
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".pair-tabbar",
+      "expected": {
+        "x": 0,
+        "y": 732,
+        "width": 375,
+        "height": 80
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".connected-toast"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "success-toast",
+      "rect": {
+        "x": 8,
+        "y": 46,
+        "width": 359,
+        "height": 64
+      },
+      "maxMismatchRatio": 0.07
+    },
+    {
+      "name": "device-card",
+      "rect": {
+        "x": 10,
+        "y": 102,
+        "width": 355,
+        "height": 352
+      },
+      "maxMismatchRatio": 0.06
+    },
+    {
+      "name": "tabbar",
+      "rect": {
+        "x": 0,
+        "y": 732,
+        "width": 375,
+        "height": 80
+      },
+      "maxMismatchRatio": 0.03
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

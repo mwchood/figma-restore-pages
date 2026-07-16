@@ -1,0 +1,132 @@
+{
+  "name": "Untitled Pair - Nearby Devices",
+  "page": "untitled-pair-nearby-devices.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:12062",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".nearby-devices-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-nearby-devices.png",
+  "visualBaselineSha256": "6b8158b1ac273fd236bc9239fd0e445b494225fc6df806ac398ffc89c3cfe809",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Nearby Devices",
+    "Available",
+    "Unavailable",
+    "Typhur Sync Dual - MU4A",
+    "Pair",
+    "Search Again"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-back.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-sync-dual.png"
+    },
+    {
+      "path": "assets/pair-help.svg",
+      "naturalSize": [
+        36,
+        36
+      ]
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".nearby-devices-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".nearby-bottom",
+      "expected": {
+        "x": 0,
+        "y": 692,
+        "width": 375,
+        "height": 120
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".nearby-row:first-of-type h2"
+    },
+    {
+      "type": "textFit",
+      "selector": ".nearby-row.unavailable p"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "device-list",
+      "rect": {
+        "x": 12,
+        "y": 150,
+        "width": 351,
+        "height": 425
+      },
+      "maxMismatchRatio": 0.07
+    },
+    {
+      "name": "bottom-action",
+      "rect": {
+        "x": 0,
+        "y": 684,
+        "width": 375,
+        "height": 128
+      },
+      "maxMismatchRatio": 0.05
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "name": "Untitled Pair - Rename Device",
+  "page": "untitled-pair-rename.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:12002",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".pair-rename-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-pair-rename.png",
+  "visualBaselineSha256": "18c18ae594cdc2f0f3f464a11b22e343c910d8af32e8c30cfc4a2e10ee186ecd",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Success!",
+    "Device Name",
+    "Done",
+    "Typhur Sync Dual"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-success.svg",
+      "naturalSize": [
+        120,
+        120
+      ]
+    },
+    {
+      "path": "assets/pair-device-base.png"
+    },
+    {
+      "path": "assets/pair-edit.svg",
+      "naturalSize": [
+        36,
+        36
+      ]
+    },
+    {
+      "path": "assets/pair-close.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-keyboard.svg",
+      "naturalSize": [
+        750,
+        646
+      ],
+      "allowExportedBackground": true
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".pair-rename-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".rename-sheet",
+      "expected": {
+        "x": 0,
+        "y": 333,
+        "width": 375,
+        "height": 479
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".rename-sheet .pair-keyboard",
+      "expected": {
+        "x": 0,
+        "y": 489,
+        "width": 375,
+        "height": 323
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".rename-sheet header h2"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "rename-sheet",
+      "rect": {
+        "x": 0,
+        "y": 325,
+        "width": 375,
+        "height": 487
+      },
+      "maxMismatchRatio": 0.05
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

@@ -45,6 +45,22 @@ const pages = [
   ["untitled-date-picker.html", "类型日期"],
   ["untitled-coupon-redemption.html", "优惠券核销"],
   ["untitled-schedule.html", "Schedule"],
+  ["untitled-pair-devices-list.html", "选择设备"],
+  ["untitled-pair-devices-empty.html", "设备空状态"],
+  ["untitled-pair-pairing-progress.html", "设备配对中"],
+  ["untitled-pair-success.html", "设备配对成功"],
+  ["untitled-pair-failed.html", "设备配对失败"],
+  ["untitled-pair-offline-failed.html", "离线配对失败"],
+  ["untitled-pair-wifi-list-loading.html", "Wi-Fi 列表加载"],
+  ["untitled-pair-wifi-list.html", "Wi-Fi 列表"],
+  ["untitled-pair-connect-state.html", "设备连接状态"],
+  ["untitled-pair-bluetooth-confirm.html", "蓝牙配对确认"],
+  ["untitled-pair-wifi-password-keyboard.html", "Wi-Fi 密码键盘"],
+  ["untitled-pair-wifi-password.html", "Wi-Fi 密码错误"],
+  ["untitled-pair-wifi-connecting.html", "Wi-Fi 连接中"],
+  ["untitled-pair-rename.html", "设备重命名"],
+  ["untitled-pair-region-details.html", "设备区域说明"],
+  ["untitled-pair-nearby-devices.html", "附近设备"],
   ["售后小程序项目/index.html", "售后小程序-首页"],
   ["售后小程序项目/my.html", "售后小程序-我的"],
   ["售后小程序项目/products.html", "售后小程序-全部产品"],
@@ -60,7 +76,8 @@ check(html.includes("sy 设计稿还原"), "sy design group title missing");
 check(html.includes("typhur测试还原页面"), "typhur test group title missing");
 check(html.includes("sy售后小程序设计"), "after-sales mini program group title missing");
 check(html.includes("Untitled 一级 Frame"), "Untitled frame group title missing");
-check((html.match(/class="restore-nav-group"/g) || []).length === 4, "restore nav groups mismatch");
+check(html.includes("Untitled 设备配网页面"), "Untitled pairing group title missing");
+check((html.match(/class="restore-nav-group"/g) || []).length === 5, "restore nav groups mismatch");
 check(html.includes("<details class=\"restore-nav-group\" open>"), "restore nav groups must be collapsible details");
 check(html.includes('id="restoreHubFrame"'), "preview iframe missing");
 check(html.includes('id="restoreRegisterNote"'), "register product SN hint missing");

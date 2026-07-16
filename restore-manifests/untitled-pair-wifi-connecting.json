@@ -1,0 +1,142 @@
+{
+  "name": "Untitled Pair - Wi-Fi Connecting",
+  "page": "untitled-pair-wifi-connecting.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:11971",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".wifi-connecting-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-wifi-connecting.png",
+  "visualBaselineSha256": "e845371b8029f43e49d26629ae5db1dc5c96a7ab464928c04f9aa551faac7d10",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Select Wi-Fi Network",
+    "Typhur Device"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-back.svg",
+      "naturalSize": [
+        48,
+        48
+      ]
+    },
+    {
+      "path": "assets/pair-wifi.svg",
+      "naturalSize": [
+        80,
+        80
+      ]
+    },
+    {
+      "path": "assets/pair-lock.svg",
+      "naturalSize": [
+        40,
+        40
+      ]
+    },
+    {
+      "path": "assets/pair-invisible.svg",
+      "naturalSize": [
+        40,
+        40
+      ]
+    },
+    {
+      "path": "assets/pair-connect-spinner.svg",
+      "naturalSize": [
+        40,
+        40
+      ]
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".wifi-connecting-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".wifi-connect",
+      "expected": {
+        "x": 20,
+        "y": 742,
+        "width": 335,
+        "height": 50
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".pair-title"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "fields",
+      "rect": {
+        "x": 12,
+        "y": 188,
+        "width": 351,
+        "height": 160
+      },
+      "maxMismatchRatio": 0.05
+    },
+    {
+      "name": "bottom-action",
+      "rect": {
+        "x": 12,
+        "y": 732,
+        "width": 351,
+        "height": 70
+      },
+      "maxMismatchRatio": 0.03
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}

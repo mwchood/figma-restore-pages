@@ -1,0 +1,127 @@
+{
+  "name": "Untitled Pair - Pairing Failed",
+  "page": "untitled-pair-failed.html",
+  "fileKey": "1ksHJH0bFEOz90PPdptuPM",
+  "nodeId": "1:11651",
+  "sourceFrame": {
+    "width": 750,
+    "height": 1624
+  },
+  "renderScale": 0.5,
+  "viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "frameSelector": ".pair-failed-frame",
+  "stylesheet": "untitled-pair.css",
+  "visualBaseline": "visual-baselines/untitled-pair-pair-failed.png",
+  "visualBaselineSha256": "2e98779098ed87e90f717ea3aded7872565419bc2af40e5e84ac5b97d89b8a14",
+  "visualDiff": {
+    "rawColorDelta": 16,
+    "colorDelta": 48,
+    "blurRadius": 0,
+    "maxMismatchRatio": 0.05
+  },
+  "texts": [
+    "Failed",
+    "Pairing failed, please try again",
+    "Unable to connect device",
+    "Cancel",
+    "Retry"
+  ],
+  "assets": [
+    {
+      "path": "assets/pair-status-time.svg",
+      "naturalSize": [
+        108,
+        40.8919
+      ]
+    },
+    {
+      "path": "assets/pair-status-right.svg",
+      "naturalSize": [
+        133.32,
+        22.0765
+      ]
+    },
+    {
+      "path": "assets/pair-failed.svg",
+      "naturalSize": [
+        120,
+        120
+      ]
+    },
+    {
+      "path": "assets/pair-device.png"
+    },
+    {
+      "path": "assets/pair-help.svg",
+      "naturalSize": [
+        36,
+        36
+      ]
+    }
+  ],
+  "cssChecks": [
+    {
+      "selector": ".pair-frame",
+      "declarations": [
+        "width: 375px;",
+        "height: 812px;"
+      ]
+    }
+  ],
+  "browserChecks": [
+    {
+      "type": "bounds",
+      "selector": ".pair-failed-frame",
+      "expected": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 812
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "bounds",
+      "selector": ".pair-danger",
+      "expected": {
+        "x": 193.5,
+        "y": 742,
+        "width": 161.5,
+        "height": 50
+      },
+      "tolerance": 0.5
+    },
+    {
+      "type": "textFit",
+      "selector": ".result-block p"
+    }
+  ],
+  "visualRegions": [
+    {
+      "name": "result",
+      "rect": {
+        "x": 20,
+        "y": 132,
+        "width": 335,
+        "height": 405
+      },
+      "maxMismatchRatio": 0.06
+    },
+    {
+      "name": "help-actions",
+      "rect": {
+        "x": 12,
+        "y": 694,
+        "width": 351,
+        "height": 108
+      },
+      "maxMismatchRatio": 0.06
+    }
+  ],
+  "audits": [
+    "scripts/audit-restore-hub.cjs"
+  ]
+}
