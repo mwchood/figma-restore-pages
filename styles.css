@@ -10821,3 +10821,181 @@ html:has(#restore-bare:target) .figma-frame {
   font-weight: 500;
   line-height: 22px;
 }
+
+/* sy membership benefits / Figma 1:4897 */
+.sy-membership-frame {
+  width: 375px;
+  height: 812px;
+  background: #fff;
+  color: #000;
+}
+
+.sy-membership-frame img { max-width: none; }
+
+.sy-membership-top-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 375px;
+  height: 309px;
+}
+
+.sy-membership-status { position: absolute; inset: 0 0 auto; height: 88px; }
+.sy-membership-time {
+  position: absolute;
+  left: 12px;
+  top: 13.5px;
+  width: 54px;
+  height: 17px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  text-align: center;
+}
+.sy-membership-cell { position: absolute; left: 293.5px; top: 16.5px; width: 17px; height: 10.67px; }
+.sy-membership-wifi { position: absolute; left: 315.5px; top: 16.5px; width: 15.27px; height: 10.97px; }
+.sy-membership-battery { position: absolute; left: 336px; top: 16.33px; width: 24.33px; height: 11.33px; }
+.sy-membership-mini-program { position: absolute; left: 280px; top: 50px; width: 87px; height: 32px; }
+.sy-membership-back { position: absolute; left: 12px; top: 53px; width: 26px; height: 26px; transform: scaleX(-1); }
+.sy-membership-title {
+  position: absolute;
+  left: 151px;
+  top: 53px;
+  width: 73px;
+  height: 26px;
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  white-space: nowrap;
+}
+
+.sy-membership-levels { position: absolute; inset: 0; }
+.sy-membership-level {
+  position: absolute;
+  top: 108px;
+  width: 30px;
+  height: 37px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+}
+.sy-membership-level.active { left: 64px; color: #fff; font-weight: 500; }
+.sy-membership-level.level-2 { left: 118px; }
+.sy-membership-level.level-3 { left: 172px; }
+.sy-membership-level.level-4 { left: 226px; }
+.sy-membership-level.level-5 { left: 280px; }
+.sy-membership-level img { width: 10px; height: 12px; margin: 0 auto 7px; }
+.sy-membership-level span { display: block; width: 30px; white-space: nowrap; }
+.sy-membership-level-line {
+  position: absolute;
+  top: 113.5px;
+  width: 24px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.45);
+}
+.sy-membership-level-line.line-1 { left: 94px; }
+.sy-membership-level-line.line-2 { left: 148px; }
+.sy-membership-level-line.line-3 { left: 202px; }
+.sy-membership-level-line.line-4 { left: 256px; }
+
+.sy-membership-card {
+  position: absolute;
+  left: 20px;
+  top: 174px;
+  width: 310px;
+  height: 173px;
+}
+.sy-membership-card-bg { position: absolute; inset: 0; width: 310px; height: 173px; }
+.sy-membership-current {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 64px;
+  height: 22px;
+  padding-left: 12px;
+  border-radius: 6px 0 6px 0;
+  color: #fff;
+  background: #babbd8;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.sy-membership-card-title { position: absolute; left: 18px; top: 40px; height: 26px; color: #717199; white-space: nowrap; }
+.sy-membership-card-title strong { font-size: 20px; font-weight: 600; line-height: 26px; }
+.sy-membership-card-title span { margin-left: 4px; font-size: 18px; font-weight: 500; line-height: 26px; }
+.sy-membership-medal { position: absolute; left: 200px; top: -20px; width: 100px; height: 100px; }
+.sy-membership-progress-copy,
+.sy-membership-next-copy,
+.sy-membership-validity {
+  position: absolute;
+  color: #717199;
+  font-weight: 300;
+  white-space: nowrap;
+}
+.sy-membership-progress-copy { left: 18px; top: 106px; font-size: 12px; line-height: 18px; }
+.sy-membership-next-copy { right: 16px; top: 106px; font-size: 12px; line-height: 18px; }
+.sy-membership-progress { position: absolute; left: 19px; top: 132px; width: 276px; height: 3px; border-radius: 20px; background: rgba(246, 248, 255, 0.33); }
+.sy-membership-progress i { display: block; width: 70px; height: 3px; border-radius: 20px; background: #717199; }
+.sy-membership-validity { left: 19px; top: 143px; font-size: 10px; line-height: 18px; }
+
+.sy-membership-next-card { position: absolute; left: 344px; top: 174px; width: 310px; height: 173px; }
+.sy-membership-next-card-bg {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid #fff;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.78);
+}
+.sy-membership-next-card strong { position: absolute; left: 18px; top: 37px; color: #54546f; font-size: 20px; line-height: 26px; }
+
+.sy-membership-benefits { position: absolute; inset: 0; }
+.sy-membership-benefits-title { position: absolute; left: 20px; top: 377px; width: 130px; height: 26px; }
+.sy-membership-benefits-title h2 { margin: 0; font-size: 18px; font-weight: 500; line-height: 26px; transform: translateY(-2px); }
+.sy-membership-benefits-title span { position: absolute; left: 82px; top: 3px; width: 48px; color: #666; font-size: 12px; font-weight: 300; line-height: 20px; white-space: nowrap; }
+
+.sy-membership-benefit { position: absolute; width: 56px; height: 81px; text-align: center; }
+.sy-membership-benefit.benefit-1 { left: 43px; top: 431px; }
+.sy-membership-benefit.benefit-2 { left: 160px; top: 431px; }
+.sy-membership-benefit.benefit-3 { left: 277px; top: 431px; }
+.sy-membership-benefit.benefit-4 { left: 43px; top: 537px; }
+.sy-membership-benefit.benefit-5 { left: 160px; top: 537px; }
+.sy-membership-benefit.benefit-6 { left: 277px; top: 537px; }
+.sy-membership-benefit.benefit-7 { left: 43px; top: 643px; }
+.sy-membership-benefit.benefit-8 { left: 160px; top: 643px; }
+.sy-membership-benefit.benefit-9 { left: 277px; top: 643px; }
+.sy-membership-benefit-circle {
+  position: absolute;
+  left: 4px;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: url("assets/sy-membership-circle-inactive-clean.svg") center / 48px 48px no-repeat;
+}
+.sy-membership-benefit.active .sy-membership-benefit-circle { background: none; }
+.sy-membership-benefit-circle > img { position: absolute; left: 11px; top: 11px; width: 26px; height: 26px; }
+.sy-membership-benefit.benefit-1 .sy-membership-benefit-circle > img,
+.sy-membership-benefit.benefit-2 .sy-membership-benefit-circle > img { left: 0; top: 0; width: 48px; height: 48px; }
+.sy-membership-benefit.benefit-7 .sy-membership-benefit-circle > img { top: 10px; }
+.sy-membership-benefit.benefit-9 .sy-membership-benefit-circle { left: 2px; }
+.sy-membership-benefit b {
+  position: absolute;
+  left: 0;
+  top: 58px;
+  width: 56px;
+  color: #999;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  white-space: nowrap;
+}
+.sy-membership-benefit.active b { color: #000; }
+
+.sy-membership-home-indicator { position: absolute; left: 121px; top: 799px; width: 134px; height: 5px; border-radius: 3px; background: #000; }

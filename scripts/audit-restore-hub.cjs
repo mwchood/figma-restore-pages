@@ -13,6 +13,7 @@ function check(condition, message) {
 
 const pages = [
   ["sy-v1.html", "我的 V1"],
+  ["sy-membership-benefits.html", "会员权益"],
   ["v3.html", "我的 V3"],
   ["v5.html", "我的 V5"],
   ["service.html", "服务"],
